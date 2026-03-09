@@ -10,16 +10,23 @@ from PIL import ImageTk, Image
 
 
 # Open hardware connections
-#laser_probe = probe.Probe()
-#side_camera = camera.Camera()
-#z_stage = stage.Stage(port = 'COM3')
+# laser_probe = probe.Probe(port = 'COM4')
+# side_camera = camera.Camera()
+# z_stage = stage.Stage(port = 'COM6')
 
 #measurer = measurement.Measurement(laser_probe, side_camera, z_stage)
 
 # Start the hardware
-#laser_probe.open()
-#side_camera.open()
-#z_stage.open()
+# res = [False]*3
+# res[0] = laser_probe.open()
+# res[1] = side_camera.open()
+# res[2] = z_stage.open()
+
+# if(not(res[0] and res[1] and res[2])):
+#     logging.error('Couldn not start the hardware!\nExiting...')
+#     laser_probe.close()
+#     side_camera.close()
+#     z_stage.close()
 
 path = os.path.dirname(__file__)
 
@@ -91,7 +98,7 @@ def toggle_automatic_recording():
 
 # Create the GUI
 
-default_font = ("Ubuntu Light", 17)
+default_font = ("Ubuntu Light", 12)
 
 root = tk.Tk()
 root.title('Hook adhesion microscope (HAM)')
@@ -106,7 +113,7 @@ root.geometry(f'{win_size[0]}x{win_size[1]}+{screen_w-win_size[0]}+0')
 
 
 # Create a canvas for the live view playback
-canvas_size = (int(win_size[0]*0.9), int(win_size[1]*0.45))
+canvas_size = (int(win_size[0]*0.9), int(win_size[1]*0.35))
 canvas = tk.Canvas(root, width = canvas_size[0], height = canvas_size[1], bg="#C3E211" )
 #canvas.create_line(108, 120, 320, 40, fill = 'black')
 img = ImageTk.PhotoImage(Image.open(path + "/../figs/Two_hook_pull.png").resize(canvas_size))

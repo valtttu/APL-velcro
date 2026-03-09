@@ -26,14 +26,14 @@ class Probe:
     ###########################################################
     # Initialize the probe class
     ###########################################################
-    def __init__(self):
+    def __init__(self, port: str):
 
         # Choose the correct controller instance
         self._sensor = MEDAQLib.CreateSensorInstance(ME_SENSOR.SENSOR_ILD1220)
         self._range = 1e4
 
         self._sensor.SetParameterString("IP_Interface", "RS232")
-        self._sensor.SetParameterString("IP_Port", "COM4")
+        self._sensor.SetParameterString("IP_Port", port)
 
         # Flags
         self._is_open = False
@@ -187,28 +187,30 @@ class Probe:
 
         while self._is_open:
             # Check whether there's enough data to read in
-            while(self._sensor.DataAvail() < EXPECTED_BLOCK_SIZE):
-                time.sleep(0.0001)
+            if(self._sensor.DataAvail() >= EXPECTED_BLOCK_SIZE):
 
-            # Fetch data from MEDAQLib's internal buffer
-            polled_data = self._sensor.Poll(1)
+                # Fetch data from MEDAQLib's internal buffer
+                polled_data = self._sensor.Poll(1)
 
-            # Check if TransferData causes an error
-            if(self._sensor.GetLastError() == ERR_CODE.ERR_NOERROR):
-                # Convert to distance in um
-                raw_value = polled_data[0]
-                raw_data=sum(raw_value)
-                d_value = (raw_data)/6.5
-                if(d_value > self._range):
-                    self._d_latest = np.nan
+                # Check if TransferData causes an error
+                if(self._sensor.GetLastError() == ERR_CODE.ERR_NOERROR):
+                    # Convert to distance in um
+                    raw_value = polled_data[0]
+                    raw_data=sum(raw_value)
+                    d_value = (raw_data)/6.5
+                    if(d_value > self._range):
+                        self._d_latest = np.nan
+                    else:
+                        self._d_latest = d_value
+
+                    if(self._is_recording):
+                        save_str = f'{time.time()}, {self._d_latest} \n'
+                        self._save_fid.write(save_str)
+                        self._save_fid.flush()
+
                 else:
-                    self._d_latest = d_value
-
-                if(self._is_recording):
-                    save_str = f'{time.time()}, {self._d_latest} \n'
-                    self._save_fid.write(save_str)
-                    self._save_fid.flush()
-
+                    # Print TransferData error
+                    logging.error(self._sensor.GetError(1024).split('.')[0])
+            
             else:
-                # Print TransferData error
-                logging.error(self._sensor.GetError(1024).split('.')[0])
+                time.sleep(0.0001)

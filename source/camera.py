@@ -15,6 +15,7 @@ class Camera:
         self._cam_list = None
         self._acq_thread = threading.Thread()
         self._avi_recorder = None
+        self._processor = None
         self._fps = 100
         self._is_recording = False
         self._is_live = False
@@ -46,6 +47,11 @@ class Camera:
             self._system.ReleaseInstance()
             logging.error('Did not find one camera, but found %d cameras!' % num_cameras)
             return False
+
+        self._cam.Init()
+        self._avi_recorder = PySpin.SpinVideo()
+        self._processor = PySpin.ImageProcessor()
+        self._processor.SetColorProcessing(PySpin.SPINNAKER_COLOR_PROCESSING_ALGORITHM_HQ_LINEAR)
         
         # Get device serial number
         serial_no = ''
@@ -58,7 +64,7 @@ class Camera:
 
 
 
-    def start_live_view(self) -> bool:
+    def start_live_view(self, fig) -> bool:
         '''
             Start camera live view with a matplotlib figure window
         '''
@@ -76,7 +82,7 @@ class Camera:
 
         # Start the image acquisition thread
         self._is_live = True
-        self._acq_thread = threading.Thread(target=self.run_camera)
+        self._acq_thread = threading.Thread(target=self.run_camera, args = (fig, ))
         self._acq_thread.start()
 
         return True
@@ -103,18 +109,29 @@ class Camera:
         
 
         # Get acquisition frame rate
-        if self._cam.AcquisitionFrameRate.GetAccessMode() != PySpin.R:
+        if self._cam.AcquisitionFrameRate.GetAccessMode() == PySpin.NA:
             logging.error('Unable to access acquisition frame rate. Aborting...')
             return False
 
-        self._fps = self._cam.AcquisitionFrameRate.GetValue()
+        node_acquisition_framerate = PySpin.CFloatPtr(self._cam.GetNodeMap().GetNode('AcquisitionFrameRate'))
+
+        if not PySpin.IsReadable(node_acquisition_framerate):
+            logging.error('Unable to retrieve frame rate. Aborting...')
+            return False
+
+        self._fps = node_acquisition_framerate.GetValue()
+
+        #self._fps = self._cam.AcquisitionFrameRate.GetValue()
 
         # Initiate the video recording object
         option = PySpin.MJPGOption()
         option.frameRate = self._fps
-        option.quality = 100
+        option.quality = 60
+        option.width = 2448
+        option.height = 2048
 
         self._avi_recorder.Open(path + '/' + filename, option)
+        self._images = []
 
         # Set recoding flag to true
         self._is_recording = True
@@ -129,6 +146,8 @@ class Camera:
         '''
 
         self._is_recording = False
+        for image in self._images:
+            self._avi_recorder.Append(image)
         self._avi_recorder.Close()
 
 
@@ -137,10 +156,11 @@ class Camera:
             Close the camera and free the resources
         '''
 
-        self._is_live = False
-        self._acq_thread.join()
-        while self._acq_thread.is_alive():
-            time.sleep(0.1)
+        if(self._is_live):
+            self._is_live = False
+            self._acq_thread.join()
+            while self._acq_thread.is_alive():
+                time.sleep(0.1)
 
         # Release the camera object
         del self._cam
@@ -153,7 +173,7 @@ class Camera:
 
 
 
-    def run_camera(self):
+    def run_camera(self, fig):
         '''
             Main loop for camera image acquisition
         '''
@@ -164,7 +184,6 @@ class Camera:
 
 
         # Figure(1) is default so you can omit this line. Figure(0) will create a new window every time program hits this line
-        fig = plt.figure(1)
 
         # Retrieve, convert, and save images
         while self._is_recording or self._is_live:
@@ -185,14 +204,16 @@ class Camera:
                     # Getting the image data as a numpy array
                     image_data = image_result.GetNDArray()
 
-                    plt.imshow(image_data, cmap='gray')
-                    plt.pause(0.001)
-                    plt.clf()
+                    #plt.imshow(image_data, cmap='gray')
+                    #plt.pause(0.001)
+                    #plt.clf()
 
                     if(self._is_recording):
                         # Convert image to Mono8 and write to avi
-                        image_converted = image_result.Convert(PySpin.PixelFormat_Mono8)
-                        self._avi_recorder.Append(image_converted)
+                        #image_converted = image_data.Convert(PySpin.PixelFormat_Mono8)
+                        image_converted = self._processor.Convert(image_result, PySpin.PixelFormat_Mono8)
+                        #self._avi_recorder.Append(image_converted)
+                        self._images.append(image_converted)
                         
 
                 # Release image
@@ -202,6 +223,6 @@ class Camera:
                 logging.error('Error in camera image acquisition: %s' % ex)
 
         # End acquisition
-        plt.close(fig)
+        #plt.close(fig)
         logging.debug('Finishing the image acquisition...')
         self._cam.EndAcquisition()

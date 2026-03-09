@@ -86,6 +86,17 @@ class Measurement:
             return (False, f'Invalid value "{value}" for parameter "{self._keys[index]}"')
 
 
+    def start_recording(self):
+        res = [False, False]
+        res[0] = self.camera.start_recording(self._params['save path']['value'], f'{self._video_file_temp}{self._measurement_no:02d}.avi')
+        res[1] = self.probe.start_recording(self._params['save path']['value'], f'{self._force_file_temp}{self._measurement_no:02d}.csv')
+        
+        if(not (res[0] and res[1])):
+            logging.error('Could not start recording, aborting the measurement')
+            self.camera.end_recording()
+            self.probe.stop_recording()
+
+
     def start_measurement(self):
         '''
             Start a single measurement
@@ -94,7 +105,7 @@ class Measurement:
         self._is_measuring = True
         self._meas_thread = threading.Thread(target =  self._measure_single)
         self._meas_thread.start()
-        logging.info(f'Measurement sequence started for sample ID: "{self._params['sample ID']['value']}"')
+        logging.info(f"Measurement sequence started for sample ID: {self._params['sample ID']['value']}")
 
 
     def stop_measurement(self):
@@ -127,7 +138,7 @@ class Measurement:
         '''
 
         # Print logging info
-        logging.info(f'\tStarting measurement {self._measurement_no} for sample ID "{self._params['sample ID']['value']}"')
+        logging.info(f"\tStarting measurement {self._measurement_no} for sample ID {self._params['sample ID']['value']}")
 
         # Move to starting location
         self.stage.move_to_pos(self._params['z start meas.']['value'], wait=True)
