@@ -57,44 +57,66 @@ class Measurement:
 
 
 
-    def edit_parameter(self, index: int, value: any):
+    def edit_parameter(self, name: str, value_str: str):
         '''
             Edit the parameter at given index
         '''
 
         # Check index validity
-        if(index < 0 or index > self._num_params):
-            logging.error(f'Invalid index "{index}" for param list, the index must be between [0, {self._num_params}]')
-            return (False, 'Invalid index error')
+        if(name not in self._keys):
+            logging.error(f'Invalid name "{name}" for param list')
+            return (False, 'Invalid name error')
+
         
         # Check the value validity
         res = False
-        if(self._params[self._keys[index]]['type'] == 'float'):
-            res = isinstance(value, float) and value >= self.self._params[self._keys[index]]['range'][0] and value <= self.self._params[self._keys[index]]['range'][1] 
-        if(self._params[self._keys[index]]['type'] == 'int'):
-            res = isinstance(value, int) and value >= self.self._params[self._keys[index]]['range'][0] and value <= self.self._params[self._keys[index]]['range'][1] 
-        elif(self._params[self._keys[index]]['type'] == 'path'):
-            res = isinstance(value, str)
-            res = utils.check_path_exists(value) and utils.check_path_writeable(value)
-        elif(self._params[self._keys[index]]['type'] == 'string'):
-            res = isinstance(value, str)
+        if(self._params[name]['type'] == 'float'):
+            try:
+                value = float(value_str)
+                res = value >= self.self._params[name]['range'][0] and value <= self.self._params[name]['range'][1] 
+            except ValueError:
+                res = False
+        if(self._params[name]['type'] == 'int'):
+            try:
+                value = int(value_str)
+                res = value >= self.self._params[name]['range'][0] and value <= self.self._params[name]['range'][1]
+            except ValueError:
+                res = False
+        elif(self._params[name]['type'] == 'path'):
+            res = isinstance(value_str, str)
+            res = utils.check_path_exists(value_str) and utils.check_path_writeable(value_str)
+            value = value_str
+        elif(self._params[name]['type'] == 'string'):
+            res = isinstance(value_str, str)
+            value = value_str
 
         if(res):
-            self._params[self._keys[index]]['value'] = value
-            return (True, f'Successfully updated "{self._keys[index]}"')
+            self._params[name]['value'] = value
+            return (True, f'Successfully updated "{name}"')
         else:
-            return (False, f'Invalid value "{value}" for parameter "{self._keys[index]}"')
+            return (False, f'Invalid value "{value_str}" for parameter "{name}"')
 
 
     def start_recording(self):
+        '''
+            Start manual recording
+        '''
         res = [False, False]
-        res[0] = self.camera.start_recording(self._params['save path']['value'], f'{self._video_file_temp}{self._measurement_no:02d}.avi')
-        res[1] = self.probe.start_recording(self._params['save path']['value'], f'{self._force_file_temp}{self._measurement_no:02d}.csv')
+        res[0] = self.camera.start_recording(self._params['save path']['value'], f'{self._params['sample ID']['value']}_video_{time.time()}.avi')
+        res[1] = self.probe.start_recording(self._params['save path']['value'], f'{self._params['sample ID']['value']}_force_{time.time()}.csv')
         
         if(not (res[0] and res[1])):
             logging.error('Could not start recording, aborting the measurement')
             self.camera.end_recording()
             self.probe.stop_recording()
+
+
+    def start_recording(self):
+        '''
+            Stop manual recording
+        '''
+        self.camera.end_recording()
+        self.probe.stop_recording()
 
 
     def start_measurement(self):

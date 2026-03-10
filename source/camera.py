@@ -86,6 +86,15 @@ class Camera:
         self._acq_thread.start()
 
         return True
+    
+
+
+    def get_latest_frame(self):
+        '''
+            Return the latest complete frame that was acquired
+        '''
+
+        pass
 
 
     

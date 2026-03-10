@@ -91,11 +91,11 @@ class Stage:
 
 
     def stop(self):
-        result = self._write_command('STOP')
+        self._write_command('STOP')
 
 
     def home(self):
-        result = self._write_command('HOME')
+        self._write_command('HOME')
 
 
     def _write_command(self, command: str): 

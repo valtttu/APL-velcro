@@ -1,28 +1,40 @@
-import cv2
+import tkinter as tk
 import time
+from datetime import datetime
 import sys
 
-def test():
-    cv2.namedWindow('Test window')
+root = tk.Tk()
 
-def listen():
-    while True:
-        if cv2.waitKey(25) & 0xFF == ord('q'):
-            break
+def onPress():
+    print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\tGot a click')
 
-        time.sleep(0.01)
+def upKey(event):
+    print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\tUp pressed')
 
-        key = cv2.waitKey()
-        if key != -1:
-            print(chr(key), end=' ')
-            sys.stdout.flush()
+def downKey(event):
+    print(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\tDown pressed')
 
+btn = tk.Button(root, text="Test", 
+                            command= onPress,
+                            activebackground="green", 
+                            activeforeground="white",
+                            anchor="center",
+                            bd=3,
+                            bg="lightgray",
+                            cursor="hand2",
+                            disabledforeground="gray",
+                            fg="black",
+                            highlightbackground="black",
+                            highlightcolor="green",
+                            highlightthickness=2,
+                            justify="center",
+                            overrelief="raised",
+                            padx=10,
+                            pady=10)
 
-            if(chr(key) == 'q'):
-                break
+btn.pack()
 
+root.bind('<Up>', upKey)
+root.bind('<Down>', downKey)
 
-
-if __name__ == "__main__":
-    test()
-    listen()
+tk.mainloop()
