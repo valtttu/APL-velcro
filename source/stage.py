@@ -26,6 +26,7 @@ class Stage:
         self._zmax = 70         # [mm]
 
 
+
     def open(self):
 
         try:
@@ -41,8 +42,10 @@ class Stage:
             return False
 
 
+
     def close(self):
         self._stepper.close()
+
 
 
     def set_velocity(self, value):
@@ -54,6 +57,7 @@ class Stage:
             logging.error(f'Cannot set velocity to {value}! Value should be between [{[0, MAX_SPEED]}]')
 
 
+
     def get_state(self):
         '''
             Returns position, velocity and is_moving flag as a tuple
@@ -61,6 +65,7 @@ class Stage:
         result = self._write_command('QSTATE')
         self._parse_state(result)
         return (self._position, self._velocity, self._is_moving)
+
 
 
     def move_to_pos(self, pos: float, wait = False):
@@ -84,6 +89,19 @@ class Stage:
             logging.error(f'Invalid position value {pos} in move_to_pos! Value should be between [{[0, self._zmax]}]')
 
 
+
+    def drive_stage(self, direction: bool):
+        '''
+            Drive the stage forward or backward until stop is called
+        '''
+
+        if(direction):
+            self.move_to_pos(self._zmax)
+        else:
+            self.move_to_pos(0)
+
+
+
     def can_move(self):
         result = self._write_command('QSTATE')
         self._parse_state(result)
@@ -94,8 +112,10 @@ class Stage:
         self._write_command('STOP')
 
 
+
     def home(self):
         self._write_command('HOME')
+
 
 
     def _write_command(self, command: str): 
@@ -105,9 +125,13 @@ class Stage:
         data = self._stepper.readline().decode().rstrip()
         return data 
     
+
+
     def _listen_reply(self):
         data = self._stepper.readline().decode().rstrip()
         return data 
+
+
 
     def _parse_state(self, msg: str):
         pts = msg.split(',')

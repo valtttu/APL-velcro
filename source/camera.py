@@ -2,7 +2,7 @@ import threading
 import logging
 import time
 import PySpin
-import matplotlib.pyplot as plt
+import numpy as np
 from utils import check_path_exists, check_path_writeable
 
 
@@ -19,6 +19,9 @@ class Camera:
         self._fps = 100
         self._is_recording = False
         self._is_live = False
+
+        self._image_lock = threading.RLock()
+        self._latest_frame = None
 
 
 
@@ -39,7 +42,7 @@ class Camera:
         logging.info('Number of cameras detected: %d' % num_cameras)
 
         # Grab the connected camera
-        if num_cameras == 1:
+        if(num_cameras == 1):
             self._cam = self._cam_list[0]
             
         else:
@@ -48,45 +51,29 @@ class Camera:
             logging.error('Did not find one camera, but found %d cameras!' % num_cameras)
             return False
 
+        # Initialize camera and the video processor
         self._cam.Init()
         self._avi_recorder = PySpin.SpinVideo()
         self._processor = PySpin.ImageProcessor()
         self._processor.SetColorProcessing(PySpin.SPINNAKER_COLOR_PROCESSING_ALGORITHM_HQ_LINEAR)
+
+        # Get the frame resolution
+        self._resolution = self._get_frame_resolution()
         
         # Get device serial number
         serial_no = ''
-        if self._cam.TLDevice.DeviceSerialNumber is not None and self._cam.TLDevice.DeviceSerialNumber.GetAccessMode() == PySpin.RO:
+        if(self._cam.TLDevice.DeviceSerialNumber is not None and self._cam.TLDevice.DeviceSerialNumber.GetAccessMode() == PySpin.RO):
             serial_no = self._cam.TLDevice.DeviceSerialNumber.GetValue()
 
             logging.info('Opened device with serial number  %s...' % serial_no)
 
-        return True
-
-
-
-    def start_live_view(self, fig) -> bool:
-        '''
-            Start camera live view with a matplotlib figure window
-        '''
-
-        # Set acquisition mode to continuous
-        if self._cam.AcquisitionMode.GetAccessMode() != PySpin.RW:
-            logging.error('Unable to set acquisition mode to continuous!')
-            return False
-
-        self._cam.AcquisitionMode.SetValue(PySpin.AcquisitionMode_Continuous)
-        logging.info('Acquisition mode set to continuous...')
-
-
-        # Set acquisition frame rate etc...
-
         # Start the image acquisition thread
         self._is_live = True
-        self._acq_thread = threading.Thread(target=self.run_camera, args = (fig, ))
+        self._acq_thread = threading.Thread(target=self._run_camera)
         self._acq_thread.start()
 
         return True
-    
+
 
 
     def get_latest_frame(self):
@@ -94,7 +81,8 @@ class Camera:
             Return the latest complete frame that was acquired
         '''
 
-        pass
+        with self._image_lock:
+            return np.copy(self._latest_frame)
 
 
     
@@ -130,14 +118,13 @@ class Camera:
 
         self._fps = node_acquisition_framerate.GetValue()
 
-        #self._fps = self._cam.AcquisitionFrameRate.GetValue()
 
         # Initiate the video recording object
         option = PySpin.MJPGOption()
         option.frameRate = self._fps
         option.quality = 60
-        option.width = 2448
-        option.height = 2048
+        option.width = self._resolution[0]
+        option.height = self._resolution[1]
 
         self._avi_recorder.Open(path + '/' + filename, option)
         self._images = []
@@ -153,11 +140,11 @@ class Camera:
         ''' 
             Stop the video recording and save the video
         '''
-
-        self._is_recording = False
-        for image in self._images:
-            self._avi_recorder.Append(image)
-        self._avi_recorder.Close()
+        if(self._is_recording):
+            self._is_recording = False
+            for image in self._images:
+                self._avi_recorder.Append(image)
+            self._avi_recorder.Close()
 
 
     def close(self):
@@ -172,6 +159,7 @@ class Camera:
                 time.sleep(0.1)
 
         # Release the camera object
+        self._cam.DeInit()
         del self._cam
 
         # Clear camera list before releasing system
@@ -181,8 +169,25 @@ class Camera:
         self._system.ReleaseInstance()
 
 
+    
+    def _get_frame_resolution(self) -> tuple[int]:
+        '''
+            Acquire the frame width and height as a tuple
+        '''
 
-    def run_camera(self, fig):
+        # Retrieve next received image and ensure image completion
+        image_result = self._cam.GetNextImage()
+
+        if image_result.IsIncomplete():
+            logging.error('Image incomplete with image status %d...' % image_result.GetImageStatus())
+            return None
+        else:
+            # Return the image resolution
+            return (image_result.GetWidth(), image_result.GetHeight())
+
+
+
+    def _run_camera(self):
         '''
             Main loop for camera image acquisition
         '''
@@ -205,23 +210,16 @@ class Camera:
                     logging.error('Image incomplete with image status %d...' % image_result.GetImageStatus())
 
                 else:
-
-                    # Record image resolution for potential use in the video reader
-                    self._frame_width = image_result.GetWidth()
-                    self._frame_height = image_result.GetHeight()
-
                     # Getting the image data as a numpy array
                     image_data = image_result.GetNDArray()
 
-                    #plt.imshow(image_data, cmap='gray')
-                    #plt.pause(0.001)
-                    #plt.clf()
+                    with self._image_lock:
+                        self._latest_frame = image_data
 
+                    # Put the frame to writing queue
                     if(self._is_recording):
                         # Convert image to Mono8 and write to avi
-                        #image_converted = image_data.Convert(PySpin.PixelFormat_Mono8)
                         image_converted = self._processor.Convert(image_result, PySpin.PixelFormat_Mono8)
-                        #self._avi_recorder.Append(image_converted)
                         self._images.append(image_converted)
                         
 
@@ -232,6 +230,5 @@ class Camera:
                 logging.error('Error in camera image acquisition: %s' % ex)
 
         # End acquisition
-        #plt.close(fig)
         logging.debug('Finishing the image acquisition...')
         self._cam.EndAcquisition()

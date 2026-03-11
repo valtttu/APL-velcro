@@ -49,7 +49,6 @@ def toggle_manual_recording():
     if(bt_start_manual['activebackground'] == 'red'):
         measurer.stop_recording()
         bt_start_automatic.config(state=tk.NORMAL)
-        bt_probe_offset.config(state=tk.NORMAL)
         bt_start_manual.config(text="Start manual\n recording")
         bt_start_manual.config(activebackground='green')
         for entry in entries:
@@ -57,7 +56,6 @@ def toggle_manual_recording():
     else:
         measurer.start_recording()
         bt_start_automatic.config(state=tk.DISABLED)
-        bt_probe_offset.config(state=tk.DISABLED)
         bt_start_manual.config(text="Stop manual\n recording")
         bt_start_manual.config(activebackground='red')
         for entry in entries:
@@ -68,8 +66,9 @@ def toggle_automatic_recording():
     if(bt_start_automatic['activebackground'] == 'red'):
         measurer.stop_measurement()
         bt_start_manual.config(state=tk.NORMAL)
-        bt_probe_offset.config(state=tk.NORMAL)
         bt_stage_home.config(state=tk.NORMAL)
+        bt_stage_down.config(state=tk.NORMAL)
+        bt_stage_up.config(state=tk.NORMAL)
         bt_start_automatic.config(text="Start measurement\n sequence")
         bt_start_automatic.config(activebackground='green')
         for entry in entries:
@@ -77,32 +76,38 @@ def toggle_automatic_recording():
     else:
         measurer.start_measurement()
         bt_start_manual.config(state=tk.DISABLED)
-        bt_probe_offset.config(state=tk.DISABLED)
         bt_stage_home.config(state=tk.DISABLED)
+        bt_stage_down.config(state=tk.DISABLED)
+        bt_stage_up.config(state=tk.DISABLED)
         bt_start_automatic.config(text="Stop measurement\n sequence")
         bt_start_automatic.config(activebackground='red')
         for entry in entries:
             entry.config(state="disabled")
 
 
-def upKey(event):
+def driveUp(event):
     if(not measurer.is_measuring_automatic()):
         z_stage.drive_stage(True)
 
 
-def downKey(event):
+def driveDown(event):
     if(not measurer.is_measuring_automatic()):
         z_stage.drive_stage(False)
+
+def stageStop(event):
+    z_stage.stop()
 
 
 def updateGUI():
     # Update info labels
-    state1.set(f'Current distance: {700} µm\nCurrent force: {0.7} N')
-    state2.set(f'Current position: {10} mm\nState: {"Idle"}')
+    springk = measurer.get_parameter('spring constant')
+    delta = laser_probe.get_latest()
+    stage_state = z_stage.get_state()
+    state1.set(f'Current distance: {delta*1000:.3f} µm\nCurrent force: {delta*1e6*springk:.3f} N')
+    state2.set(f'Current position: {stage_state[0]} mm\nState: {"Idle"}')
 
     # Get the next camera frame and display that
-    #camera.get_latest_frame()
-    img = ImageTk.PhotoImage(Image.open(path + "/../figs/Two_hook_pull.png").resize(canvas_size))
+    img = ImageTk.PhotoImage(Image.fromarray(side_camera.get_latest_frame()).resize(canvas_size))
     canvas.create_image(0,0, anchor='nw', image=img)
 
 
@@ -123,7 +128,7 @@ root.geometry(f'{win_size[0]}x{win_size[1]}+{screen_w-win_size[0]}+0')
 
 # Create a canvas for the live view playback
 canvas_size = (int(win_size[0]*0.9), int(win_size[1]*0.35))
-canvas = tk.Canvas(root, width = canvas_size[0], height = canvas_size[1], bg="#C3E211" )
+canvas = tk.Canvas(root, width = canvas_size[0], height = canvas_size[1], bg="#D6D6D5" )
 img = ImageTk.PhotoImage(Image.open(path + "/../figs/Two_hook_pull.png").resize(canvas_size))
 canvas.create_image(0,0, anchor='nw', image=img)
 canvas.grid(sticky='N',column=0, columnspan=8, row=0, rowspan=8, padx=10, pady=10)
@@ -169,8 +174,27 @@ bt_start_manual = tk.Button(root, text="Start manual\n recording",
                             padx=10,
                             pady=10)
 
+bt_stage_up = tk.Button(root, text="↑", 
+                            command= None,
+                            activebackground="green", 
+                            activeforeground="white",
+                            anchor="center",
+                            bd=3,
+                            bg="lightgray",
+                            cursor="hand2",
+                            disabledforeground="gray",
+                            fg="black",
+                            font=default_font,
+                            highlightbackground="black",
+                            highlightcolor="green",
+                            highlightthickness=2,
+                            justify="center",
+                            overrelief="raised",
+                            padx=10,
+                            pady=10)
 
-bt_probe_offset = tk.Button(root, text="Set\n probe\n offset", 
+
+bt_stage_down = tk.Button(root, text="↓", 
                             command= None,
                             activebackground="green", 
                             activeforeground="white",
@@ -224,7 +248,9 @@ state2_label = tk.Label(root,textvariable=state2, font=default_font, foreground=
 bt_start_automatic.grid(row=8, column=0, columnspan=3, sticky='W', padx=10)
 bt_start_manual.grid(row=8, column=3, columnspan=3, sticky='W')
 
-bt_probe_offset.grid(row=11,column=7, rowspan=3, sticky='W')
+bt_stage_down.grid(row=9,column=7, sticky='W')
+bt_stage_up.grid(row=8,column=7, sticky='W')
+
 bt_stage_home.grid(row=14,column=7, rowspan=2, sticky='W')
 
 state1_label.grid(row=9, column=0, columnspan=3, sticky='W', padx=10)
@@ -243,12 +269,14 @@ for i in range(len(keys)):
     tk.Label(root, text=keys[i], foreground='white', bg='#300924', font=default_font).grid(column=0, row=start_row+i, columnspan=col_span, sticky='W', padx=10)
     entries.append(tk.Entry(root,textvariable = text_vars[i], font=default_font))
     entries[i].grid(column=col_span, row=start_row+i, columnspan=col_span-2, sticky='W')
-    entries[i].bind("<Return>", lambda event: update_param(event, text_vars, params))
+    entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
 
 
-# Bind arrows for stage movement
-root.bind('<Up>', upKey)
-root.bind('<Down>', downKey)
+# Bind buttons for stage movement
+bt_stage_up.bind('<ButtonPress-1>', lambda event: driveUp(event))
+bt_stage_down.bind('<ButtonPress-1>', lambda event: driveDown(event))
+bt_stage_up.bind('<ButtonRelease-1>', lambda event: stageStop(event))
+bt_stage_down.bind('<ButtonRelease-1>', lambda event: stageStop(event))
 
 
 # Add GUI update function
