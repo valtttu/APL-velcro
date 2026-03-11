@@ -9,6 +9,8 @@ import measurement
 import tkinter as tk
 from PIL import ImageTk, Image
 
+import numpy as np
+
 UPDATE_MS = 20
 
 
@@ -19,7 +21,7 @@ z_stage = stage.Stage(port = 'COM6')
 
 measurer = measurement.Measurement(laser_probe, side_camera, z_stage)
 
-utils.setup_logging()
+utils.setup_logging('HAM.log')
 
 # Start the hardware
 res = [False]*3
@@ -36,13 +38,12 @@ if(not(res[0] and res[1] and res[2])):
 path = os.path.dirname(__file__)
 
 
-
 # Define handlers for button press event etc.
 def update_param(event, entries, keys):
     logging.info(f'Updating params:')
     for i in range(len(keys)):
-        measurer.edit_parameter(keys[i], entries[i].get())
-        logging.info(f'\t{keys[i]}: {entries[i].get()}')
+        res = measurer.edit_parameter(keys[i], entries[i].get())
+        logging.info(f'\t{res[1]}: {entries[i].get()}')
 
 
 def toggle_manual_recording():
@@ -99,16 +100,31 @@ def stageStop(event):
 
 
 def updateGUI():
+    global img, oval
     # Update info labels
     springk = measurer.get_parameter('spring constant')
     delta = laser_probe.get_latest()
     stage_state = z_stage.get_state()
-    state1.set(f'Current distance: {delta*1000:.3f} µm\nCurrent force: {delta*1e6*springk:.3f} N')
-    state2.set(f'Current position: {stage_state[0]} mm\nState: {"Idle"}')
+    camera_state = side_camera.get_saving_state()
+    state1.set(f'Current distance: {delta/1000:.3f} µm\nCurrent force: {delta/1e6*springk:.3f} N')
+    state2.set(f'Current position: {stage_state[0]} mm\nState: {measurer.get_state()}')
+    if(camera_state[0]):
+        state3.set(f'Camera FPS: {side_camera.get_acquired_fps():.2f} Hz\t Saving state: {camera_state[1]:.0f}')
+    else:
+        state3.set(f'Camera FPS: {side_camera.get_acquired_fps():.2f} Hz\t Saving state: {"Done"}')
 
     # Get the next camera frame and display that
-    img = ImageTk.PhotoImage(Image.fromarray(side_camera.get_latest_frame()).resize(canvas_size))
-    canvas.create_image(0,0, anchor='nw', image=img)
+    frame = side_camera.get_latest_frame()
+    img = ImageTk.PhotoImage(Image.fromarray(frame, 'L').resize(canvas_size))
+    canvas.itemconfig(image_container, image = img)
+
+    if(measurer.is_recording()):
+        canvas.itemconfig(oval, fill = 'red')
+    else:
+        canvas.itemconfig(oval, fill = '')
+
+    # Add GUI update function
+    root.after(UPDATE_MS, updateGUI)
 
 
 # Create the GUI window
@@ -128,10 +144,15 @@ root.geometry(f'{win_size[0]}x{win_size[1]}+{screen_w-win_size[0]}+0')
 
 # Create a canvas for the live view playback
 canvas_size = (int(win_size[0]*0.9), int(win_size[1]*0.35))
-canvas = tk.Canvas(root, width = canvas_size[0], height = canvas_size[1], bg="#D6D6D5" )
-img = ImageTk.PhotoImage(Image.open(path + "/../figs/Two_hook_pull.png").resize(canvas_size))
-canvas.create_image(0,0, anchor='nw', image=img)
+canvas = tk.Canvas(root, width = canvas_size[0], height = canvas_size[1], bg='#300924')
 canvas.grid(sticky='N',column=0, columnspan=8, row=0, rowspan=8, padx=10, pady=10)
+
+frame = side_camera.get_latest_frame()
+pil_image = Image.fromarray(frame, 'L').resize(canvas_size)
+img = ImageTk.PhotoImage(pil_image)
+image_container = canvas.create_image(0,0, anchor='nw', image = img)
+oval = canvas.create_oval(5, 5, 25, 25, fill='', outline = '')
+
 
 
 # Create buttons
@@ -243,25 +264,29 @@ state2 = tk.StringVar()
 state2.set(f'Current position: {10} mm\nState: {"Idle"}')
 state2_label = tk.Label(root,textvariable=state2, font=default_font, foreground='green', bg='#300924', justify='left')
 
+state3 = tk.StringVar()
+state3.set(f'Camera FPS: {10} Hz\t Saving state: {"Done"}')
+state3_label = tk.Label(root,textvariable=state3, font=default_font, foreground='green', bg='#300924', justify='left')
+
 
 # Arrange everything in a grid arrangement
-bt_start_automatic.grid(row=8, column=0, columnspan=3, sticky='W', padx=10)
-bt_start_manual.grid(row=8, column=3, columnspan=3, sticky='W')
+bt_start_automatic.grid(row=9, column=0, columnspan=3, sticky='W', padx=10)
+bt_start_manual.grid(row=9, column=3, columnspan=3, sticky='W')
 
 bt_stage_down.grid(row=9,column=7, sticky='W')
 bt_stage_up.grid(row=8,column=7, sticky='W')
 
-bt_stage_home.grid(row=14,column=7, rowspan=2, sticky='W')
+bt_stage_home.grid(row=13,column=7, rowspan=2, sticky='W')
 
-state1_label.grid(row=9, column=0, columnspan=3, sticky='W', padx=10)
-state2_label.grid(row=9, column=3, columnspan=3, sticky='W')
+state1_label.grid(row=8, column=0, columnspan=3, sticky='W', padx=10)
+state2_label.grid(row=8, column=3, columnspan=3, sticky='W')
 
 # Create the text entry fields for parameters
 keys = measurer.get_parameters()[0]
 default_params = measurer.get_parameters()[1]
 text_vars = []
 entries = []
-start_row = 10
+start_row = 14
 col_span = 3    
 for i in range(len(keys)):
     text_vars.append(tk.StringVar())
@@ -270,6 +295,8 @@ for i in range(len(keys)):
     entries.append(tk.Entry(root,textvariable = text_vars[i], font=default_font))
     entries[i].grid(column=col_span, row=start_row+i, columnspan=col_span-2, sticky='W')
     entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
+
+state3_label.grid(row=start_row + len(keys), column=0, columnspan=6, sticky='W')
 
 
 # Bind buttons for stage movement

@@ -1,0 +1,1652 @@
+11-03-2026 11:38:09 INFO:Library version: 4.2.0.88
+11-03-2026 11:38:09 INFO:Number of cameras detected: 1
+11-03-2026 11:38:09 INFO:Opened device with serial number  22507263...
+11-03-2026 11:38:10 ERROR:Exception in Tkinter callback
+11-03-2026 11:38:10 ERROR:
+
+11-03-2026 11:38:10 ERROR:Traceback (most recent call last):
+
+11-03-2026 11:38:10 ERROR:
+11-03-2026 11:38:10 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 11:38:10 ERROR:
+11-03-2026 11:38:10 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 11:38:10 ERROR:
+11-03-2026 11:38:10 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 103, in updateGUI
+    springk = measurer.get_parameter('spring constant')
+
+11-03-2026 11:38:10 ERROR:
+11-03-2026 11:38:10 ERROR:AttributeError: 'Measurement' object has no attribute 'get_parameter'
+
+11-03-2026 11:38:10 ERROR:
+11-03-2026 11:41:52 INFO:Library version: 4.2.0.88
+11-03-2026 11:41:52 INFO:Number of cameras detected: 1
+11-03-2026 11:41:52 INFO:Opened device with serial number  22507263...
+11-03-2026 11:41:53 ERROR:Exception in Tkinter callback
+11-03-2026 11:41:53 ERROR:
+
+11-03-2026 11:41:53 ERROR:Traceback (most recent call last):
+
+11-03-2026 11:41:53 ERROR:
+11-03-2026 11:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 11:41:53 ERROR:
+11-03-2026 11:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 11:41:53 ERROR:
+11-03-2026 11:41:53 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 103, in updateGUI
+    springk = measurer.get_parameter('spring constant')
+
+11-03-2026 11:41:53 ERROR:
+11-03-2026 11:41:53 ERROR:AttributeError: 'Measurement' object has no attribute 'get_parameter'
+
+11-03-2026 11:41:53 ERROR:
+11-03-2026 11:44:34 INFO:Library version: 4.2.0.88
+11-03-2026 11:44:34 INFO:Number of cameras detected: 1
+11-03-2026 11:44:34 INFO:Opened device with serial number  22507263...
+11-03-2026 11:44:36 ERROR:Exception in Tkinter callback
+11-03-2026 11:44:36 ERROR:
+
+11-03-2026 11:44:36 ERROR:Traceback (most recent call last):
+
+11-03-2026 11:44:36 ERROR:
+11-03-2026 11:44:36 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 11:44:36 ERROR:
+11-03-2026 11:44:36 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 11:44:36 ERROR:
+11-03-2026 11:44:36 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 103, in updateGUI
+    springk = measurer.get_parameter('spring constant')
+
+11-03-2026 11:44:36 ERROR:
+11-03-2026 11:44:36 ERROR:AttributeError: 'Measurement' object has no attribute 'get_parameter'
+
+11-03-2026 11:44:36 ERROR:
+11-03-2026 11:44:45 INFO:Updating params:
+11-03-2026 11:44:45 ERROR:Exception in Tkinter callback
+11-03-2026 11:44:45 ERROR:
+
+11-03-2026 11:44:45 ERROR:Traceback (most recent call last):
+
+11-03-2026 11:44:45 ERROR:
+11-03-2026 11:44:45 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 11:44:45 ERROR:
+11-03-2026 11:44:45 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 272, in <lambda>
+    entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
+
+11-03-2026 11:44:45 ERROR:
+11-03-2026 11:44:45 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 44, in update_param
+    measurer.edit_parameter(keys[i], entries[i].get())
+
+11-03-2026 11:44:45 ERROR:
+11-03-2026 11:44:45 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\measurement.py", line 76, in edit_parameter
+    res = value >= self.self._params[name]['range'][0] and value <= self.self._params[name]['range'][1]
+
+11-03-2026 11:44:45 ERROR:
+11-03-2026 11:44:45 ERROR:AttributeError: 'Measurement' object has no attribute 'self'
+
+11-03-2026 11:44:45 ERROR:
+11-03-2026 11:44:56 INFO:Updating params:
+11-03-2026 11:44:56 ERROR:Exception in Tkinter callback
+11-03-2026 11:44:56 ERROR:
+
+11-03-2026 11:44:56 ERROR:Traceback (most recent call last):
+
+11-03-2026 11:44:56 ERROR:
+11-03-2026 11:44:56 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 11:44:56 ERROR:
+11-03-2026 11:44:56 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 272, in <lambda>
+    entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
+
+11-03-2026 11:44:56 ERROR:
+11-03-2026 11:44:56 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 44, in update_param
+    measurer.edit_parameter(keys[i], entries[i].get())
+
+11-03-2026 11:44:56 ERROR:
+11-03-2026 11:44:56 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\measurement.py", line 76, in edit_parameter
+    res = value >= self.self._params[name]['range'][0] and value <= self.self._params[name]['range'][1]
+
+11-03-2026 11:44:56 ERROR:
+11-03-2026 11:44:56 ERROR:AttributeError: 'Measurement' object has no attribute 'self'
+
+11-03-2026 11:44:56 ERROR:
+11-03-2026 11:48:26 INFO:Library version: 4.2.0.88
+11-03-2026 11:48:26 INFO:Number of cameras detected: 1
+11-03-2026 11:48:26 INFO:Opened device with serial number  22507263...
+11-03-2026 11:48:26 ERROR:Exception in Tkinter callback
+11-03-2026 11:48:26 ERROR:
+
+11-03-2026 11:48:26 ERROR:Traceback (most recent call last):
+
+11-03-2026 11:48:26 ERROR:
+11-03-2026 11:48:26 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 11:48:26 ERROR:
+11-03-2026 11:48:26 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 11:48:26 ERROR:
+11-03-2026 11:48:26 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 111, in updateGUI
+    canvas.configure(image = img)
+
+11-03-2026 11:48:26 ERROR:
+11-03-2026 11:48:26 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1675, in configure
+    return self._configure('configure', cnf, kw)
+
+11-03-2026 11:48:26 ERROR:
+11-03-2026 11:48:26 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1665, in _configure
+    self.tk.call(_flatten((self._w, cmd)) + self._options(cnf))
+
+11-03-2026 11:48:26 ERROR:
+11-03-2026 11:48:26 ERROR:_tkinter.TclError: unknown option "-image"
+
+11-03-2026 11:48:26 ERROR:
+11-03-2026 11:49:10 INFO:Library version: 4.2.0.88
+11-03-2026 11:49:10 INFO:Number of cameras detected: 1
+11-03-2026 11:49:10 INFO:Opened device with serial number  22507263...
+11-03-2026 11:49:31 INFO:Library version: 4.2.0.88
+11-03-2026 11:49:31 INFO:Number of cameras detected: 1
+11-03-2026 11:49:31 INFO:Opened device with serial number  22507263...
+11-03-2026 11:49:42 INFO:Updating params:
+11-03-2026 11:49:42 INFO:	spring constant: 4
+11-03-2026 11:49:42 INFO:	z-velocity meas.: 0.5
+11-03-2026 11:49:42 INFO:	z-velocity default: 4
+11-03-2026 11:49:42 INFO:	pushing force: 1
+11-03-2026 11:49:42 INFO:	z start meas.: 30
+11-03-2026 11:49:42 INFO:	scan length: 10
+11-03-2026 11:49:42 INFO:	repeats: 1
+11-03-2026 11:49:42 INFO:	save path: C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 11:49:42 INFO:	sample ID: Hook
+11-03-2026 11:49:51 INFO:Updating params:
+11-03-2026 11:49:51 INFO:	spring constant: 4
+11-03-2026 11:49:51 INFO:	z-velocity meas.: 0.5
+11-03-2026 11:49:51 INFO:	z-velocity default: 8
+11-03-2026 11:49:51 INFO:	pushing force: 1
+11-03-2026 11:49:51 INFO:	z start meas.: 30
+11-03-2026 11:49:51 INFO:	scan length: 10
+11-03-2026 11:49:51 INFO:	repeats: 1
+11-03-2026 11:49:51 INFO:	save path: C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 11:49:51 INFO:	sample ID: Hook
+11-03-2026 13:02:06 INFO:Library version: 4.2.0.88
+11-03-2026 13:02:06 INFO:Number of cameras detected: 1
+11-03-2026 13:02:06 INFO:Opened device with serial number  22507263...
+11-03-2026 13:02:06 ERROR:Could not start the hardware!
+Exiting...
+11-03-2026 13:02:06 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:02:06 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 32, in <module>
+
+11-03-2026 13:02:06 ERROR:    
+11-03-2026 13:02:06 ERROR:laser_probe.close()
+11-03-2026 13:02:06 ERROR:
+
+11-03-2026 13:02:06 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\probe.py", line 113, in close
+
+11-03-2026 13:02:06 ERROR:    
+11-03-2026 13:02:06 ERROR:self._aq_thread.join()
+11-03-2026 13:02:06 ERROR:
+
+11-03-2026 13:02:06 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\threading.py", line 1091, in join
+
+11-03-2026 13:02:06 ERROR:    
+11-03-2026 13:02:06 ERROR:raise RuntimeError("cannot join thread before it is started")
+11-03-2026 13:02:06 ERROR:
+
+11-03-2026 13:02:06 ERROR:RuntimeError
+11-03-2026 13:02:06 ERROR:: 
+11-03-2026 13:02:06 ERROR:cannot join thread before it is started
+11-03-2026 13:02:06 ERROR:
+
+11-03-2026 13:06:47 INFO:Library version: 4.2.0.88
+11-03-2026 13:06:47 INFO:Number of cameras detected: 1
+11-03-2026 13:06:47 INFO:Opened device with serial number  22507263...
+11-03-2026 13:07:00 INFO:Updating params:
+11-03-2026 13:07:00 INFO:	spring constant: 4
+11-03-2026 13:07:00 INFO:	z-velocity meas.: 0.5
+11-03-2026 13:07:00 INFO:	z-velocity default: 4
+11-03-2026 13:07:00 INFO:	pushing force: 1
+11-03-2026 13:07:00 INFO:	z start meas.: 30
+11-03-2026 13:07:00 INFO:	scan length: 10
+11-03-2026 13:07:00 INFO:	repeats: 1
+11-03-2026 13:07:00 INFO:	save path: C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 13:07:00 INFO:	sample ID: Hook
+11-03-2026 13:08:42 INFO:Library version: 4.2.0.88
+11-03-2026 13:08:42 INFO:Number of cameras detected: 1
+11-03-2026 13:08:42 INFO:Opened device with serial number  22507263...
+11-03-2026 13:09:15 INFO:Updating params:
+11-03-2026 13:09:15 INFO:	spring constant: 4
+11-03-2026 13:09:15 INFO:	z-velocity meas.: 0.5
+11-03-2026 13:09:15 INFO:	z-velocity default: 6
+11-03-2026 13:09:15 INFO:	pushing force: 1
+11-03-2026 13:09:15 INFO:	z start meas.: 30
+11-03-2026 13:09:15 INFO:	scan length: 10
+11-03-2026 13:09:15 INFO:	repeats: 1
+11-03-2026 13:09:15 INFO:	save path: C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 13:09:15 INFO:	sample ID: Hook
+11-03-2026 13:09:23 INFO:Updating params:
+11-03-2026 13:09:23 INFO:	spring constant: 4
+11-03-2026 13:09:23 INFO:	z-velocity meas.: 0.5
+11-03-2026 13:09:23 INFO:	z-velocity default: 8
+11-03-2026 13:09:23 INFO:	pushing force: 1
+11-03-2026 13:09:23 INFO:	z start meas.: 30
+11-03-2026 13:09:23 INFO:	scan length: 10
+11-03-2026 13:09:23 INFO:	repeats: 1
+11-03-2026 13:09:23 INFO:	save path: C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 13:09:23 INFO:	sample ID: Hook
+11-03-2026 13:11:49 INFO:Library version: 4.2.0.88
+11-03-2026 13:11:49 INFO:Number of cameras detected: 1
+11-03-2026 13:11:49 INFO:Opened device with serial number  22507263...
+11-03-2026 13:13:32 INFO:Library version: 4.2.0.88
+11-03-2026 13:13:32 INFO:Number of cameras detected: 1
+11-03-2026 13:13:32 INFO:Opened device with serial number  22507263...
+11-03-2026 13:13:57 INFO:Updating params:
+11-03-2026 13:13:58 INFO:	Successfully updated "spring constant": 4
+11-03-2026 13:13:58 INFO:	Successfully updated "z-velocity meas.": 0.5
+11-03-2026 13:13:58 INFO:	Invalid value "9" for parameter "z-velocity default": 9
+11-03-2026 13:13:58 INFO:	Successfully updated "pushing force": 1
+11-03-2026 13:13:58 INFO:	Successfully updated "z start meas.": 30
+11-03-2026 13:13:58 INFO:	Successfully updated "scan length": 10
+11-03-2026 13:13:58 INFO:	Successfully updated "repeats": 1
+11-03-2026 13:13:58 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 13:13:58 INFO:	Successfully updated "sample ID": Hook
+11-03-2026 13:15:33 INFO:Library version: 4.2.0.88
+11-03-2026 13:15:33 INFO:Number of cameras detected: 1
+11-03-2026 13:15:33 INFO:Opened device with serial number  22507263...
+11-03-2026 13:16:01 INFO:Updating params:
+11-03-2026 13:16:01 INFO:	Successfully updated "spring constant": 4
+11-03-2026 13:16:01 INFO:	Successfully updated "z-velocity meas.": 0.5
+11-03-2026 13:16:01 INFO:	Successfully updated "z-velocity default": 5
+11-03-2026 13:16:01 INFO:	Successfully updated "pushing force": 1
+11-03-2026 13:16:01 INFO:	Successfully updated "z start meas.": 30
+11-03-2026 13:16:01 INFO:	Successfully updated "scan length": 10
+11-03-2026 13:16:01 INFO:	Successfully updated "repeats": 1
+11-03-2026 13:16:01 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 13:16:01 INFO:	Successfully updated "sample ID": Hook
+11-03-2026 13:17:34 INFO:Library version: 4.2.0.88
+11-03-2026 13:17:34 INFO:Number of cameras detected: 1
+11-03-2026 13:17:34 INFO:Opened device with serial number  22507263...
+11-03-2026 13:29:37 INFO:Library version: 4.2.0.88
+11-03-2026 13:29:37 INFO:Number of cameras detected: 1
+11-03-2026 13:29:37 INFO:Opened device with serial number  22507263...
+11-03-2026 13:32:05 INFO:Library version: 4.2.0.88
+11-03-2026 13:32:05 INFO:Number of cameras detected: 1
+11-03-2026 13:32:05 INFO:Opened device with serial number  22507263...
+11-03-2026 13:33:37 INFO:Library version: 4.2.0.88
+11-03-2026 13:33:37 INFO:Number of cameras detected: 1
+11-03-2026 13:33:37 INFO:Opened device with serial number  22507263...
+11-03-2026 13:36:06 INFO:Library version: 4.2.0.88
+11-03-2026 13:36:06 INFO:Number of cameras detected: 1
+11-03-2026 13:36:07 INFO:Opened device with serial number  22507263...
+11-03-2026 13:36:49 INFO:Library version: 4.2.0.88
+11-03-2026 13:36:49 INFO:Number of cameras detected: 1
+11-03-2026 13:36:49 INFO:Opened device with serial number  22507263...
+11-03-2026 13:36:49 ERROR:C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py:114: DeprecationWarning: 'mode' parameter for changing data types is deprecated and will be removed in Pillow 13 (2026-10-15)
+  img = ImageTk.PhotoImage(Image.fromarray(frame, 'RGB'))
+
+11-03-2026 13:36:50 ERROR:Exception in Tkinter callback
+11-03-2026 13:36:50 ERROR:
+
+11-03-2026 13:36:50 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 114, in updateGUI
+    img = ImageTk.PhotoImage(Image.fromarray(frame, 'RGB'))
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3335, in fromarray
+    return frombuffer(mode, size, obj, "raw", rawmode, 0, 1)
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3226, in frombuffer
+    return frombytes(mode, size, data, decoder_name, args)
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3163, in frombytes
+    im.frombytes(data, decoder_name, decoder_args)
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 863, in frombytes
+    raise ValueError(msg)
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:36:50 ERROR:ValueError: not enough image data
+
+11-03-2026 13:36:50 ERROR:
+11-03-2026 13:40:09 INFO:Library version: 4.2.0.88
+11-03-2026 13:40:09 INFO:Number of cameras detected: 1
+11-03-2026 13:40:09 INFO:Opened device with serial number  22507263...
+11-03-2026 13:40:09 ERROR:Exception in thread 
+11-03-2026 13:40:09 ERROR:Thread-5 (_run_camera)
+11-03-2026 13:40:09 ERROR::
+
+11-03-2026 13:40:09 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:40:09 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\threading.py", line 1016, in _bootstrap_inner
+
+11-03-2026 13:40:10 ERROR:    
+11-03-2026 13:40:10 ERROR:self.run()
+11-03-2026 13:40:10 ERROR:
+
+11-03-2026 13:40:10 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\threading.py", line 953, in run
+
+11-03-2026 13:40:10 ERROR:    
+11-03-2026 13:40:10 ERROR:self._target(*self._args, **self._kwargs)
+11-03-2026 13:40:10 ERROR:
+
+11-03-2026 13:40:10 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\camera.py", line 206, in _run_camera
+
+11-03-2026 13:40:10 ERROR:    
+11-03-2026 13:40:10 ERROR:self._latest_frame = np.copy(image_converted.GetNDArray())
+11-03-2026 13:40:10 ERROR:
+
+11-03-2026 13:40:10 ERROR:UnboundLocalError
+11-03-2026 13:40:10 ERROR:: 
+11-03-2026 13:40:10 ERROR:local variable 'image_converted' referenced before assignment
+11-03-2026 13:40:10 ERROR:
+
+11-03-2026 13:40:10 ERROR:Exception in Tkinter callback
+11-03-2026 13:40:10 ERROR:
+
+11-03-2026 13:40:10 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3304, in fromarray
+    typemode, rawmode, color_modes = _fromarray_typemap[typekey]
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:KeyError: ((1, 1), '|O')
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:
+The above exception was the direct cause of the following exception:
+
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 114, in updateGUI
+    img = ImageTk.PhotoImage(Image.fromarray(frame, 'RGB'))
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3308, in fromarray
+    raise TypeError(msg) from e
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:10 ERROR:TypeError: Cannot handle this data type: (1, 1), |O
+
+11-03-2026 13:40:10 ERROR:
+11-03-2026 13:40:18 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:40:18 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 299, in <module>
+
+11-03-2026 13:40:18 ERROR:    
+11-03-2026 13:40:18 ERROR:side_camera.close()
+11-03-2026 13:40:18 ERROR:
+
+11-03-2026 13:40:18 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\camera.py", line 159, in close
+
+11-03-2026 13:40:18 ERROR:    
+11-03-2026 13:40:18 ERROR:self._cam.DeInit()
+11-03-2026 13:40:18 ERROR:
+
+11-03-2026 13:40:18 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PySpin\PySpin.py", line 36704, in DeInit
+
+11-03-2026 13:40:18 ERROR:    
+11-03-2026 13:40:18 ERROR:return _PySpin._SWIG_CamPtr_DeInit(self)
+11-03-2026 13:40:18 ERROR:
+
+11-03-2026 13:40:18 ERROR:_PySpin
+11-03-2026 13:40:18 ERROR:.
+11-03-2026 13:40:18 ERROR:SpinnakerException
+11-03-2026 13:40:18 ERROR:: 
+11-03-2026 13:40:18 ERROR:Spinnaker: Can't de-initialize camera. Camera is still streaming. [-1004]
+11-03-2026 13:40:18 ERROR:
+
+11-03-2026 13:41:53 INFO:Library version: 4.2.0.88
+11-03-2026 13:41:53 INFO:Number of cameras detected: 1
+11-03-2026 13:41:53 INFO:Opened device with serial number  22507263...
+11-03-2026 13:41:53 ERROR:C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py:114: DeprecationWarning: 'mode' parameter for changing data types is deprecated and will be removed in Pillow 13 (2026-10-15)
+  img = ImageTk.PhotoImage(Image.fromarray(frame, 'RGB'))
+
+11-03-2026 13:41:53 ERROR:Exception in Tkinter callback
+11-03-2026 13:41:53 ERROR:
+
+11-03-2026 13:41:53 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 114, in updateGUI
+    img = ImageTk.PhotoImage(Image.fromarray(frame, 'RGB'))
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3335, in fromarray
+    return frombuffer(mode, size, obj, "raw", rawmode, 0, 1)
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3226, in frombuffer
+    return frombytes(mode, size, data, decoder_name, args)
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3163, in frombytes
+    im.frombytes(data, decoder_name, decoder_args)
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 863, in frombytes
+    raise ValueError(msg)
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:41:53 ERROR:ValueError: not enough image data
+
+11-03-2026 13:41:53 ERROR:
+11-03-2026 13:42:37 INFO:Library version: 4.2.0.88
+11-03-2026 13:42:37 INFO:Number of cameras detected: 1
+11-03-2026 13:42:37 INFO:Opened device with serial number  22507263...
+11-03-2026 13:43:17 INFO:Library version: 4.2.0.88
+11-03-2026 13:43:17 INFO:Number of cameras detected: 1
+11-03-2026 13:43:17 INFO:Opened device with serial number  22507263...
+11-03-2026 13:45:39 INFO:Library version: 4.2.0.88
+11-03-2026 13:45:39 INFO:Number of cameras detected: 1
+11-03-2026 13:45:39 INFO:Opened device with serial number  22507263...
+11-03-2026 13:45:39 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:45:39 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 139, in <module>
+
+11-03-2026 13:45:39 ERROR:    
+11-03-2026 13:45:39 ERROR:image_container = canvas.create_image(0,0, anchor='nw',image=ImageTk.PhotoImage(Image.fromarray(frame, 'L')))
+11-03-2026 13:45:39 ERROR:
+
+11-03-2026 13:45:39 ERROR:NameError
+11-03-2026 13:45:39 ERROR:: 
+11-03-2026 13:45:39 ERROR:name 'frame' is not defined
+11-03-2026 13:45:39 ERROR:
+
+11-03-2026 13:47:41 INFO:Library version: 4.2.0.88
+11-03-2026 13:47:41 INFO:Number of cameras detected: 1
+11-03-2026 13:47:41 INFO:Opened device with serial number  22507263...
+11-03-2026 13:47:42 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:47:42 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 139, in <module>
+
+11-03-2026 13:47:42 ERROR:    
+11-03-2026 13:47:42 ERROR:img = ImageTk.PhotoImage(Image.fromarray(frame, 'L')).resize(canvas_size)
+11-03-2026 13:47:42 ERROR:
+
+11-03-2026 13:47:42 ERROR:AttributeError
+11-03-2026 13:47:42 ERROR:: 
+11-03-2026 13:47:42 ERROR:'PhotoImage' object has no attribute 'resize'
+11-03-2026 13:47:42 ERROR:
+
+11-03-2026 13:50:21 INFO:Library version: 4.2.0.88
+11-03-2026 13:50:21 INFO:Number of cameras detected: 1
+11-03-2026 13:50:22 INFO:Opened device with serial number  22507263...
+11-03-2026 13:50:52 INFO:Library version: 4.2.0.88
+11-03-2026 13:50:52 INFO:Number of cameras detected: 1
+11-03-2026 13:50:52 INFO:Opened device with serial number  22507263...
+11-03-2026 13:51:05 INFO:Library version: 4.2.0.88
+11-03-2026 13:51:05 INFO:Number of cameras detected: 1
+11-03-2026 13:51:06 INFO:Opened device with serial number  22507263...
+11-03-2026 13:51:50 INFO:Library version: 4.2.0.88
+11-03-2026 13:51:50 INFO:Number of cameras detected: 1
+11-03-2026 13:51:50 INFO:Opened device with serial number  22507263...
+11-03-2026 13:52:28 INFO:Library version: 4.2.0.88
+11-03-2026 13:52:28 INFO:Number of cameras detected: 1
+11-03-2026 13:52:28 INFO:Opened device with serial number  22507263...
+11-03-2026 13:55:20 INFO:Library version: 4.2.0.88
+11-03-2026 13:55:20 INFO:Number of cameras detected: 1
+11-03-2026 13:55:20 INFO:Opened device with serial number  22507263...
+11-03-2026 13:58:19 INFO:Library version: 4.2.0.88
+11-03-2026 13:58:19 INFO:Number of cameras detected: 1
+11-03-2026 13:58:19 INFO:Opened device with serial number  22507263...
+11-03-2026 13:58:33 ERROR:Exception in Tkinter callback
+11-03-2026 13:58:33 ERROR:
+
+11-03-2026 13:58:33 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:58:33 ERROR:
+11-03-2026 13:58:33 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 13:58:33 ERROR:
+11-03-2026 13:58:33 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 52, in toggle_manual_recording
+    measurer.stop_recording()
+
+11-03-2026 13:58:33 ERROR:
+11-03-2026 13:58:33 ERROR:AttributeError: 'Measurement' object has no attribute 'stop_recording'
+
+11-03-2026 13:58:33 ERROR:
+11-03-2026 13:59:01 ERROR:Exception in Tkinter callback
+11-03-2026 13:59:01 ERROR:
+
+11-03-2026 13:59:01 ERROR:Traceback (most recent call last):
+
+11-03-2026 13:59:01 ERROR:
+11-03-2026 13:59:01 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 13:59:01 ERROR:
+11-03-2026 13:59:01 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 13:59:01 ERROR:
+11-03-2026 13:59:01 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 107, in updateGUI
+    stage_state = z_stage.get_state()
+
+11-03-2026 13:59:01 ERROR:
+11-03-2026 13:59:01 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 66, in get_state
+    result = self._write_command('QSTATE')
+
+11-03-2026 13:59:01 ERROR:
+11-03-2026 13:59:01 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 125, in _write_command
+    time.sleep(0.1)
+
+11-03-2026 13:59:01 ERROR:
+11-03-2026 13:59:01 ERROR:KeyboardInterrupt
+
+11-03-2026 13:59:01 ERROR:
+11-03-2026 13:59:36 INFO:Library version: 4.2.0.88
+11-03-2026 13:59:36 INFO:Number of cameras detected: 1
+11-03-2026 13:59:36 INFO:Opened device with serial number  22507263...
+11-03-2026 13:59:56 INFO:Started recording with FPS 150.8
+11-03-2026 14:01:22 INFO:Library version: 4.2.0.88
+11-03-2026 14:01:22 INFO:Number of cameras detected: 1
+11-03-2026 14:01:22 INFO:Opened device with serial number  22507263...
+11-03-2026 14:01:36 INFO:Updating params:
+11-03-2026 14:01:36 INFO:	Successfully updated "spring constant": 4
+11-03-2026 14:01:36 INFO:	Successfully updated "z-velocity meas.": 0.5
+11-03-2026 14:01:36 INFO:	Successfully updated "z-velocity default": 0.1
+11-03-2026 14:01:36 INFO:	Successfully updated "pushing force": 1
+11-03-2026 14:01:36 INFO:	Successfully updated "z start meas.": 30
+11-03-2026 14:01:36 INFO:	Successfully updated "scan length": 10
+11-03-2026 14:01:36 INFO:	Successfully updated "repeats": 1
+11-03-2026 14:01:36 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 14:01:36 INFO:	Successfully updated "sample ID": Hook
+11-03-2026 14:01:44 INFO:Updating params:
+11-03-2026 14:01:44 INFO:	Successfully updated "spring constant": 4
+11-03-2026 14:01:44 INFO:	Successfully updated "z-velocity meas.": 0.5
+11-03-2026 14:01:44 INFO:	Successfully updated "z-velocity default": 0.7
+11-03-2026 14:01:44 INFO:	Successfully updated "pushing force": 1
+11-03-2026 14:01:44 INFO:	Successfully updated "z start meas.": 30
+11-03-2026 14:01:44 INFO:	Successfully updated "scan length": 10
+11-03-2026 14:01:44 INFO:	Successfully updated "repeats": 1
+11-03-2026 14:01:44 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 14:01:44 INFO:	Successfully updated "sample ID": Hook
+11-03-2026 15:28:14 INFO:Library version: 4.2.0.88
+11-03-2026 15:28:14 INFO:Number of cameras detected: 1
+11-03-2026 15:28:14 INFO:Opened device with serial number  22507263...
+11-03-2026 15:28:14 ERROR:ERROR: Could not connect to the micro controller
+11-03-2026 15:28:14 ERROR:Could not start the hardware!
+Exiting...
+11-03-2026 15:28:15 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:15 ERROR:
+
+11-03-2026 15:28:15 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 107, in updateGUI
+    stage_state = z_stage.get_state()
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 66, in get_state
+    result = self._write_command('QSTATE')
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:15 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:15 ERROR:
+11-03-2026 15:28:20 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:20 ERROR:
+
+11-03-2026 15:28:20 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 289, in <lambda>
+    bt_stage_down.bind('<ButtonPress-1>', lambda event: driveDown(event))
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 97, in driveDown
+    z_stage.drive_stage(False)
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 102, in drive_stage
+    self.move_to_pos(0)
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 76, in move_to_pos
+    result = self._write_command(f'MOVE {pos}')
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:20 ERROR:
+
+11-03-2026 15:28:20 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 291, in <lambda>
+    bt_stage_down.bind('<ButtonRelease-1>', lambda event: stageStop(event))
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 100, in stageStop
+    z_stage.stop()
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 113, in stop
+    self._write_command('STOP')
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:20 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:20 ERROR:
+11-03-2026 15:28:21 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:21 ERROR:
+
+11-03-2026 15:28:21 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 289, in <lambda>
+    bt_stage_down.bind('<ButtonPress-1>', lambda event: driveDown(event))
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 97, in driveDown
+    z_stage.drive_stage(False)
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 102, in drive_stage
+    self.move_to_pos(0)
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 76, in move_to_pos
+    result = self._write_command(f'MOVE {pos}')
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:21 ERROR:
+
+11-03-2026 15:28:21 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 291, in <lambda>
+    bt_stage_down.bind('<ButtonRelease-1>', lambda event: stageStop(event))
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 100, in stageStop
+    z_stage.stop()
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 113, in stop
+    self._write_command('STOP')
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:21 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:21 ERROR:
+11-03-2026 15:28:22 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:22 ERROR:
+
+11-03-2026 15:28:22 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 288, in <lambda>
+    bt_stage_up.bind('<ButtonPress-1>', lambda event: driveUp(event))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 92, in driveUp
+    z_stage.drive_stage(True)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 100, in drive_stage
+    self.move_to_pos(self._zmax)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 76, in move_to_pos
+    result = self._write_command(f'MOVE {pos}')
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:22 ERROR:
+
+11-03-2026 15:28:22 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 290, in <lambda>
+    bt_stage_up.bind('<ButtonRelease-1>', lambda event: stageStop(event))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 100, in stageStop
+    z_stage.stop()
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 113, in stop
+    self._write_command('STOP')
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:22 ERROR:
+
+11-03-2026 15:28:22 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 288, in <lambda>
+    bt_stage_up.bind('<ButtonPress-1>', lambda event: driveUp(event))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 92, in driveUp
+    z_stage.drive_stage(True)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 100, in drive_stage
+    self.move_to_pos(self._zmax)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 76, in move_to_pos
+    result = self._write_command(f'MOVE {pos}')
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:22 ERROR:
+
+11-03-2026 15:28:22 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 290, in <lambda>
+    bt_stage_up.bind('<ButtonRelease-1>', lambda event: stageStop(event))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 100, in stageStop
+    z_stage.stop()
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 113, in stop
+    self._write_command('STOP')
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:22 ERROR:
+
+11-03-2026 15:28:22 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 288, in <lambda>
+    bt_stage_up.bind('<ButtonPress-1>', lambda event: driveUp(event))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 92, in driveUp
+    z_stage.drive_stage(True)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 100, in drive_stage
+    self.move_to_pos(self._zmax)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 76, in move_to_pos
+    result = self._write_command(f'MOVE {pos}')
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:22 ERROR:
+
+11-03-2026 15:28:22 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 290, in <lambda>
+    bt_stage_up.bind('<ButtonRelease-1>', lambda event: stageStop(event))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 100, in stageStop
+    z_stage.stop()
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 113, in stop
+    self._write_command('STOP')
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:22 ERROR:
+
+11-03-2026 15:28:22 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 288, in <lambda>
+    bt_stage_up.bind('<ButtonPress-1>', lambda event: driveUp(event))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 92, in driveUp
+    z_stage.drive_stage(True)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 100, in drive_stage
+    self.move_to_pos(self._zmax)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 76, in move_to_pos
+    result = self._write_command(f'MOVE {pos}')
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:22 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:22 ERROR:
+11-03-2026 15:28:23 ERROR:Exception in Tkinter callback
+11-03-2026 15:28:23 ERROR:
+
+11-03-2026 15:28:23 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 290, in <lambda>
+    bt_stage_up.bind('<ButtonRelease-1>', lambda event: stageStop(event))
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 100, in stageStop
+    z_stage.stop()
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 113, in stop
+    self._write_command('STOP')
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:28:23 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 15:28:23 ERROR:
+11-03-2026 15:29:32 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:29:32 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 304, in <module>
+
+11-03-2026 15:29:32 ERROR:    
+11-03-2026 15:29:32 ERROR:side_camera.close()
+11-03-2026 15:29:32 ERROR:
+
+11-03-2026 15:29:32 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\camera.py", line 159, in close
+
+11-03-2026 15:29:32 ERROR:    
+11-03-2026 15:29:32 ERROR:self._cam.DeInit()
+11-03-2026 15:29:32 ERROR:
+
+11-03-2026 15:29:32 ERROR:AttributeError
+11-03-2026 15:29:32 ERROR:: 
+11-03-2026 15:29:32 ERROR:'Camera' object has no attribute '_cam'
+11-03-2026 15:29:32 ERROR:
+
+11-03-2026 15:29:44 INFO:Library version: 4.2.0.88
+11-03-2026 15:29:44 INFO:Number of cameras detected: 1
+11-03-2026 15:29:44 INFO:Opened device with serial number  22507263...
+11-03-2026 15:29:44 ERROR:Exception in Tkinter callback
+11-03-2026 15:29:44 ERROR:
+
+11-03-2026 15:29:44 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:29:44 ERROR:
+11-03-2026 15:29:44 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:29:44 ERROR:
+11-03-2026 15:29:44 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 15:29:44 ERROR:
+11-03-2026 15:29:44 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 115, in updateGUI
+    image_container.configure(image=ImageTk.PhotoImage(Image.fromarray(frame, 'L').resize(canvas_size)))
+
+11-03-2026 15:29:44 ERROR:
+11-03-2026 15:29:44 ERROR:AttributeError: 'int' object has no attribute 'configure'
+
+11-03-2026 15:29:44 ERROR:
+11-03-2026 15:32:55 INFO:Library version: 4.2.0.88
+11-03-2026 15:32:55 INFO:Number of cameras detected: 1
+11-03-2026 15:32:55 INFO:Opened device with serial number  22507263...
+11-03-2026 15:33:21 INFO:Library version: 4.2.0.88
+11-03-2026 15:33:21 INFO:Number of cameras detected: 1
+11-03-2026 15:33:21 INFO:Opened device with serial number  22507263...
+11-03-2026 15:36:33 INFO:Library version: 4.2.0.88
+11-03-2026 15:36:33 INFO:Number of cameras detected: 1
+11-03-2026 15:36:33 INFO:Opened device with serial number  22507263...
+11-03-2026 15:36:33 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:36:33 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3304, in fromarray
+
+11-03-2026 15:36:33 ERROR:    
+11-03-2026 15:36:33 ERROR:typemode, rawmode, color_modes = _fromarray_typemap[typekey]
+11-03-2026 15:36:33 ERROR:
+
+11-03-2026 15:36:33 ERROR:KeyError
+11-03-2026 15:36:33 ERROR:: 
+11-03-2026 15:36:33 ERROR:((1, 1), '|O')
+11-03-2026 15:36:33 ERROR:
+
+11-03-2026 15:36:33 ERROR:
+The above exception was the direct cause of the following exception:
+
+
+11-03-2026 15:36:33 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:36:33 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 145, in <module>
+
+11-03-2026 15:36:33 ERROR:    
+11-03-2026 15:36:33 ERROR:img = ImageTk.PhotoImage(Image.fromarray(frame, 'L').resize(canvas_size))
+11-03-2026 15:36:33 ERROR:
+
+11-03-2026 15:36:33 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\PIL\Image.py", line 3308, in fromarray
+
+11-03-2026 15:36:33 ERROR:    
+11-03-2026 15:36:33 ERROR:raise TypeError(msg) from e
+11-03-2026 15:36:33 ERROR:
+
+11-03-2026 15:36:33 ERROR:TypeError
+11-03-2026 15:36:33 ERROR:: 
+11-03-2026 15:36:33 ERROR:Cannot handle this data type: (1, 1), |O
+11-03-2026 15:36:33 ERROR:
+
+11-03-2026 15:37:55 INFO:Library version: 4.2.0.88
+11-03-2026 15:37:55 INFO:Number of cameras detected: 1
+11-03-2026 15:37:55 INFO:Opened device with serial number  22507263...
+11-03-2026 15:38:14 INFO:Library version: 4.2.0.88
+11-03-2026 15:38:14 INFO:Number of cameras detected: 1
+11-03-2026 15:38:14 INFO:Opened device with serial number  22507263...
+11-03-2026 15:39:18 INFO:Library version: 4.2.0.88
+11-03-2026 15:39:18 INFO:Number of cameras detected: 1
+11-03-2026 15:39:18 INFO:Opened device with serial number  22507263...
+11-03-2026 15:41:12 INFO:Library version: 4.2.0.88
+11-03-2026 15:41:12 INFO:Number of cameras detected: 1
+11-03-2026 15:41:12 INFO:Opened device with serial number  22507263...
+11-03-2026 15:41:12 ERROR:Exception in Tkinter callback
+11-03-2026 15:41:12 ERROR:
+
+11-03-2026 15:41:12 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:41:12 ERROR:
+11-03-2026 15:41:12 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:41:12 ERROR:
+11-03-2026 15:41:12 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 15:41:12 ERROR:
+11-03-2026 15:41:12 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 116, in updateGUI
+    canvas.delete(image_container)
+
+11-03-2026 15:41:12 ERROR:
+11-03-2026 15:41:12 ERROR:UnboundLocalError: local variable 'image_container' referenced before assignment
+
+11-03-2026 15:41:12 ERROR:
+11-03-2026 15:42:02 INFO:Library version: 4.2.0.88
+11-03-2026 15:42:02 INFO:Number of cameras detected: 1
+11-03-2026 15:42:02 INFO:Opened device with serial number  22507263...
+11-03-2026 15:42:27 INFO:Library version: 4.2.0.88
+11-03-2026 15:42:27 INFO:Number of cameras detected: 1
+11-03-2026 15:42:27 INFO:Opened device with serial number  22507263...
+11-03-2026 15:42:59 INFO:Library version: 4.2.0.88
+11-03-2026 15:42:59 INFO:Number of cameras detected: 1
+11-03-2026 15:42:59 INFO:Opened device with serial number  22507263...
+11-03-2026 15:43:21 INFO:Library version: 4.2.0.88
+11-03-2026 15:43:21 INFO:Number of cameras detected: 1
+11-03-2026 15:43:22 INFO:Opened device with serial number  22507263...
+11-03-2026 15:43:58 INFO:Library version: 4.2.0.88
+11-03-2026 15:43:58 INFO:Number of cameras detected: 1
+11-03-2026 15:43:58 INFO:Opened device with serial number  22507263...
+11-03-2026 15:44:24 INFO:Library version: 4.2.0.88
+11-03-2026 15:44:24 INFO:Number of cameras detected: 1
+11-03-2026 15:44:24 INFO:Opened device with serial number  22507263...
+11-03-2026 15:45:06 INFO:Library version: 4.2.0.88
+11-03-2026 15:45:06 INFO:Number of cameras detected: 1
+11-03-2026 15:45:06 INFO:Opened device with serial number  22507263...
+11-03-2026 15:45:48 INFO:Library version: 4.2.0.88
+11-03-2026 15:45:48 INFO:Number of cameras detected: 1
+11-03-2026 15:45:48 INFO:Opened device with serial number  22507263...
+11-03-2026 15:47:07 INFO:Library version: 4.2.0.88
+11-03-2026 15:47:07 INFO:Number of cameras detected: 1
+11-03-2026 15:47:07 INFO:Opened device with serial number  22507263...
+11-03-2026 15:48:30 INFO:Library version: 4.2.0.88
+11-03-2026 15:48:30 INFO:Number of cameras detected: 1
+11-03-2026 15:48:30 INFO:Opened device with serial number  22507263...
+11-03-2026 15:48:50 INFO:Library version: 4.2.0.88
+11-03-2026 15:48:50 INFO:Number of cameras detected: 1
+11-03-2026 15:48:50 INFO:Opened device with serial number  22507263...
+11-03-2026 15:48:50 ERROR:Exception in Tkinter callback
+11-03-2026 15:48:50 ERROR:
+
+11-03-2026 15:48:50 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:48:50 ERROR:
+11-03-2026 15:48:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:48:50 ERROR:
+11-03-2026 15:48:50 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 15:48:50 ERROR:
+11-03-2026 15:48:50 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 117, in updateGUI
+    canvas.delete(image_container)
+
+11-03-2026 15:48:50 ERROR:
+11-03-2026 15:48:50 ERROR:NameError: name 'image_container' is not defined
+
+11-03-2026 15:48:50 ERROR:
+11-03-2026 15:49:34 INFO:Library version: 4.2.0.88
+11-03-2026 15:49:34 INFO:Number of cameras detected: 1
+11-03-2026 15:49:34 INFO:Opened device with serial number  22507263...
+11-03-2026 15:50:29 INFO:Library version: 4.2.0.88
+11-03-2026 15:50:29 INFO:Number of cameras detected: 1
+11-03-2026 15:50:29 INFO:Opened device with serial number  22507263...
+11-03-2026 15:52:11 INFO:Library version: 4.2.0.88
+11-03-2026 15:52:11 INFO:Number of cameras detected: 1
+11-03-2026 15:52:11 INFO:Opened device with serial number  22507263...
+11-03-2026 15:53:18 INFO:Library version: 4.2.0.88
+11-03-2026 15:53:18 INFO:Number of cameras detected: 1
+11-03-2026 15:53:19 INFO:Opened device with serial number  22507263...
+11-03-2026 15:54:49 INFO:Library version: 4.2.0.88
+11-03-2026 15:54:49 INFO:Number of cameras detected: 1
+11-03-2026 15:54:50 INFO:Opened device with serial number  22507263...
+11-03-2026 15:58:08 INFO:Library version: 4.2.0.88
+11-03-2026 15:58:08 INFO:Number of cameras detected: 1
+11-03-2026 15:58:08 INFO:Opened device with serial number  22507263...
+11-03-2026 15:58:08 ERROR:Exception in Tkinter callback
+11-03-2026 15:58:08 ERROR:
+
+11-03-2026 15:58:08 ERROR:Traceback (most recent call last):
+
+11-03-2026 15:58:08 ERROR:
+11-03-2026 15:58:08 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 15:58:08 ERROR:
+11-03-2026 15:58:08 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 15:58:08 ERROR:
+11-03-2026 15:58:08 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 116, in updateGUI
+    canvas.delete(image_container)
+
+11-03-2026 15:58:08 ERROR:
+11-03-2026 15:58:08 ERROR:UnboundLocalError: local variable 'image_container' referenced before assignment
+
+11-03-2026 15:58:08 ERROR:
+11-03-2026 15:59:18 INFO:Library version: 4.2.0.88
+11-03-2026 15:59:18 INFO:Number of cameras detected: 1
+11-03-2026 15:59:18 INFO:Opened device with serial number  22507263...
+11-03-2026 16:02:21 INFO:Library version: 4.2.0.88
+11-03-2026 16:02:21 INFO:Number of cameras detected: 1
+11-03-2026 16:02:22 INFO:Opened device with serial number  22507263...
+11-03-2026 16:02:23 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:02:23 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 147, in <module>
+
+11-03-2026 16:02:23 ERROR:    
+11-03-2026 16:02:23 ERROR:canvas.image
+11-03-2026 16:02:23 ERROR:
+
+11-03-2026 16:02:23 ERROR:AttributeError
+11-03-2026 16:02:23 ERROR:: 
+11-03-2026 16:02:23 ERROR:'Canvas' object has no attribute 'image'
+11-03-2026 16:02:23 ERROR:
+
+11-03-2026 16:03:26 INFO:Library version: 4.2.0.88
+11-03-2026 16:03:26 INFO:Number of cameras detected: 1
+11-03-2026 16:03:26 INFO:Opened device with serial number  22507263...
+11-03-2026 16:04:03 INFO:Library version: 4.2.0.88
+11-03-2026 16:04:03 INFO:Number of cameras detected: 1
+11-03-2026 16:04:03 INFO:Opened device with serial number  22507263...
+11-03-2026 16:05:04 INFO:Library version: 4.2.0.88
+11-03-2026 16:05:04 INFO:Number of cameras detected: 1
+11-03-2026 16:05:04 INFO:Opened device with serial number  22507263...
+11-03-2026 16:05:25 INFO:Library version: 4.2.0.88
+11-03-2026 16:05:25 INFO:Number of cameras detected: 1
+11-03-2026 16:05:25 INFO:Opened device with serial number  22507263...
+11-03-2026 16:06:13 INFO:Library version: 4.2.0.88
+11-03-2026 16:06:13 INFO:Number of cameras detected: 1
+11-03-2026 16:06:13 INFO:Opened device with serial number  22507263...
+11-03-2026 16:06:13 ERROR:Exception in Tkinter callback
+11-03-2026 16:06:13 ERROR:
+
+11-03-2026 16:06:13 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:06:13 ERROR:
+11-03-2026 16:06:13 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 16:06:13 ERROR:
+11-03-2026 16:06:13 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 16:06:13 ERROR:
+11-03-2026 16:06:13 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 117, in updateGUI
+    img.put(Image.fromarray(frame, 'L').resize(canvas_size))
+
+11-03-2026 16:06:13 ERROR:
+11-03-2026 16:06:13 ERROR:AttributeError: 'PhotoImage' object has no attribute 'put'
+
+11-03-2026 16:06:13 ERROR:
+11-03-2026 16:08:47 INFO:Library version: 4.2.0.88
+11-03-2026 16:08:47 INFO:Number of cameras detected: 1
+11-03-2026 16:08:48 INFO:Opened device with serial number  22507263...
+11-03-2026 16:08:48 ERROR:Exception in Tkinter callback
+11-03-2026 16:08:48 ERROR:
+
+11-03-2026 16:08:48 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:08:48 ERROR:
+11-03-2026 16:08:48 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 16:08:48 ERROR:
+11-03-2026 16:08:48 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 16:08:48 ERROR:
+11-03-2026 16:08:48 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 117, in updateGUI
+    img.config(data = Image.fromarray(frame, 'L').resize(canvas_size))
+
+11-03-2026 16:08:48 ERROR:
+11-03-2026 16:08:48 ERROR:AttributeError: 'PhotoImage' object has no attribute 'config'
+
+11-03-2026 16:08:48 ERROR:
+11-03-2026 16:09:07 INFO:Library version: 4.2.0.88
+11-03-2026 16:09:07 INFO:Number of cameras detected: 1
+11-03-2026 16:09:07 INFO:Opened device with serial number  22507263...
+11-03-2026 16:09:08 ERROR:Exception in Tkinter callback
+11-03-2026 16:09:08 ERROR:
+
+11-03-2026 16:09:08 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:09:08 ERROR:
+11-03-2026 16:09:08 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 16:09:08 ERROR:
+11-03-2026 16:09:08 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 16:09:08 ERROR:
+11-03-2026 16:09:08 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 117, in updateGUI
+    img.configure(data = Image.fromarray(frame, 'L').resize(canvas_size))
+
+11-03-2026 16:09:08 ERROR:
+11-03-2026 16:09:08 ERROR:AttributeError: 'PhotoImage' object has no attribute 'configure'
+
+11-03-2026 16:09:08 ERROR:
+11-03-2026 16:11:16 INFO:Library version: 4.2.0.88
+11-03-2026 16:11:16 INFO:Number of cameras detected: 1
+11-03-2026 16:11:16 INFO:Opened device with serial number  22507263...
+11-03-2026 16:15:10 INFO:Updating params:
+11-03-2026 16:15:10 INFO:	Successfully updated "spring constant": 4
+11-03-2026 16:15:10 INFO:	Successfully updated "z-velocity meas.": 0.5
+11-03-2026 16:15:10 INFO:	Successfully updated "z-velocity default": 0.3
+11-03-2026 16:15:10 INFO:	Successfully updated "pushing force": 1
+11-03-2026 16:15:10 INFO:	Successfully updated "z start meas.": 30
+11-03-2026 16:15:10 INFO:	Successfully updated "scan length": 10
+11-03-2026 16:15:10 INFO:	Successfully updated "repeats": 1
+11-03-2026 16:15:10 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 16:15:10 INFO:	Successfully updated "sample ID": Hook
+11-03-2026 16:15:48 INFO:Updating params:
+11-03-2026 16:15:48 INFO:	Successfully updated "spring constant": 4
+11-03-2026 16:15:48 INFO:	Successfully updated "z-velocity meas.": 0.5
+11-03-2026 16:15:48 INFO:	Successfully updated "z-velocity default": 6
+11-03-2026 16:15:48 INFO:	Successfully updated "pushing force": 1
+11-03-2026 16:15:48 INFO:	Successfully updated "z start meas.": 30
+11-03-2026 16:15:48 INFO:	Successfully updated "scan length": 10
+11-03-2026 16:15:48 INFO:	Successfully updated "repeats": 1
+11-03-2026 16:15:48 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+11-03-2026 16:15:48 INFO:	Successfully updated "sample ID": Hook
+11-03-2026 16:16:54 INFO:Library version: 4.2.0.88
+11-03-2026 16:16:54 INFO:Number of cameras detected: 1
+11-03-2026 16:16:54 INFO:Opened device with serial number  22507263...
+11-03-2026 16:22:48 INFO:Library version: 4.2.0.88
+11-03-2026 16:22:48 INFO:Number of cameras detected: 1
+11-03-2026 16:22:48 INFO:Opened device with serial number  22507263...
+11-03-2026 16:22:48 ERROR:Could not start the hardware!
+Exiting...
+11-03-2026 16:22:48 ERROR:Exception in Tkinter callback
+11-03-2026 16:22:48 ERROR:
+
+11-03-2026 16:22:48 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 107, in updateGUI
+    stage_state = z_stage.get_state()
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 66, in get_state
+    result = self._write_command('QSTATE')
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 123, in _write_command
+    self._stepper.read_all() # Empty the current buffer
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialutil.py", line 652, in read_all
+    return self.read(self.in_waiting)
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\site-packages\serial\serialwin32.py", line 259, in in_waiting
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:48 ERROR:serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+
+11-03-2026 16:22:48 ERROR:
+11-03-2026 16:22:57 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:22:57 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 302, in <module>
+
+11-03-2026 16:22:57 ERROR:    
+11-03-2026 16:22:57 ERROR:side_camera.close()
+11-03-2026 16:22:57 ERROR:
+
+11-03-2026 16:22:57 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\camera.py", line 159, in close
+
+11-03-2026 16:22:57 ERROR:    
+11-03-2026 16:22:57 ERROR:self._cam.DeInit()
+11-03-2026 16:22:57 ERROR:
+
+11-03-2026 16:22:57 ERROR:AttributeError
+11-03-2026 16:22:57 ERROR:: 
+11-03-2026 16:22:57 ERROR:'Camera' object has no attribute '_cam'
+11-03-2026 16:22:57 ERROR:
+
+11-03-2026 16:23:08 INFO:Library version: 4.2.0.88
+11-03-2026 16:23:08 INFO:Number of cameras detected: 1
+11-03-2026 16:23:08 INFO:Opened device with serial number  22507263...
+11-03-2026 16:26:47 INFO:Library version: 4.2.0.88
+11-03-2026 16:26:47 INFO:Number of cameras detected: 1
+11-03-2026 16:26:47 INFO:Opened device with serial number  22507263...
+11-03-2026 16:28:18 INFO:Library version: 4.2.0.88
+11-03-2026 16:28:18 INFO:Number of cameras detected: 1
+11-03-2026 16:28:18 INFO:Opened device with serial number  22507263...
+11-03-2026 16:28:33 INFO:Library version: 4.2.0.88
+11-03-2026 16:28:33 INFO:Number of cameras detected: 1
+11-03-2026 16:28:33 INFO:Opened device with serial number  22507263...
+11-03-2026 16:28:48 INFO:Library version: 4.2.0.88
+11-03-2026 16:28:48 INFO:Number of cameras detected: 1
+11-03-2026 16:28:48 INFO:Opened device with serial number  22507263...
+11-03-2026 16:29:12 INFO:Library version: 4.2.0.88
+11-03-2026 16:29:12 INFO:Number of cameras detected: 1
+11-03-2026 16:29:12 INFO:Opened device with serial number  22507263...
+11-03-2026 16:29:29 INFO:Library version: 4.2.0.88
+11-03-2026 16:29:29 INFO:Number of cameras detected: 1
+11-03-2026 16:29:29 INFO:Opened device with serial number  22507263...
+11-03-2026 16:30:14 INFO:Library version: 4.2.0.88
+11-03-2026 16:30:14 INFO:Number of cameras detected: 1
+11-03-2026 16:30:14 INFO:Opened device with serial number  22507263...
+11-03-2026 16:30:25 INFO:Library version: 4.2.0.88
+11-03-2026 16:30:25 INFO:Number of cameras detected: 1
+11-03-2026 16:30:26 INFO:Opened device with serial number  22507263...
+11-03-2026 16:31:53 INFO:Library version: 4.2.0.88
+11-03-2026 16:31:53 INFO:Number of cameras detected: 1
+11-03-2026 16:31:53 INFO:Opened device with serial number  22507263...
+11-03-2026 16:41:54 INFO:Library version: 4.2.0.88
+11-03-2026 16:41:54 INFO:Number of cameras detected: 1
+11-03-2026 16:41:54 INFO:Opened device with serial number  22507263...
+11-03-2026 16:41:54 ERROR:Exception in Tkinter callback
+11-03-2026 16:41:54 ERROR:
+
+11-03-2026 16:41:54 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:41:54 ERROR:
+11-03-2026 16:41:54 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 16:41:54 ERROR:
+11-03-2026 16:41:54 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 16:41:54 ERROR:
+11-03-2026 16:41:54 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 119, in updateGUI
+    if(measurer.is_recording()):
+
+11-03-2026 16:41:54 ERROR:
+11-03-2026 16:41:54 ERROR:AttributeError: 'Measurement' object has no attribute 'is_recording'
+
+11-03-2026 16:41:54 ERROR:
+11-03-2026 16:41:56 INFO:Started recording with FPS 150.8
+11-03-2026 16:46:18 INFO:Library version: 4.2.0.88
+11-03-2026 16:46:18 INFO:Number of cameras detected: 1
+11-03-2026 16:46:18 INFO:Opened device with serial number  22507263...
+11-03-2026 16:46:20 ERROR:Exception in Tkinter callback
+11-03-2026 16:46:20 ERROR:
+
+11-03-2026 16:46:20 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:46:20 ERROR:
+11-03-2026 16:46:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 16:46:20 ERROR:
+11-03-2026 16:46:20 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 16:46:20 ERROR:
+11-03-2026 16:46:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 119, in updateGUI
+    if(measurer.is_recording()):
+
+11-03-2026 16:46:20 ERROR:
+11-03-2026 16:46:20 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\measurement.py", line 174, in is_recording
+    return self._is_recording
+
+11-03-2026 16:46:20 ERROR:
+11-03-2026 16:46:20 ERROR:AttributeError: 'Measurement' object has no attribute '_is_recording'
+
+11-03-2026 16:46:20 ERROR:
+11-03-2026 16:46:23 INFO:Started recording with FPS 150.8
+11-03-2026 16:47:24 INFO:Library version: 4.2.0.88
+11-03-2026 16:47:24 INFO:Number of cameras detected: 1
+11-03-2026 16:47:24 INFO:Opened device with serial number  22507263...
+11-03-2026 16:47:27 INFO:Started recording with FPS 150.8
+11-03-2026 16:49:53 INFO:Library version: 4.2.0.88
+11-03-2026 16:49:53 INFO:Number of cameras detected: 1
+11-03-2026 16:49:53 INFO:Opened device with serial number  22507263...
+11-03-2026 16:49:53 ERROR:Exception in Tkinter callback
+11-03-2026 16:49:53 ERROR:
+
+11-03-2026 16:49:53 ERROR:Traceback (most recent call last):
+
+11-03-2026 16:49:53 ERROR:
+11-03-2026 16:49:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+11-03-2026 16:49:53 ERROR:
+11-03-2026 16:49:53 ERROR:  File "C:\Users\turkkiv2\.conda\envs\VELCRO\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+11-03-2026 16:49:53 ERROR:
+11-03-2026 16:49:53 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 122, in updateGUI
+    oval.configure(fill = '')
+
+11-03-2026 16:49:53 ERROR:
+11-03-2026 16:49:53 ERROR:AttributeError: 'int' object has no attribute 'configure'
+
+11-03-2026 16:49:53 ERROR:
+11-03-2026 16:49:56 INFO:Started recording with FPS 150.8
+11-03-2026 16:52:05 INFO:Library version: 4.2.0.88
+11-03-2026 16:52:05 INFO:Number of cameras detected: 1
+11-03-2026 16:52:05 INFO:Opened device with serial number  22507263...
+11-03-2026 16:52:08 INFO:Started recording with FPS 150.8
+11-03-2026 17:08:50 INFO:Library version: 4.2.0.88
+11-03-2026 17:08:50 INFO:Number of cameras detected: 1
+11-03-2026 17:08:50 INFO:Opened device with serial number  22507263...
+11-03-2026 17:09:32 INFO:Library version: 4.2.0.88
+11-03-2026 17:09:32 INFO:Number of cameras detected: 1
+11-03-2026 17:09:32 INFO:Opened device with serial number  22507263...
+11-03-2026 17:09:43 INFO:Started recording with FPS 150.8
+11-03-2026 17:11:33 INFO:Library version: 4.2.0.88
+11-03-2026 17:11:33 INFO:Number of cameras detected: 1
+11-03-2026 17:11:33 INFO:Opened device with serial number  22507263...
+11-03-2026 17:12:41 INFO:Started recording with FPS 150.8

@@ -3,6 +3,7 @@ import logging
 import time
 import PySpin
 import numpy as np
+import time
 from utils import check_path_exists, check_path_writeable
 
 
@@ -17,11 +18,16 @@ class Camera:
         self._avi_recorder = None
         self._processor = None
         self._fps = 100
+        self._frame_time = np.nan
         self._is_recording = False
         self._is_live = False
 
         self._image_lock = threading.RLock()
         self._latest_frame = None
+
+        self._write_thread = threading.Thread()
+        self._is_saving = False
+        self._save_progress = 0
 
 
 
@@ -56,9 +62,7 @@ class Camera:
         self._avi_recorder = PySpin.SpinVideo()
         self._processor = PySpin.ImageProcessor()
         self._processor.SetColorProcessing(PySpin.SPINNAKER_COLOR_PROCESSING_ALGORITHM_HQ_LINEAR)
-
-        # Get the frame resolution
-        self._resolution = self._get_frame_resolution()
+        
         
         # Get device serial number
         serial_no = ''
@@ -72,6 +76,7 @@ class Camera:
         self._acq_thread = threading.Thread(target=self._run_camera)
         self._acq_thread.start()
 
+
         return True
 
 
@@ -80,9 +85,24 @@ class Camera:
         '''
             Return the latest complete frame that was acquired
         '''
-
         with self._image_lock:
             return np.copy(self._latest_frame)
+
+
+    def get_acquired_fps(self) -> float:
+        '''
+            Return the actual acquisition fps
+        '''
+
+        return 1/self._frame_time
+
+
+    def get_saving_state(self) -> tuple[float | bool]:
+        '''
+            Return the video writing status, tuple(is_saving, percentage)
+        '''
+
+        return (self._is_saving, self._save_progress)
 
 
     
@@ -90,6 +110,11 @@ class Camera:
         ''' 
             Begin saving video to given path
         '''
+
+        # Check that previous data has already been saved
+        if(self._is_saving):
+            logging.info('Have not finished writing previous video yet')
+            return False
 
         # Check the recording path and filename
         if not check_path_writeable(path):
@@ -142,9 +167,11 @@ class Camera:
         '''
         if(self._is_recording):
             self._is_recording = False
-            for image in self._images:
-                self._avi_recorder.Append(image)
-            self._avi_recorder.Close()
+
+            # Start the video writing thread
+            self._is_saving = True
+            self._write_thread = threading.Thread(target=self._write_video)
+            self._write_thread.start()
 
 
     def close(self):
@@ -169,23 +196,19 @@ class Camera:
         self._system.ReleaseInstance()
 
 
+
+    def _write_video(self):
+        '''
+            Write the currently saved frames to a video
+        '''
+        n_tot = len(self._images)
+        for i, image in enumerate(self._images):
+            self._avi_recorder.Append(image)
+            self._save_progress = (i+1)/n_tot*100
+        self._avi_recorder.Close()
+        self._is_saving = False
+
     
-    def _get_frame_resolution(self) -> tuple[int]:
-        '''
-            Acquire the frame width and height as a tuple
-        '''
-
-        # Retrieve next received image and ensure image completion
-        image_result = self._cam.GetNextImage()
-
-        if image_result.IsIncomplete():
-            logging.error('Image incomplete with image status %d...' % image_result.GetImageStatus())
-            return None
-        else:
-            # Return the image resolution
-            return (image_result.GetWidth(), image_result.GetHeight())
-
-
 
     def _run_camera(self):
         '''
@@ -196,8 +219,7 @@ class Camera:
         self._cam.BeginAcquisition()
         logging.debug('Acquiring images...')
 
-
-        # Figure(1) is default so you can omit this line. Figure(0) will create a new window every time program hits this line
+        frame_timer = time.time()
 
         # Retrieve, convert, and save images
         while self._is_recording or self._is_live:
@@ -214,13 +236,21 @@ class Camera:
                     image_data = image_result.GetNDArray()
 
                     with self._image_lock:
-                        self._latest_frame = image_data
+                        self._latest_frame = np.copy(image_data)
+
+                    self._frame_time = time.time() - frame_timer
+                    frame_timer = time.time()
+
+                    # Record the resolution
+                    self._resolution = (image_result.GetWidth(), image_result.GetHeight())
 
                     # Put the frame to writing queue
                     if(self._is_recording):
                         # Convert image to Mono8 and write to avi
                         image_converted = self._processor.Convert(image_result, PySpin.PixelFormat_Mono8)
                         self._images.append(image_converted)
+
+                    
                         
 
                 # Release image

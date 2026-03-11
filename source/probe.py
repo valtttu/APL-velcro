@@ -110,9 +110,10 @@ class Probe:
         self.stop_recording()
         self._is_open = False
 
-        self._aq_thread.join()
-        while self._aq_thread.is_alive():
-            time.sleep(0.01)
+        if(self._aq_thread.is_alive()):
+            self._aq_thread.join()
+            while self._aq_thread.is_alive():
+                time.sleep(0.01)
 
         # Closing down by closing interface and releasing sensor instance
         self._sensor.CloseSensor()

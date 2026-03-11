@@ -51,8 +51,9 @@ class Stage:
     def set_velocity(self, value):
 
         if(value > 0 and value <= MAX_SPEED):
-            self._velocity = value
-            self._write_command(f'SVEL {value}')
+            if(value != self._velocity):
+                self._velocity = value
+                self._write_command(f'SVEL {value}')
         else:
             logging.error(f'Cannot set velocity to {value}! Value should be between [{[0, MAX_SPEED]}]')
 

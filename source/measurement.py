@@ -24,7 +24,7 @@ class Measurement:
         # Parameters dict
         self._params = {'spring constant': {'value': 4, 'type': 'float', 'range': (0, 50), 'unit': 'N/m'},
                         'z-velocity meas.': {'value': 0.5, 'type': 'float', 'range': (0.01, 2), 'unit': 'mm/s'},
-                        'z-velocity default': {'value': 2, 'type': 'float', 'range': (0.1, 5), 'unit': 'mm/s'},
+                        'z-velocity default': {'value': 2, 'type': 'float', 'range': (0.1, 8), 'unit': 'mm/s'},
                         'pushing force': {'value': 1, 'type': 'float', 'range': (0.1, 50), 'unit': 'N'},
                         'z start meas.': {'value': 30, 'type': 'float', 'range': (0, 100), 'unit': 'mm'},
                         'scan length': {'value': 10, 'type': 'float', 'range': (0.5, 50), 'unit': 'mm'},
@@ -46,6 +46,8 @@ class Measurement:
 
         # State flags
         self._is_measuring = False
+        self._is_recording = False
+        self._state_str = ''
 
 
     def get_parameters(self):
@@ -54,6 +56,16 @@ class Measurement:
         '''
 
         return (self._keys, list(self._params.values()))
+
+
+    def get_parameter(self, key: str):
+        '''
+            Get value of given parameter 
+        '''
+        if(key in self._keys):
+            return self._params[key]['value']
+        else:
+            return None
 
 
 
@@ -73,13 +85,13 @@ class Measurement:
         if(self._params[name]['type'] == 'float'):
             try:
                 value = float(value_str)
-                res = value >= self.self._params[name]['range'][0] and value <= self.self._params[name]['range'][1] 
+                res = value >= self._params[name]['range'][0] and value <= self._params[name]['range'][1] 
             except ValueError:
                 res = False
         if(self._params[name]['type'] == 'int'):
             try:
                 value = int(value_str)
-                res = value >= self.self._params[name]['range'][0] and value <= self.self._params[name]['range'][1]
+                res = value >= self._params[name]['range'][0] and value <= self._params[name]['range'][1]
             except ValueError:
                 res = False
         elif(self._params[name]['type'] == 'path'):
@@ -92,6 +104,7 @@ class Measurement:
 
         if(res):
             self._params[name]['value'] = value
+            self._sync_parameters()
             return (True, f'Successfully updated "{name}"')
         else:
             return (False, f'Invalid value "{value_str}" for parameter "{name}"')
@@ -102,21 +115,25 @@ class Measurement:
             Start manual recording
         '''
         res = [False, False]
-        res[0] = self.camera.start_recording(self._params['save path']['value'], f'{self._params['sample ID']['value']}_video_{time.time()}.avi')
-        res[1] = self.probe.start_recording(self._params['save path']['value'], f'{self._params['sample ID']['value']}_force_{time.time()}.csv')
+        res[0] = self.camera.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_video_{time.time()}.avi")
+        res[1] = self.probe.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_force_{time.time()}.csv")
         
         if(not (res[0] and res[1])):
             logging.error('Could not start recording, aborting the measurement')
             self.camera.end_recording()
             self.probe.stop_recording()
+        else:
+            self._is_recording = True
 
 
-    def start_recording(self):
+    def stop_recording(self):
         '''
             Stop manual recording
         '''
-        self.camera.end_recording()
-        self.probe.stop_recording()
+        if(self._is_recording):
+            self.camera.end_recording()
+            self.probe.stop_recording()
+            self._is_recording = False
 
 
     def start_measurement(self):
@@ -149,9 +166,35 @@ class Measurement:
         '''
 
         return self._is_measuring
+
+
+    def is_recording(self):
+        '''
+            Return true if any recording is on
+        '''
+
+        return self._is_recording
+
+
+    def get_state(self):
+        '''
+            Return description of the automatic measurement status
+        '''
+        if(self._is_measuring):
+            return self._state_str
+        else:
+            return 'Idle'
         
 
 
+    def _sync_parameters(self):
+        '''
+            Synchronize changes in parameter list to the hardware
+        '''
+
+        self._force_file_temp = self._params['sample ID']['value'] + '_force_N_'
+        self._video_file_temp = self._params['sample ID']['value'] + '_video_N_'
+        self.stage.set_velocity(self._params['z-velocity default']['value'])
 
 
     def _measure_single(self):
@@ -161,6 +204,7 @@ class Measurement:
 
         # Print logging info
         logging.info(f"\tStarting measurement {self._measurement_no} for sample ID {self._params['sample ID']['value']}")
+        self._state_str = f'Measurement no {self._measurement_no}: Starting'
 
         # Move to starting location
         self.stage.move_to_pos(self._params['z start meas.']['value'], wait=True)
@@ -176,7 +220,9 @@ class Measurement:
             res[1] = self.probe.start_recording(self._params['save path']['value'], f'{self._force_file_temp}{self._measurement_no:02d}.csv')
         
         if(res[0] and res[1]):
-            self.stage.move_to_pos(self.stage.zmax)
+            self.stage.drive_stage(True)
+            self._is_recording = True
+            self._state_str = f'Measurement no {self._measurement_no}: Approaching'
         else:
             logging.error('Could not start recording, aborting the measurement')
             self.camera.end_recording()
@@ -195,8 +241,10 @@ class Measurement:
         if(not self._is_measuring):
             return
         else:
+            self._state_str = f'Measurement no {self._measurement_no}: Retracting'
             self.stage.move_to_pos(self._params['z-velocity meas.']['value'] - self._params['scan length']['value'], wait=True)
             self.stage.set_velocity(self._params['z-velocity default']['value'])
+            
         
 
         # Wait for the std deviation to come down
@@ -212,8 +260,10 @@ class Measurement:
         # Finish the measurement
         self.camera.end_recording()
         self.probe.stop_recording()
+        self._is_recording = False
         self._measurement_no += 1
         logging.info('\t\tDone!')
+        self._state_str = f'Measurement no {self._measurement_no}: Finished'
         self._is_measuring = False
         
         return
