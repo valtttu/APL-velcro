@@ -5,13 +5,14 @@ import utils
 import os
 import logging
 import measurement
+import sys
 
 import tkinter as tk
 from PIL import ImageTk, Image
 
 import numpy as np
 
-UPDATE_MS = 20
+UPDATE_MS = 40
 
 
 # Open hardware connections
@@ -34,6 +35,8 @@ if(not(res[0] and res[1] and res[2])):
     laser_probe.close()
     side_camera.close()
     z_stage.close()
+
+    sys.exit()
 
 path = os.path.dirname(__file__)
 
@@ -106,10 +109,10 @@ def updateGUI():
     delta = laser_probe.get_latest()
     stage_state = z_stage.get_state()
     camera_state = side_camera.get_saving_state()
-    state1.set(f'Current distance: {delta/1000:.3f} µm\nCurrent force: {delta/1e6*springk:.3f} N')
+    state1.set(f'Current distance: {delta/1000:.3f} mm\nCurrent force: {delta/1e6*springk:.3f} N')
     state2.set(f'Current position: {stage_state[0]} mm\nState: {measurer.get_state()}')
     if(camera_state[0]):
-        state3.set(f'Camera FPS: {side_camera.get_acquired_fps():.2f} Hz\t Saving state: {camera_state[1]:.0f}')
+        state3.set(f'Camera FPS: {side_camera.get_acquired_fps():.2f} Hz\t Saving state: {camera_state[1]:.0f} %')
     else:
         state3.set(f'Camera FPS: {side_camera.get_acquired_fps():.2f} Hz\t Saving state: {"Done"}')
 

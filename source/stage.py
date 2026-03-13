@@ -22,7 +22,7 @@ class Stage:
         self._upper_limit_flag = False
         self._lower_limit_flag = False
         self._is_moving = False
-
+        self._is_waiting = False
         self._zmax = 70         # [mm]
 
 
@@ -63,9 +63,10 @@ class Stage:
         '''
             Returns position, velocity and is_moving flag as a tuple
         '''
-        result = self._write_command('QSTATE')
-        self._parse_state(result)
-        return (self._position, self._velocity, self._is_moving)
+        if(not self._is_waiting):
+            result = self._write_command('QSTATE')
+            self._parse_state(result)
+        return (self._position, self._velocity, self._is_moving, self._lower_limit_flag, self._upper_limit_flag)
 
 
 
@@ -81,11 +82,14 @@ class Stage:
 
             if(wait):
                 t_start = time.time()
+                self._is_waiting = True
+                self._is_moving = True
                 while(time.time() - t_start < MOVE_TIMEOUT and self._is_moving):
                     
                     result = self._write_command('QSTATE')
                     self._parse_state(result)
                     time.sleep(0.05)
+                self._is_waiting = False
         else:
             logging.error(f'Invalid position value {pos} in move_to_pos! Value should be between [{[0, self._zmax]}]')
 
@@ -104,9 +108,7 @@ class Stage:
 
 
     def can_move(self):
-        result = self._write_command('QSTATE')
-        self._parse_state(result)
-        return self._lower_limit_flag or self._upper_limit_flag
+        return (not self._lower_limit_flag) and (not self._upper_limit_flag)
 
 
     def stop(self):
@@ -122,7 +124,7 @@ class Stage:
     def _write_command(self, command: str): 
         self._stepper.read_all() # Empty the current buffer
         self._stepper.write(bytes(command + '\n', 'utf-8'))
-        time.sleep(0.1)
+        time.sleep(0.05)
         data = self._stepper.readline().decode().rstrip()
         return data 
     
@@ -139,8 +141,11 @@ class Stage:
 
         if('busy' in pts[0].lower()):
             self._is_moving = True
-        else:
+        elif('ready' in pts[0].lower()):
             self._is_moving = False
+        else:
+            logging.error(f'Got invalid reply for "QSTATE" {msg}')
+            return
         
         for i in range(1,len(pts)):
             tmp = pts[i].split('=')

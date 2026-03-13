@@ -22,7 +22,7 @@ class Measurement:
         self.stage = stage
 
         # Parameters dict
-        self._params = {'spring constant': {'value': 4, 'type': 'float', 'range': (0, 50), 'unit': 'N/m'},
+        self._params = {'spring constant': {'value': 4, 'type': 'float', 'range': (0, 50000), 'unit': 'N/m'},
                         'z-velocity meas.': {'value': 0.5, 'type': 'float', 'range': (0.01, 2), 'unit': 'mm/s'},
                         'z-velocity default': {'value': 2, 'type': 'float', 'range': (0.1, 8), 'unit': 'mm/s'},
                         'pushing force': {'value': 1, 'type': 'float', 'range': (0.1, 50), 'unit': 'N'},
@@ -115,8 +115,9 @@ class Measurement:
             Start manual recording
         '''
         res = [False, False]
-        res[0] = self.camera.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_video_{time.time()}.avi")
-        res[1] = self.probe.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_force_{time.time()}.csv")
+        t_now = time.time()
+        res[0] = self.camera.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_video_{t_now:.0f}")
+        res[1] = self.probe.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_force_{t_now:.0f}.csv")
         
         if(not (res[0] and res[1])):
             logging.error('Could not start recording, aborting the measurement')
@@ -144,7 +145,6 @@ class Measurement:
         self._is_measuring = True
         self._meas_thread = threading.Thread(target =  self._measure_single)
         self._meas_thread.start()
-        logging.info(f"Measurement sequence started for sample ID: {self._params['sample ID']['value']}")
 
 
     def stop_measurement(self):
@@ -155,8 +155,9 @@ class Measurement:
         self._is_measuring = False
         self.stage.stop()
         self._meas_thread.join()
-        self.probe.stop_recording()
-        self.camera.end_recording()
+        if(self._is_recording):
+            self.probe.stop_recording()
+            self.camera.end_recording()
         logging.info('Measurement stopped')
 
 
@@ -203,7 +204,7 @@ class Measurement:
         '''
 
         # Print logging info
-        logging.info(f"\tStarting measurement {self._measurement_no} for sample ID {self._params['sample ID']['value']}")
+        logging.info(f"Starting measurement {self._measurement_no} for sample ID {self._params['sample ID']['value']}")
         self._state_str = f'Measurement no {self._measurement_no}: Starting'
 
         # Move to starting location
@@ -216,25 +217,31 @@ class Measurement:
         else:
             self.stage.set_velocity(self._params['z-velocity meas.']['value'])
             res = [False, False]
-            res[0] = self.camera.start_recording(self._params['save path']['value'], f'{self._video_file_temp}{self._measurement_no:02d}.avi')
+            res[0] = self.camera.start_recording(self._params['save path']['value'], f'{self._video_file_temp}{self._measurement_no:02d}')
             res[1] = self.probe.start_recording(self._params['save path']['value'], f'{self._force_file_temp}{self._measurement_no:02d}.csv')
         
         if(res[0] and res[1]):
             self.stage.drive_stage(True)
             self._is_recording = True
             self._state_str = f'Measurement no {self._measurement_no}: Approaching'
+            logging.info('\t\tStarting approach')
         else:
             logging.error('Could not start recording, aborting the measurement')
+            self.stage.stop()
             self.camera.end_recording()
             self.probe.stop_recording()
+            self._is_measuring = False
+            return
 
 
         # Move upwards until pushing force limit or maximum z-position is reached
-        starting_force = self.probe.get_latest_mean()*self._params['spring constant']['value']
-        current_force = self.probe.get_latest()*self._params['spring constant']['value']
-        while(self._is_measuring and self.stage.can_move() and np. abs(starting_force - current_force) < self._params['pushing force']['value']):
-            time.sleep(0.001)
-            current_force = self.probe.get_latest()*self._params['spring constant']['value']
+        starting_force = self.probe.get_latest_mean()/1e6*self._params['spring constant']['value']
+        current_force = self.probe.get_latest()/1e6*self._params['spring constant']['value']
+        print(f'Force difference is {starting_force - current_force}')
+        while(self._is_measuring and np. abs(starting_force - current_force) < self._params['pushing force']['value']):
+            time.sleep(0.05)
+            current_force = self.probe.get_latest()/1e6*self._params['spring constant']['value']
+            print(f'Force difference is {starting_force - current_force}')
 
 
         # Reverse the direction and retract
@@ -242,7 +249,8 @@ class Measurement:
             return
         else:
             self._state_str = f'Measurement no {self._measurement_no}: Retracting'
-            self.stage.move_to_pos(self._params['z-velocity meas.']['value'] - self._params['scan length']['value'], wait=True)
+            logging.info('\t\tStarting retracting')
+            self.stage.move_to_pos(self._params['z start meas.']['value'] - self._params['scan length']['value'], wait=True)
             self.stage.set_velocity(self._params['z-velocity default']['value'])
             
         

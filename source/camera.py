@@ -93,8 +93,10 @@ class Camera:
         '''
             Return the actual acquisition fps
         '''
-
-        return 1/self._frame_time
+        if(self._frame_time < 1e-3):
+            return np.nan
+        else:
+            return 1/self._frame_time
 
 
     def get_saving_state(self) -> tuple[float | bool]:
@@ -202,7 +204,7 @@ class Camera:
             Write the currently saved frames to a video
         '''
         n_tot = len(self._images)
-        for i, image in enumerate(self._images):
+        for i, image in enumerate(self._images):            
             self._avi_recorder.Append(image)
             self._save_progress = (i+1)/n_tot*100
         self._avi_recorder.Close()
@@ -246,7 +248,6 @@ class Camera:
 
                     # Put the frame to writing queue
                     if(self._is_recording):
-                        # Convert image to Mono8 and write to avi
                         image_converted = self._processor.Convert(image_result, PySpin.PixelFormat_Mono8)
                         self._images.append(image_converted)
 

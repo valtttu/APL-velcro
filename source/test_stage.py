@@ -27,6 +27,7 @@ stg.move_to_pos(24)
 while(stg.get_state()[2]):
     time.sleep(0.5)
     print(stg.get_state())
+    print(stg.can_move())
 
 print(f'Finished move in {time.time() -  t_start:.2f} seconds')
 
