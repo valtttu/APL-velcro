@@ -1,17 +1,21 @@
 import probe
 import camera
 import stage
-import utils
-import os
-import logging
 import measurement
+import utils
+
+
+from termcolor import colored
+import numpy as np
+import os
 import sys
+import logging
 
 import tkinter as tk
 from PIL import ImageTk, Image
 
-import numpy as np
 
+# Update interval for the GUI, equals to 25 fps
 UPDATE_MS = 40
 
 
@@ -25,6 +29,7 @@ measurer = measurement.Measurement(laser_probe, side_camera, z_stage)
 utils.setup_logging('HAM.log')
 
 # Start the hardware
+print(colored('Starting the hardware', 'yellow'))
 res = [False]*3
 res[0] = laser_probe.open()
 res[1] = side_camera.open()
@@ -32,13 +37,15 @@ res[2] = z_stage.open()
 
 if(not(res[0] and res[1] and res[2])):
     logging.error('Could not start the hardware!\nExiting...')
+    print(colored('Could not start the hardware!\nExiting...', 'red'))
     laser_probe.close()
     side_camera.close()
     z_stage.close()
 
     sys.exit()
+else:
+    print(colored('Hardware was successfully started', 'green'))
 
-path = os.path.dirname(__file__)
 
 
 # Define handlers for button press event etc.
@@ -58,12 +65,13 @@ def toggle_manual_recording():
         for entry in entries:
             entry.config(state="normal")
     else:
-        measurer.start_recording()
-        bt_start_automatic.config(state=tk.DISABLED)
-        bt_start_manual.config(text="Stop manual\n recording")
-        bt_start_manual.config(activebackground='red')
-        for entry in entries:
-            entry.config(state="disabled")
+        res = measurer.start_recording()
+        if(res):
+            bt_start_automatic.config(state=tk.DISABLED)
+            bt_start_manual.config(text="Stop manual\n recording")
+            bt_start_manual.config(activebackground='red')
+            for entry in entries:
+                entry.config(state="disabled")
 
 
 def toggle_automatic_recording():
@@ -138,7 +146,7 @@ def updateGUI():
 
 # Create the GUI window
 default_font = ("Ubuntu Light", 12)
-font_color = "#FFFFFFFF"
+font_color = "#FFFFFF"
 
 root = tk.Tk()
 root.title('Hook adhesion microscope (HAM)')
@@ -333,3 +341,5 @@ tk.mainloop()
 laser_probe.close()
 side_camera.close()
 z_stage.close()
+
+print(colored('Successfully closed the hardware', 'yellow'))

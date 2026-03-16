@@ -1,6 +1,7 @@
 import serial
 import logging
-import time 
+import time
+from termcolor import colored
 
 Z_MAX = 70          # [mm]
 MAX_SPEED = 10      # [mm/s]
@@ -28,17 +29,20 @@ class Stage:
 
 
     def open(self):
-
+        print('Stage: Opening USB connection to z-stage... ', end='')
         try:
             self._stepper = serial.Serial(port = self._port, baudrate = BAUDRATE, timeout = TIMEOUT)
             reply = self._write_command('QSTATE')
             if('ready' not in reply.lower()):
                 logging.error('ERROR: Could not connect to the micro controller')
+                print(colored('ERROR: Could not connect to the micro controller', 'red'))
                 return False
             else:
+                print(colored('Done!', 'green'))
                 return True
         except:
             logging.error('ERROR: Could not connect to the micro controller')
+            print(colored('ERROR: Could not connect to the micro controller', 'red'))
             return False
 
 

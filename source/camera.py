@@ -5,6 +5,7 @@ import PySpin
 import numpy as np
 import time
 from utils import check_path_exists, check_path_writeable
+from termcolor import colored
 
 
 class Camera:
@@ -34,6 +35,7 @@ class Camera:
     def open(self) -> bool:
 
         # Retrieve singleton reference to system object
+        print('Camera: Opening USB connection to the side camera... ', end='')
         self._system = PySpin.System.GetInstance()
 
         # Get current library version
@@ -46,6 +48,7 @@ class Camera:
         num_cameras = self._cam_list.GetSize()
 
         logging.info('Number of cameras detected: %d' % num_cameras)
+        print(f'found {num_cameras} camera(s) ', end='')
 
         # Grab the connected camera
         if(num_cameras == 1):
@@ -55,6 +58,7 @@ class Camera:
             self._cam_list.Clear()
             self._system.ReleaseInstance()
             logging.error('Did not find one camera, but found %d cameras!' % num_cameras)
+            print( colored(f'Error: Found {num_cameras} instead of one', 'red'))
             return False
 
         # Initialize camera and the video processor
@@ -70,11 +74,13 @@ class Camera:
             serial_no = self._cam.TLDevice.DeviceSerialNumber.GetValue()
 
             logging.info('Opened device with serial number  %s...' % serial_no)
+            print(f'with serial number: {serial_no} ... ', end='')
 
         # Start the image acquisition thread
         self._is_live = True
         self._acq_thread = threading.Thread(target=self._run_camera)
         self._acq_thread.start()
+        print(colored('Done!', 'green'))
 
 
         return True
@@ -188,7 +194,8 @@ class Camera:
                 time.sleep(0.1)
 
         # Release the camera object
-        self._cam.DeInit()
+        if(self._cam_list.GetSize() > 0):
+            self._cam.DeInit()
         del self._cam
 
         # Clear camera list before releasing system

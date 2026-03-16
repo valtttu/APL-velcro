@@ -123,8 +123,10 @@ class Measurement:
             logging.error('Could not start recording, aborting the measurement')
             self.camera.end_recording()
             self.probe.stop_recording()
+            return False
         else:
             self._is_recording = True
+            return True
 
 
     def stop_recording(self):
@@ -200,7 +202,7 @@ class Measurement:
             self._finished = False
             return True
         else:
-            return True
+            return False
         
 
 
@@ -223,6 +225,16 @@ class Measurement:
         self._measurement_no += 1
         logging.info(f"Starting measurement {self._measurement_no} for sample ID {self._params['sample ID']['value']}")
         self._state_str = f'Meas. no. {self._measurement_no}: Starting'
+
+        # Check if camera is ready
+        if(self.camera.get_saving_state()[0]):
+            self._state_str = f'Meas. no. {self._measurement_no}: Waiting camera'
+            while(self._is_measuring and self.camera.get_saving_state()[0]):
+                time.sleep(0.3)
+            if(self._is_measuring):
+                self._state_str = f'Meas. no. {self._measurement_no}: Moving to approach'
+            else:
+                return
 
         # Move to starting location
         self.stage.move_to_pos(self._params['z start meas.']['value'], wait=True)
