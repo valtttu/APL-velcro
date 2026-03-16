@@ -48,6 +48,7 @@ class Probe:
 
         # Other needed variables
         self._save_fid = None
+        self._latest_file = ''
 
 
     ###########################################################
@@ -139,6 +140,7 @@ class Probe:
             return False
         
         self._save_fid = open(path + '/' + filename, 'w')
+        self._latest_file = filename
         self._is_recording = True
         return True
 
@@ -182,6 +184,13 @@ class Probe:
     
 
     ###########################################################
+    # Get the last filename that was recorded
+    ###########################################################
+    def get_last_file(self) -> str:
+        return self._latest_file
+    
+
+    ###########################################################
     # Private function that avails one measurement
     ###########################################################
     def _get_single(self):
@@ -214,4 +223,4 @@ class Probe:
                     logging.error(self._sensor.GetError(1024).split('.')[0])
             
             else:
-                time.sleep(0.0001)
+                time.sleep(0.001)

@@ -116,6 +116,12 @@ def updateGUI():
     else:
         state3.set(f'Camera FPS: {side_camera.get_acquired_fps():.2f} Hz\t Saving state: {"Done"}')
 
+    state4.set(f'Latest force file: "{laser_probe.get_last_file()}"')
+
+    # Check if a measurement has finished
+    if(measurer.has_finished()):
+        toggle_automatic_recording()
+
     # Get the next camera frame and display that
     frame = side_camera.get_latest_frame()
     img = ImageTk.PhotoImage(Image.fromarray(frame, 'L').resize(canvas_size))
@@ -132,6 +138,7 @@ def updateGUI():
 
 # Create the GUI window
 default_font = ("Ubuntu Light", 12)
+font_color = "#FFFFFFFF"
 
 root = tk.Tk()
 root.title('Hook adhesion microscope (HAM)')
@@ -261,15 +268,19 @@ bt_stage_home = tk.Button(root, text="Home\n stage",
 # Create state info labels
 state1 = tk.StringVar()
 state1.set(f'Current distance: {700} µm\nCurrent force: {0.7} N')
-state1_label = tk.Label(root,textvariable=state1, font=default_font, foreground='green', bg='#300924', justify='left')
+state1_label = tk.Label(root,textvariable=state1, font=default_font, foreground=font_color, bg='#300924', justify='left')
 
 state2 = tk.StringVar()
 state2.set(f'Current position: {10} mm\nState: {"Idle"}')
-state2_label = tk.Label(root,textvariable=state2, font=default_font, foreground='green', bg='#300924', justify='left')
+state2_label = tk.Label(root,textvariable=state2, font=default_font, foreground=font_color, bg='#300924', justify='left')
 
 state3 = tk.StringVar()
 state3.set(f'Camera FPS: {10} Hz\t Saving state: {"Done"}')
-state3_label = tk.Label(root,textvariable=state3, font=default_font, foreground='green', bg='#300924', justify='left')
+state3_label = tk.Label(root,textvariable=state3, font=default_font, foreground=font_color, bg='#300924', justify='left')
+
+state4 = tk.StringVar()
+state4.set(f'Latest force file:')
+state4_label = tk.Label(root,textvariable=state4, font=default_font, foreground=font_color, bg='#300924', justify='left')
 
 
 # Arrange everything in a grid arrangement
@@ -300,6 +311,7 @@ for i in range(len(keys)):
     entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
 
 state3_label.grid(row=start_row + len(keys), column=0, columnspan=6, sticky='W')
+state4_label.grid(row=start_row + len(keys) + 1, column=0, columnspan=6, sticky='W')
 
 
 # Bind buttons for stage movement

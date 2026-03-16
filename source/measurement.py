@@ -1,13 +1,12 @@
 
 from probe import Probe
 from camera import Camera
-from stage import Stage
+from stage import Stage, MAX_SPEED, Z_MAX
 import numpy as np
 import utils
 import logging
 import time
 import threading
-from termcolor import colored
 
 MEASUREMENT_STOP_NOISE_THRESHOLD = 10  # Limit for force reading standard deviation in [um]. Recording stops only after the noise is smaller than this
 MEASUREMENT_STOP_TIMEOUT = 30   # The timeout for waiting for the standard deviation to come down in [s]
@@ -22,11 +21,11 @@ class Measurement:
         self.stage = stage
 
         # Parameters dict
-        self._params = {'spring constant': {'value': 4, 'type': 'float', 'range': (0, 50000), 'unit': 'N/m'},
-                        'z-velocity meas.': {'value': 0.5, 'type': 'float', 'range': (0.01, 2), 'unit': 'mm/s'},
-                        'z-velocity default': {'value': 2, 'type': 'float', 'range': (0.1, 8), 'unit': 'mm/s'},
+        self._params = {'spring constant': {'value': 400, 'type': 'float', 'range': (0, 50000), 'unit': 'N/m'},
+                        'z-velocity meas.': {'value': 0.5, 'type': 'float', 'range': (0.01, MAX_SPEED), 'unit': 'mm/s'},
+                        'z-velocity default': {'value': 2, 'type': 'float', 'range': (0.1, MAX_SPEED), 'unit': 'mm/s'},
                         'pushing force': {'value': 1, 'type': 'float', 'range': (0.1, 50), 'unit': 'N'},
-                        'z start meas.': {'value': 30, 'type': 'float', 'range': (0, 100), 'unit': 'mm'},
+                        'z start meas.': {'value': 35, 'type': 'float', 'range': (0, Z_MAX), 'unit': 'mm'},
                         'scan length': {'value': 10, 'type': 'float', 'range': (0.5, 50), 'unit': 'mm'},
                         'repeats': {'value': 1, 'type': 'int', 'range': (1, 10), 'unit': ''},
                         'save path': {'value': utils.construct_default_path(), 'type': 'path', 'range': None, 'unit': ''},
@@ -47,6 +46,7 @@ class Measurement:
         # State flags
         self._is_measuring = False
         self._is_recording = False
+        self._finished = False
         self._state_str = ''
 
 
@@ -143,6 +143,7 @@ class Measurement:
         '''
 
         self._is_measuring = True
+        self._finished = False
         self._meas_thread = threading.Thread(target =  self._measure_single)
         self._meas_thread.start()
 
@@ -154,11 +155,13 @@ class Measurement:
 
         self._is_measuring = False
         self.stage.stop()
-        self._meas_thread.join()
+        if(self._meas_thread.is_alive()):
+            self._meas_thread.join()
+            logging.info('Measurement stopped')
         if(self._is_recording):
             self.probe.stop_recording()
             self.camera.end_recording()
-        logging.info('Measurement stopped')
+        
 
 
     def is_measuring_automatic(self):
@@ -188,6 +191,19 @@ class Measurement:
         
 
 
+    def has_finished(self):
+        '''
+            Return the `self._finished` flag and set it to `False` when accessed for the 1st time
+        '''
+
+        if(self._finished):
+            self._finished = False
+            return True
+        else:
+            return True
+        
+
+
     def _sync_parameters(self):
         '''
             Synchronize changes in parameter list to the hardware
@@ -203,9 +219,10 @@ class Measurement:
             Perform a single measurement: Uses the params saved in `self._params` and saves data with the current measurement number 
         '''
 
-        # Print logging info
+        # Increment measurement no. and print logging info
+        self._measurement_no += 1
         logging.info(f"Starting measurement {self._measurement_no} for sample ID {self._params['sample ID']['value']}")
-        self._state_str = f'Measurement no {self._measurement_no}: Starting'
+        self._state_str = f'Meas. no. {self._measurement_no}: Starting'
 
         # Move to starting location
         self.stage.move_to_pos(self._params['z start meas.']['value'], wait=True)
@@ -223,7 +240,7 @@ class Measurement:
         if(res[0] and res[1]):
             self.stage.drive_stage(True)
             self._is_recording = True
-            self._state_str = f'Measurement no {self._measurement_no}: Approaching'
+            self._state_str = f'Meas. no. {self._measurement_no}: Approaching'
             logging.info('\t\tStarting approach')
         else:
             logging.error('Could not start recording, aborting the measurement')
@@ -237,18 +254,27 @@ class Measurement:
         # Move upwards until pushing force limit or maximum z-position is reached
         starting_force = self.probe.get_latest_mean()/1e6*self._params['spring constant']['value']
         current_force = self.probe.get_latest()/1e6*self._params['spring constant']['value']
-        print(f'Force difference is {starting_force - current_force}')
-        while(self._is_measuring and np. abs(starting_force - current_force) < self._params['pushing force']['value']):
+        while(self._is_measuring and self.stage.can_move() and np.abs(starting_force - current_force) < self._params['pushing force']['value']):
             time.sleep(0.05)
             current_force = self.probe.get_latest()/1e6*self._params['spring constant']['value']
-            print(f'Force difference is {starting_force - current_force}')
+            
+        # Log the approach stop reason
+        if(not self._is_measuring):
+            logging.info('\t\tApproach was stopped: Reason user input')
+        elif(not self.stage.can_move()):
+            logging.info('\t\tApproach was stopped: Stage upper limit reached')
+        elif(np.abs(starting_force - current_force) >= self._params['pushing force']['value']):
+            logging.info('\t\tApproach was stopped: Pushing force limit reached')
+        else:
+            logging.error('\t\tApproach was stopped: Reason unknown')
+
 
 
         # Reverse the direction and retract
         if(not self._is_measuring):
             return
         else:
-            self._state_str = f'Measurement no {self._measurement_no}: Retracting'
+            self._state_str = f'Meas. no. {self._measurement_no}: Retracting'
             logging.info('\t\tStarting retracting')
             self.stage.move_to_pos(self._params['z start meas.']['value'] - self._params['scan length']['value'], wait=True)
             self.stage.set_velocity(self._params['z-velocity default']['value'])
@@ -269,10 +295,10 @@ class Measurement:
         self.camera.end_recording()
         self.probe.stop_recording()
         self._is_recording = False
-        self._measurement_no += 1
         logging.info('\t\tDone!')
-        self._state_str = f'Measurement no {self._measurement_no}: Finished'
+        self._state_str = f'Meas. no. {self._measurement_no}: Finished'
         self._is_measuring = False
+        self._finished = True
         
         return
 

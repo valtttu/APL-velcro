@@ -2,7 +2,7 @@ import serial
 import logging
 import time 
 
-
+Z_MAX = 70          # [mm]
 MAX_SPEED = 10      # [mm/s]
 MOVE_TIMEOUT = 60   # timeout for waiting stage movement [s]
 TIMEOUT = 3         # timeout for the serial communication [s]
@@ -23,7 +23,7 @@ class Stage:
         self._lower_limit_flag = False
         self._is_moving = False
         self._is_waiting = False
-        self._zmax = 70         # [mm]
+        self._zmax = Z_MAX       # [mm]
 
 
 
@@ -152,11 +152,11 @@ class Stage:
             if('pos' in tmp[0].lower()):
                 self._position = float(tmp[1].rstrip())
             elif('homed' in tmp[0].lower()):
-                self._is_homed = bool(tmp[1].rstrip())
+                self._is_homed =  '1' in tmp[1].rstrip()
             elif('ll' in tmp[0].lower()):
-                self._lower_limit_flag = bool(tmp[1].rstrip())
+                self._lower_limit_flag = '1' in tmp[1].rstrip()
             elif('ul' in tmp[0].lower()):
-                self._upper_limit_flag = bool(tmp[1].rstrip())
+                self._upper_limit_flag = '1' in tmp[1].rstrip()
 
 
 

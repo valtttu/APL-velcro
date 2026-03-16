@@ -28,6 +28,8 @@ btn1 = tk.Button(root, text="Test 1",
                             disabledforeground="gray",
                             fg="black",
                             highlightbackground="black",
+                            borderwidth=3,
+                            relief='solid',
                             highlightcolor="green",
                             highlightthickness=2,
                             justify="center",
@@ -54,6 +56,9 @@ btn2 = tk.Button(root, text="Test 2",
                             padx=10,
                             pady=10)
 
+lbl = tk.Label(root, text='My label', borderwidth=5, relief='solid', highlightbackground="white", highlightcolor='white')
+
+lbl.pack()
 btn1.pack()
 btn2.pack()
 btn2.bind('<ButtonPress-1>', lambda event: onPress(event))
