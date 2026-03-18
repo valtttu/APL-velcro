@@ -132,7 +132,7 @@ def updateGUI():
 
     # Get the next camera frame and display that
     frame = side_camera.get_latest_frame()
-    img = ImageTk.PhotoImage(Image.fromarray(frame, 'L').resize(canvas_size))
+    img = ImageTk.PhotoImage(Image.fromarray(frame, 'L').resize(frame_resize))
     canvas.itemconfig(image_container, image = img)
 
     if(measurer.is_recording()):
@@ -166,9 +166,11 @@ canvas = tk.Canvas(root, width = canvas_size[0], height = canvas_size[1], bg='#3
 canvas.grid(sticky='N',column=0, columnspan=8, row=0, rowspan=8, padx=10, pady=10)
 
 frame = side_camera.get_latest_frame()
-pil_image = Image.fromarray(frame, 'L').resize(canvas_size)
+frame_resolution = side_camera.get_resolution()
+frame_resize = (int(canvas_size[1]/frame_resolution[1]*frame_resolution[0]), canvas_size[1])
+pil_image = Image.fromarray(frame, 'L').resize(frame_resize)
 img = ImageTk.PhotoImage(pil_image)
-image_container = canvas.create_image(0,0, anchor='nw', image = img)
+image_container = canvas.create_image(int(canvas_size[0]/2),canvas_size[1]/2, anchor='center', image = img)
 oval = canvas.create_oval(5, 5, 25, 25, fill='', outline = '')
 
 
@@ -318,8 +320,8 @@ for i in range(len(keys)):
     entries[i].grid(column=col_span, row=start_row+i, columnspan=col_span-2, sticky='W')
     entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
 
-state3_label.grid(row=start_row + len(keys), column=0, columnspan=6, sticky='W')
-state4_label.grid(row=start_row + len(keys) + 1, column=0, columnspan=6, sticky='W')
+state3_label.grid(row=start_row + len(keys), column=0, columnspan=6, sticky='W', padx=10)
+state4_label.grid(row=start_row + len(keys) + 1, column=0, columnspan=6, sticky='W', padx=10)
 
 
 # Bind buttons for stage movement

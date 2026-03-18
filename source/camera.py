@@ -22,6 +22,7 @@ class Camera:
         self._frame_time = np.nan
         self._is_recording = False
         self._is_live = False
+        self._resolution = (720, 540)
 
         self._image_lock = threading.RLock()
         self._latest_frame = None
@@ -109,8 +110,14 @@ class Camera:
         '''
             Return the video writing status, tuple(is_saving, percentage)
         '''
-
         return (self._is_saving, self._save_progress)
+
+
+    def get_resolution(self) -> tuple[int]:
+        '''
+            Return the frame resolution
+        '''
+        return self._resolution
 
 
     

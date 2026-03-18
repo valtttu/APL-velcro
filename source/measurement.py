@@ -38,7 +38,7 @@ class Measurement:
         # Filename templates
         self._force_file_temp = self._params['sample ID']['value'] + '_force_N_'
         self._video_file_temp = self._params['sample ID']['value'] + '_video_N_'
-        self._measurement_no = 1
+        self._measurement_no = 0
 
         # Measuring thread
         self._meas_thread = threading.Thread()
