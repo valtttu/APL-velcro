@@ -246,8 +246,8 @@ class Measurement:
         else:
             self.stage.set_velocity(self._params['z-velocity meas.']['value'])
             res = [False, False]
-            res[0] = self.camera.start_recording(self._params['save path']['value'], f'{self._video_file_temp}{self._measurement_no:02d}')
-            res[1] = self.probe.start_recording(self._params['save path']['value'], f'{self._force_file_temp}{self._measurement_no:02d}.csv')
+            res[0] = self.camera.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_N_{self._measurement_no:02d}_video")
+            res[1] = self.probe.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_N_{self._measurement_no:02d}_force.csv")
         
         if(res[0] and res[1]):
             self.stage.drive_stage(True)

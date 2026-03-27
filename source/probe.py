@@ -49,6 +49,7 @@ class Probe:
         # Other needed variables
         self._save_fid = None
         self._latest_file = ''
+        self._sample_rate = 200
 
 
     ###########################################################
@@ -213,10 +214,14 @@ class Probe:
                     else:
                         self._d_latest = d_value
 
+                    # If recording, append the file
                     if(self._is_recording):
                         save_str = f'{time.time()}, {self._d_latest} \n'
                         self._save_fid.write(save_str)
                         self._save_fid.flush()
+
+                    # Sleep 90% of the acquisition cycle
+                    time.sleep(1/self._sample_rate*0.9)
 
                 else:
                     # Print TransferData error
