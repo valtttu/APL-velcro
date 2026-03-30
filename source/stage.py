@@ -81,14 +81,14 @@ class Stage:
             result = self._write_command(f'MOVE {pos}')
 
             if('move started' not in result.lower()):
-                logging.error(f'Error in moving to pos {pos}: {result}')
+                logging.debug(f'Error in moving to pos {pos}: {result}')
 
 
             if(wait):
                 t_start = time.time()
                 self._is_waiting = True
                 self._is_moving = True
-                while(time.time() - t_start < MOVE_TIMEOUT and self._is_moving):
+                while(time.time() - t_start < MOVE_TIMEOUT and self._is_moving and self._is_waiting):
                     
                     result = self._write_command('QSTATE')
                     self._parse_state(result)
@@ -116,6 +116,7 @@ class Stage:
 
 
     def stop(self):
+        self._is_waiting = False
         self._write_command('STOP')
 
 
@@ -148,7 +149,7 @@ class Stage:
         elif('ready' in pts[0].lower()):
             self._is_moving = False
         else:
-            logging.error(f'Got invalid reply for "QSTATE" {msg}')
+            logging.debug(f'Got invalid reply for "QSTATE" {msg}')
             return
         
         for i in range(1,len(pts)):

@@ -74,8 +74,8 @@ def toggle_manual_recording():
                 entry.config(state="disabled")
 
 
-def toggle_automatic_recording():
-    if(bt_start_automatic['activebackground'] == 'red'):
+def toggle_automatic_recording(enable = False):
+    if(measurer.is_measuring_automatic() or enable):
         measurer.stop_measurement()
         bt_start_manual.config(state=tk.NORMAL)
         bt_stage_home.config(state=tk.NORMAL)
@@ -128,7 +128,7 @@ def updateGUI():
 
     # Check if a measurement has finished
     if(measurer.has_finished()):
-        toggle_automatic_recording()
+        toggle_automatic_recording(enable=True)
 
     # Get the next camera frame and display that
     frame = side_camera.get_latest_frame()
@@ -146,6 +146,7 @@ def updateGUI():
 
 # Create the GUI window
 default_font = ("Ubuntu Light", 12)
+arrow_font = ("Arial Bold", 16)
 font_color = "#FFFFFF"
 
 root = tk.Tk()
@@ -225,7 +226,7 @@ bt_stage_up = tk.Button(root, text="↑",
                             cursor="hand2",
                             disabledforeground="gray",
                             fg="black",
-                            font=default_font,
+                            font=arrow_font,
                             highlightbackground="black",
                             highlightcolor="green",
                             highlightthickness=2,
@@ -245,7 +246,7 @@ bt_stage_down = tk.Button(root, text="↓",
                             cursor="hand2",
                             disabledforeground="gray",
                             fg="black",
-                            font=default_font,
+                            font=arrow_font,
                             highlightbackground="black",
                             highlightcolor="green",
                             highlightthickness=2,
@@ -319,6 +320,7 @@ for i in range(len(keys)):
     entries.append(tk.Entry(root,textvariable = text_vars[i], font=default_font))
     entries[i].grid(column=col_span, row=start_row+i, columnspan=col_span-2, sticky='W')
     entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
+    tk.Label(root, text=default_params[i]["unit"], foreground='white', bg='#300924', font=default_font).grid(column=col_span+2, row=start_row+i, columnspan=1, sticky='W')
 
 state3_label.grid(row=start_row + len(keys), column=0, columnspan=6, sticky='W', padx=10)
 state4_label.grid(row=start_row + len(keys) + 1, column=0, columnspan=6, sticky='W', padx=10)

@@ -4509,3 +4509,437 @@ Exiting...
 19-03-2026 11:38:32 ERROR:Got invalid reply for "QSTATE" 
 19-03-2026 11:42:49 ERROR:Got invalid reply for "QSTATE" 
 19-03-2026 11:42:52 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:31:52 INFO:Library version: 4.2.0.88
+30-03-2026 09:31:52 INFO:Number of cameras detected: 1
+30-03-2026 09:31:52 INFO:Opened device with serial number  22507263...
+30-03-2026 09:31:52 ERROR:ERROR: Could not connect to the micro controller
+30-03-2026 09:31:52 ERROR:Could not start the hardware!
+Exiting...
+30-03-2026 09:31:58 INFO:Library version: 4.2.0.88
+30-03-2026 09:31:58 INFO:Number of cameras detected: 1
+30-03-2026 09:31:58 INFO:Opened device with serial number  22507263...
+30-03-2026 09:33:04 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:33:07 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:36:56 INFO:Updating params:
+30-03-2026 09:36:56 INFO:	Successfully updated "spring constant": 7400
+30-03-2026 09:36:56 INFO:	Successfully updated "z-velocity meas.": 0.5
+30-03-2026 09:36:56 INFO:	Successfully updated "z-velocity default": 2
+30-03-2026 09:36:56 INFO:	Successfully updated "pushing force": 1
+30-03-2026 09:36:56 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 09:36:56 INFO:	Successfully updated "scan length": 10
+30-03-2026 09:36:56 INFO:	Successfully updated "repeats": 1
+30-03-2026 09:36:56 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 09:36:56 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 09:37:07 INFO:Updating params:
+30-03-2026 09:37:07 INFO:	Successfully updated "spring constant": 7400
+30-03-2026 09:37:07 INFO:	Successfully updated "z-velocity meas.": 0.5
+30-03-2026 09:37:07 INFO:	Successfully updated "z-velocity default": 4
+30-03-2026 09:37:07 INFO:	Successfully updated "pushing force": 1
+30-03-2026 09:37:07 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 09:37:07 INFO:	Successfully updated "scan length": 10
+30-03-2026 09:37:07 INFO:	Successfully updated "repeats": 1
+30-03-2026 09:37:07 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 09:37:07 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 09:37:10 INFO:Updating params:
+30-03-2026 09:37:10 INFO:	Successfully updated "spring constant": 7400
+30-03-2026 09:37:10 INFO:	Successfully updated "z-velocity meas.": 1
+30-03-2026 09:37:10 INFO:	Successfully updated "z-velocity default": 4
+30-03-2026 09:37:10 INFO:	Successfully updated "pushing force": 1
+30-03-2026 09:37:10 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 09:37:10 INFO:	Successfully updated "scan length": 10
+30-03-2026 09:37:10 INFO:	Successfully updated "repeats": 1
+30-03-2026 09:37:10 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 09:37:10 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 09:38:13 INFO:Starting measurement 1 for sample ID Hook
+30-03-2026 09:38:13 ERROR:Error in moving to pos 35.0: BUSY, POS=36.425, UL=0, LL=0, HOMED=1
+30-03-2026 09:38:14 ERROR:Got invalid reply for "QSTATE"  LHOMED=1
+30-03-2026 09:38:14 ERROR:Got invalid reply for "QSTATE" EMove finished
+30-03-2026 09:38:14 INFO:Started recording with FPS 199.9
+30-03-2026 09:38:14 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 09:38:14 ERROR:Error in moving to pos 70: BUSY, POS=35.080, UL=0, LL=0, HOMED=1
+30-03-2026 09:38:14 INFO:		Starting approach
+30-03-2026 09:38:17 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:38:18 INFO:		Approach was stopped: Reason user input
+30-03-2026 09:38:18 INFO:Starting measurement 2 for sample ID Hook
+30-03-2026 09:38:25 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 09:38:25 ERROR:Error in moving to pos 35.0: BUSY, POS=38.080, UL=0, LL=0, HOMED=1
+30-03-2026 09:38:28 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:38:28 INFO:Started recording with FPS 199.9
+30-03-2026 09:38:28 ERROR:Error in moving to pos 70: BUSY, POS=35.040, UL=0, LL=0, HOMED=1
+30-03-2026 09:38:28 INFO:		Starting approach
+30-03-2026 09:38:31 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:38:33 INFO:		Approach was stopped: Reason user input
+30-03-2026 09:39:23 INFO:Started recording with FPS 199.9
+30-03-2026 09:56:36 INFO:Library version: 4.2.0.88
+30-03-2026 09:56:36 INFO:Number of cameras detected: 1
+30-03-2026 09:56:36 INFO:Opened device with serial number  22507263...
+30-03-2026 09:56:58 INFO:Library version: 4.2.0.88
+30-03-2026 09:56:58 INFO:Number of cameras detected: 1
+30-03-2026 09:56:58 INFO:Opened device with serial number  22507263...
+30-03-2026 09:57:11 INFO:Updating params:
+30-03-2026 09:57:11 INFO:	Successfully updated "spring constant": 7400
+30-03-2026 09:57:11 INFO:	Successfully updated "z-velocity meas.": 0.5
+30-03-2026 09:57:11 INFO:	Successfully updated "z-velocity default": 2
+30-03-2026 09:57:11 INFO:	Successfully updated "pushing force": 1
+30-03-2026 09:57:11 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 09:57:11 INFO:	Successfully updated "scan length": 10
+30-03-2026 09:57:11 INFO:	Successfully updated "repeats": 1
+30-03-2026 09:57:11 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 09:57:11 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 09:57:20 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:57:23 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:57:52 INFO:Updating params:
+30-03-2026 09:57:52 INFO:	Successfully updated "spring constant": 7400
+30-03-2026 09:57:52 INFO:	Successfully updated "z-velocity meas.": 0.5
+30-03-2026 09:57:52 INFO:	Successfully updated "z-velocity default": 5
+30-03-2026 09:57:52 INFO:	Successfully updated "pushing force": 1
+30-03-2026 09:57:52 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 09:57:52 INFO:	Successfully updated "scan length": 10
+30-03-2026 09:57:52 INFO:	Successfully updated "repeats": 1
+30-03-2026 09:57:52 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 09:57:52 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 09:57:56 INFO:Updating params:
+30-03-2026 09:57:56 INFO:	Successfully updated "spring constant": 7400
+30-03-2026 09:57:56 INFO:	Successfully updated "z-velocity meas.": 2
+30-03-2026 09:57:56 INFO:	Successfully updated "z-velocity default": 5
+30-03-2026 09:57:56 INFO:	Successfully updated "pushing force": 1
+30-03-2026 09:57:56 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 09:57:56 INFO:	Successfully updated "scan length": 10
+30-03-2026 09:57:56 INFO:	Successfully updated "repeats": 1
+30-03-2026 09:57:56 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 09:57:56 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 09:58:06 INFO:Updating params:
+30-03-2026 09:58:06 INFO:	Successfully updated "spring constant": 7400
+30-03-2026 09:58:06 INFO:	Successfully updated "z-velocity meas.": 2
+30-03-2026 09:58:06 INFO:	Successfully updated "z-velocity default": 5
+30-03-2026 09:58:06 INFO:	Successfully updated "pushing force": 1
+30-03-2026 09:58:06 INFO:	Successfully updated "z start meas.": 36
+30-03-2026 09:58:06 INFO:	Successfully updated "scan length": 2
+30-03-2026 09:58:06 INFO:	Successfully updated "repeats": 1
+30-03-2026 09:58:06 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 09:58:06 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 09:58:54 INFO:Starting measurement 1 for sample ID Hook
+30-03-2026 09:58:54 ERROR:Error in moving to pos 36.0: BUSY, POS=2.208, UL=0, LL=0, HOMED=1
+30-03-2026 09:58:54 ERROR:Got invalid reply for "QSTATE" S4 U=L0 =1
+30-03-2026 09:58:57 ERROR:Got invalid reply for "QSTATE" BUY, POS=2.16,L0, L=,HOMEDBSY,  S=   83 U   ED=   
+30-03-2026 09:58:57 ERROR:Got invalid reply for "QSTATE" UO     L  L 0M   
+30-03-2026 09:58:57 ERROR:Got invalid reply for "QSTATE" , POS=15.330, UL=0, LL=0, HOMED=1
+30-03-2026 09:59:03 INFO:Started recording with FPS 199.9
+30-03-2026 09:59:03 ERROR:Given file already exists!
+30-03-2026 09:59:03 ERROR:Could not start recording, aborting the measurement
+30-03-2026 09:59:03 ERROR:Got invalid reply for "QSTATE" Stopping
+30-03-2026 09:59:06 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:59:47 INFO:Starting measurement 2 for sample ID Hook
+30-03-2026 09:59:47 ERROR:Error in moving to pos 36.0: READY, POS=36.000, UL=0, LL=0, HOMED=1
+30-03-2026 09:59:50 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:59:50 INFO:Started recording with FPS 199.9
+30-03-2026 09:59:50 ERROR:Error in moving to pos 70: BUSY, POS=36.080, UL=0, LL=0, HOMED=1
+30-03-2026 09:59:50 INFO:		Starting approach
+30-03-2026 09:59:53 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 09:59:53 INFO:		Starting retracting
+30-03-2026 09:59:53 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 09:59:53 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 09:59:55 ERROR:Got invalid reply for "QSTATE" Stopping
+30-03-2026 09:59:58 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 09:59:58 INFO:		Done!
+30-03-2026 09:59:58 INFO:Measurement stopped
+30-03-2026 09:59:58 INFO:Starting measurement 3 for sample ID Hook
+30-03-2026 10:00:11 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:00:11 ERROR:Error in moving to pos 36.0: BUSY, POS=37.343, UL=0, LL=0, HOMED=1
+30-03-2026 10:00:11 ERROR:Got invalid reply for "QSTATE" BUY POS=37.135, UL=0,LL=0, HOMED1
+30-03-2026 10:00:11 ERROR:Got invalid reply for "QSTATE" S, =Move finished
+30-03-2026 10:00:12 INFO:Started recording with FPS 199.9
+30-03-2026 10:00:12 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:00:12 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:00:12 INFO:		Starting approach
+30-03-2026 10:00:15 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:00:15 INFO:		Starting retracting
+30-03-2026 10:00:15 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:00:15 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:00:18 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:00:19 INFO:		Done!
+30-03-2026 10:00:22 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:08:34 INFO:Library version: 4.2.0.88
+30-03-2026 10:08:34 INFO:Number of cameras detected: 1
+30-03-2026 10:08:34 INFO:Opened device with serial number  22507263...
+30-03-2026 10:08:40 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:08:43 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:09:26 INFO:Updating params:
+30-03-2026 10:09:26 INFO:	Successfully updated "spring constant": 7200
+30-03-2026 10:09:26 INFO:	Successfully updated "z-velocity meas.": 2
+30-03-2026 10:09:26 INFO:	Successfully updated "z-velocity default": 5
+30-03-2026 10:09:26 INFO:	Successfully updated "pushing force": 1
+30-03-2026 10:09:26 INFO:	Successfully updated "z start meas.": 36
+30-03-2026 10:09:26 INFO:	Successfully updated "scan length": 2
+30-03-2026 10:09:26 INFO:	Successfully updated "repeats": 1
+30-03-2026 10:09:26 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 10:09:26 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 10:09:42 INFO:Starting measurement 1 for sample ID Hook
+30-03-2026 10:09:42 ERROR:Got invalid reply for "QSTATE" USYOS2.2 U LL0,D=
+30-03-2026 10:09:42 ERROR:Error in moving to pos 36.0: B, P=12 L=0 = HOME1BUSY, POS=2.420, UL=0, LL=0, HOMED=1
+30-03-2026 10:09:42 ERROR:Got invalid reply for "QSTATE" UY O2.9, ,  HOMED=
+30-03-2026 10:09:45 ERROR:Got invalid reply for "QSTATE" BS,PS=62UL=0LL=0,1BUSY, PS=   04 U   ED=   
+30-03-2026 10:09:45 ERROR:Got invalid reply for "QSTATE" O     L  L 0M   
+30-03-2026 10:09:45 ERROR:Got invalid reply for "QSTATE" , POS=15.542, UL=0, LL=0, HOMED=1
+30-03-2026 10:09:51 INFO:Started recording with FPS 199.9
+30-03-2026 10:09:51 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:09:51 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:09:51 INFO:		Starting approach
+30-03-2026 10:09:54 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:09:54 INFO:		Starting retracting
+30-03-2026 10:09:54 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:09:54 ERROR:Error in moving to pos 34.0: BUSY, POS=41.120, UL=0, LL=0, HOMED=1
+30-03-2026 10:09:57 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:09:58 INFO:		Done!
+30-03-2026 10:10:01 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:10:01 INFO:Starting measurement 2 for sample ID Hook
+30-03-2026 10:10:09 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:10:09 ERROR:Error in moving to pos 36.0: BUSY, POS=34.208, UL=0, LL=0, HOMED=1
+30-03-2026 10:10:09 ERROR:Got invalid reply for "QSTATE" BS4    LL=0 ED 
+30-03-2026 10:10:09 ERROR:Got invalid reply for "QSTATE" UY, POS=3.  UL=0  HOM=1 ove finished
+30-03-2026 10:10:10 INFO:Started recording with FPS 199.9
+30-03-2026 10:10:10 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:10:10 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:10:10 INFO:		Starting approach
+30-03-2026 10:10:13 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:10:13 INFO:		Starting retracting
+30-03-2026 10:10:13 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:10:13 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:10:16 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:10:17 INFO:		Done!
+30-03-2026 10:10:17 ERROR:Given file already exists!
+30-03-2026 10:10:20 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:10:20 INFO:Starting measurement 3 for sample ID Hook
+30-03-2026 10:10:20 INFO:Measurement stopped
+30-03-2026 10:10:25 INFO:Starting measurement 4 for sample ID Hook
+30-03-2026 10:10:28 INFO:Measurement stopped
+30-03-2026 10:17:30 INFO:Library version: 4.2.0.88
+30-03-2026 10:17:30 INFO:Number of cameras detected: 1
+30-03-2026 10:17:30 INFO:Opened device with serial number  22507263...
+30-03-2026 10:17:44 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:17:47 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:18:10 INFO:Updating params:
+30-03-2026 10:18:10 INFO:	Successfully updated "spring constant": 7200
+30-03-2026 10:18:10 INFO:	Successfully updated "z-velocity meas.": 0.5
+30-03-2026 10:18:10 INFO:	Successfully updated "z-velocity default": 2
+30-03-2026 10:18:10 INFO:	Successfully updated "pushing force": 1
+30-03-2026 10:18:10 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 10:18:10 INFO:	Successfully updated "scan length": 10
+30-03-2026 10:18:10 INFO:	Successfully updated "repeats": 1
+30-03-2026 10:18:10 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 10:18:10 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 10:18:28 INFO:Updating params:
+30-03-2026 10:18:28 INFO:	Successfully updated "spring constant": 7200
+30-03-2026 10:18:28 INFO:	Successfully updated "z-velocity meas.": 2
+30-03-2026 10:18:28 INFO:	Successfully updated "z-velocity default": 5
+30-03-2026 10:18:28 INFO:	Successfully updated "pushing force": 1
+30-03-2026 10:18:28 INFO:	Successfully updated "z start meas.": 36
+30-03-2026 10:18:28 INFO:	Successfully updated "scan length": 2
+30-03-2026 10:18:28 INFO:	Successfully updated "repeats": 1
+30-03-2026 10:18:28 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 10:18:28 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 10:21:42 INFO:Starting measurement 1 for sample ID Hook
+30-03-2026 10:21:42 ERROR:Error in moving to pos 36.0: BUSY, POS=9.080, UL=0, LL=0, HOMED=1
+30-03-2026 10:21:45 ERROR:Got invalid reply for "QSTATE"  L=0,0 HMD=
+30-03-2026 10:21:49 INFO:Started recording with FPS 199.9
+30-03-2026 10:21:49 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:21:49 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:21:49 INFO:		Starting approach
+30-03-2026 10:21:52 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:21:52 INFO:		Starting retracting
+30-03-2026 10:21:52 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:21:52 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:21:55 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:21:56 INFO:		Done!
+30-03-2026 10:21:59 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:22:17 INFO:Starting measurement 2 for sample ID Hook
+30-03-2026 10:22:17 ERROR:Error in moving to pos 36.0: BUSY, POS=34.208, UL=0, LL=0, HOMED=1
+30-03-2026 10:22:18 ERROR:Got invalid reply for "QSTATE" B O=4.47 U OMED=1
+30-03-2026 10:22:18 ERROR:Got invalid reply for "QSTATE" USY,PS31,L=0, LL=0,HMove finished
+30-03-2026 10:22:18 INFO:Started recording with FPS 199.9
+30-03-2026 10:22:18 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:22:18 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:22:18 INFO:		Starting approach
+30-03-2026 10:22:21 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:22:21 INFO:		Starting retracting
+30-03-2026 10:22:21 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:22:21 ERROR:Error in moving to pos 34.0: Stopping
+30-03-2026 10:22:24 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:22:26 INFO:		Done!
+30-03-2026 10:22:26 ERROR:Given file already exists!
+30-03-2026 10:22:26 INFO:Measurement stopped
+30-03-2026 10:34:44 INFO:Library version: 4.2.0.88
+30-03-2026 10:34:44 INFO:Number of cameras detected: 1
+30-03-2026 10:34:44 INFO:Opened device with serial number  22507263...
+30-03-2026 10:34:54 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:34:57 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:35:35 INFO:Updating params:
+30-03-2026 10:35:35 INFO:	Successfully updated "spring constant": 7200
+30-03-2026 10:35:35 INFO:	Successfully updated "z-velocity meas.": 2
+30-03-2026 10:35:35 INFO:	Successfully updated "z-velocity default": 6
+30-03-2026 10:35:35 INFO:	Successfully updated "pushing force": 1
+30-03-2026 10:35:35 INFO:	Successfully updated "z start meas.": 36
+30-03-2026 10:35:35 INFO:	Successfully updated "scan length": 2
+30-03-2026 10:35:35 INFO:	Successfully updated "repeats": 2
+30-03-2026 10:35:35 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 10:35:35 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 10:35:37 INFO:Starting measurement  0/2 (1) for sample ID Hook
+30-03-2026 10:35:37 ERROR:Error in moving to pos 36.0: BUSY, POS=2.231, UL=0, LL=0, HOMED=1
+30-03-2026 10:35:40 ERROR:Got invalid reply for "QSTATE" USY=.4  0 0 M
+30-03-2026 10:35:40 ERROR:Got invalid reply for "QSTATE" B, POS27 UL=,LL=,HOED=1
+30-03-2026 10:35:45 INFO:Started recording with FPS 199.9
+30-03-2026 10:35:45 ERROR:Given file already exists!
+30-03-2026 10:35:45 ERROR:Could not start recording, aborting the measurement
+30-03-2026 10:35:45 ERROR:Got invalid reply for "QSTATE" Stopping
+30-03-2026 10:35:48 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:36:05 INFO:Starting measurement  0/2 (2) for sample ID Hook
+30-03-2026 10:36:05 ERROR:Error in moving to pos 36.0: READY, POS=36.000, UL=0, LL=0, HOMED=1
+30-03-2026 10:36:08 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:36:08 INFO:Started recording with FPS 199.9
+30-03-2026 10:36:08 ERROR:Error in moving to pos 70: BUSY, POS=36.080, UL=0, LL=0, HOMED=1
+30-03-2026 10:36:08 INFO:		Starting approach
+30-03-2026 10:36:11 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:36:11 INFO:		Starting retracting
+30-03-2026 10:36:11 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:36:11 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:36:14 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:36:15 INFO:		Done!
+30-03-2026 10:36:15 INFO:Starting measurement  1/2 (3) for sample ID Hook
+30-03-2026 10:36:18 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" USOS=34.4  U L HOMED=
+30-03-2026 10:36:26 ERROR:Error in moving to pos 36.0: BY, P8 L=  L=0 1BUSY, POS=34.721, UL=0, LL=0, HOMED=1
+30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" B PO36,UL0 = HME1
+30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" USY,S=4.91 =,LL0,OD=Move finished
+30-03-2026 10:36:26 INFO:Started recording with FPS 199.9
+30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:36:27 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:36:27 INFO:		Starting approach
+30-03-2026 10:36:29 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:36:29 INFO:		Starting retracting
+30-03-2026 10:36:29 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:36:30 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:36:33 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:36:34 INFO:		Done!
+30-03-2026 10:36:37 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:38:33 INFO:Updating params:
+30-03-2026 10:38:33 INFO:	Successfully updated "spring constant": 7200
+30-03-2026 10:38:33 INFO:	Successfully updated "z-velocity meas.": 2
+30-03-2026 10:38:33 INFO:	Successfully updated "z-velocity default": 6
+30-03-2026 10:38:33 INFO:	Successfully updated "pushing force": 1
+30-03-2026 10:38:33 INFO:	Successfully updated "z start meas.": 36
+30-03-2026 10:38:33 INFO:	Successfully updated "scan length": 2
+30-03-2026 10:38:33 INFO:	Successfully updated "repeats": 3
+30-03-2026 10:38:33 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 10:38:33 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 10:38:35 INFO:Starting measurement  0/3 (4) for sample ID Hook
+30-03-2026 10:38:35 ERROR:Got invalid reply for "QSTATE" UY ,U=0, L0OED=1
+30-03-2026 10:38:36 ERROR:Error in moving to pos 36.0: BS,POS=34.240 LL=, HMBUSY, POS=34.481, UL=0, LL=0, HOMED=1
+30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" UY,P472,=,0 E=
+30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" BS OS=3.1 UL0 LL=,HOMD1BUSY, POS=34.961, UL=0, LL=0, HOMED=1
+30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" Move finished
+30-03-2026 10:38:36 INFO:Started recording with FPS 199.9
+30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:38:36 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:38:36 INFO:		Starting approach
+30-03-2026 10:38:39 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:38:39 INFO:		Starting retracting
+30-03-2026 10:38:39 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:38:39 ERROR:Error in moving to pos 34.0: Stopping
+30-03-2026 10:38:42 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:38:44 INFO:		Done!
+30-03-2026 10:38:44 INFO:Starting measurement  1/3 (5) for sample ID Hook
+30-03-2026 10:38:44 INFO:Measurement stopped
+30-03-2026 10:38:52 INFO:Starting measurement  0/3 (6) for sample ID Hook
+30-03-2026 10:38:53 ERROR:Error in moving to pos 36.0: READY, POS=36.000, UL=0, LL=0, HOMED=1
+30-03-2026 10:38:56 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:38:56 INFO:Started recording with FPS 199.9
+30-03-2026 10:38:56 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:38:56 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:38:56 INFO:		Starting approach
+30-03-2026 10:38:59 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:38:59 INFO:		Starting retracting
+30-03-2026 10:38:59 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:38:59 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:02 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:39:03 INFO:		Done!
+30-03-2026 10:39:03 INFO:Starting measurement  1/3 (7) for sample ID Hook
+30-03-2026 10:39:06 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:39:14 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:39:14 ERROR:Error in moving to pos 36.0: BUSY, POS=34.481, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:14 ERROR:Got invalid reply for "QSTATE" USYPOS=34.72 L=  L OMED=1
+30-03-2026 10:39:14 ERROR:Got invalid reply for "QSTATE" B,   U L=  H  USY, POS=34.961, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:14 ERROR:Got invalid reply for "QSTATE" Move finished
+30-03-2026 10:39:15 INFO:Started recording with FPS 199.9
+30-03-2026 10:39:15 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:39:15 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:15 INFO:		Starting approach
+30-03-2026 10:39:17 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:39:17 INFO:		Starting retracting
+30-03-2026 10:39:17 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:39:18 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:21 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:39:22 INFO:		Done!
+30-03-2026 10:39:22 INFO:Starting measurement  2/3 (8) for sample ID Hook
+30-03-2026 10:39:25 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:39:33 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:39:33 ERROR:Error in moving to pos 36.0: BUSY, POS=34.481, UL=0, LL, HOMED=1
+30-03-2026 10:39:33 ERROR:Got invalid reply for "QSTATE" U, 31 =0, L= HOMED
+30-03-2026 10:39:33 ERROR:Got invalid reply for "QSTATE" =0BSYPOS=4.72 ULL0,=1BUSY, POS=34.961, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:33 ERROR:Got invalid reply for "QSTATE" Move finished
+30-03-2026 10:39:33 INFO:Started recording with FPS 199.9
+30-03-2026 10:39:33 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:39:33 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:33 INFO:		Starting approach
+30-03-2026 10:39:36 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:39:36 INFO:		Starting retracting
+30-03-2026 10:39:36 ERROR:Got invalid reply for "QSTATE" Move started
+30-03-2026 10:39:36 ERROR:Error in moving to pos 34.0: BUSY, POS=41.040, UL=0, LL=0, HOMED=1
+30-03-2026 10:39:39 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:39:41 INFO:		Done!
+30-03-2026 10:39:41 ERROR:Given file already exists!
+30-03-2026 10:39:44 ERROR:Got invalid reply for "QSTATE" 
+30-03-2026 10:46:58 INFO:Library version: 4.2.0.88
+30-03-2026 10:46:58 INFO:Number of cameras detected: 1
+30-03-2026 10:46:58 INFO:Opened device with serial number  22507263...
+30-03-2026 10:48:05 INFO:Updating params:
+30-03-2026 10:48:05 INFO:	Successfully updated "spring constant": 7200
+30-03-2026 10:48:05 INFO:	Successfully updated "z-velocity meas.": 5
+30-03-2026 10:48:05 INFO:	Successfully updated "z-velocity default": 2
+30-03-2026 10:48:05 INFO:	Successfully updated "pushing force": 1
+30-03-2026 10:48:05 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 10:48:05 INFO:	Successfully updated "scan length": 2
+30-03-2026 10:48:05 INFO:	Successfully updated "repeats": 1
+30-03-2026 10:48:05 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 10:48:05 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 10:48:08 INFO:Started recording with FPS 199.9
+30-03-2026 10:48:34 INFO:Updating params:
+30-03-2026 10:48:34 INFO:	Successfully updated "spring constant": 7200
+30-03-2026 10:48:34 INFO:	Successfully updated "z-velocity meas.": 2
+30-03-2026 10:48:34 INFO:	Successfully updated "z-velocity default": 5
+30-03-2026 10:48:34 INFO:	Successfully updated "pushing force": 1
+30-03-2026 10:48:34 INFO:	Successfully updated "z start meas.": 35
+30-03-2026 10:48:34 INFO:	Successfully updated "scan length": 2
+30-03-2026 10:48:34 INFO:	Successfully updated "repeats": 1
+30-03-2026 10:48:34 INFO:	Successfully updated "save path": C:/Users/turkkiv2/APL-Velcro/
+30-03-2026 10:48:34 INFO:	Successfully updated "sample ID": Hook
+30-03-2026 10:49:02 INFO:Starting measurement  1/1 (1) for sample ID Hook
+30-03-2026 10:49:05 INFO:Started recording with FPS 199.9
+30-03-2026 10:49:05 INFO:		Starting approach
+30-03-2026 10:49:09 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:49:09 INFO:		Starting retracting
+30-03-2026 10:49:14 INFO:		Done!
+30-03-2026 10:49:14 INFO:	Done with sample  ID {self._params['sample ID']['value']}!
+30-03-2026 10:50:16 INFO:Starting measurement  1/1 (2) for sample ID Hook
+30-03-2026 10:50:17 INFO:Started recording with FPS 199.9
+30-03-2026 10:50:17 INFO:		Starting approach
+30-03-2026 10:50:20 INFO:		Approach was stopped: Reason user input
+30-03-2026 10:50:40 INFO:Starting measurement  1/1 (3) for sample ID Hook
+30-03-2026 10:50:43 INFO:Started recording with FPS 199.9
+30-03-2026 10:50:43 INFO:		Starting approach
+30-03-2026 10:50:47 INFO:		Approach was stopped: Pushing force limit reached
+30-03-2026 10:50:47 INFO:		Starting retracting
+30-03-2026 10:50:51 INFO:		Done!
+30-03-2026 10:50:51 ERROR:Given file already exists!
+30-03-2026 10:50:51 INFO:	Done with sample  ID {self._params['sample ID']['value']}!
+30-03-2026 10:50:51 INFO:Measurement stopped

@@ -20,6 +20,4 @@ This repo contains mechanical design and control software for hook adhesion micr
 
 
 ## ToDo log
-1. Find out why `stop_measurement()` works interestingly
-2. Enable saving parameters in a file
-3. Implement multiple repeats in the automatic measurements
+1. Find out where the lag in measurement starting comes from
