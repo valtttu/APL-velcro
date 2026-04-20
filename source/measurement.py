@@ -252,6 +252,7 @@ class Measurement:
             Perform a measurement: Uses the params saved in `self._params` and saves data with the current measurement number 
         '''
         n = self._params['repeats']['value']
+        start_no = self._measurement_no+1
         for i in range(n):
             # Increment measurement no. and print logging info
             self._measurement_no += 1
@@ -351,7 +352,7 @@ class Measurement:
 
         self._is_measuring = False
         self._finished = True
-        self.print_parameters(self._params['save path']['value'], f"{self._params['sample ID']['value']}_params.txt")
+        self.print_parameters(self._params['save path']['value'], f"{self._params['sample ID']['value']}_N{start_no:02d}-N{self._measurement_no:02d}_params.txt")
         logging.info(F"\tDone with sample  ID {self._params['sample ID']['value']}!")
         self._state_str = f'Finished all {n} measurements!'
         

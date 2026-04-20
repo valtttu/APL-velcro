@@ -16,6 +16,10 @@ This repo contains mechanical design and control software for hook adhesion micr
 
 ### Hardware design
 
+<center>
+    <img src="./figs/HAM_setup_drawing.png" alt="Solidworks model of the setup" width="90%" height="auto">
+</center>
+
 ### Software implementation
 
 
