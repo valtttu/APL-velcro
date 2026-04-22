@@ -38,6 +38,7 @@ class Probe:
         # Flags
         self._is_open = False
         self._is_recording = False
+        self._has_errors = False
 
         # The acquisition thread
         self._aq_thread = threading.Thread()
@@ -50,6 +51,7 @@ class Probe:
         self._save_fid = None
         self._latest_file = ''
         self._sample_rate = 200
+        self._error_counter = 0
 
 
     ###########################################################
@@ -150,11 +152,18 @@ class Probe:
     ###########################################################
     # Stop recording data
     ###########################################################
-    def stop_recording(self) -> bool:
+    def stop_recording(self):
         if(self._is_recording):
             self._is_recording = False
             self._save_fid.close()
 
+
+
+    ###########################################################
+    # Get error state
+    ###########################################################
+    def get_error_state(self) -> bool:
+        return self._has_errors
     
 
     ###########################################################
@@ -223,9 +232,18 @@ class Probe:
                     # Sleep 90% of the acquisition cycle
                     time.sleep(1/self._sample_rate*0.9)
 
+                    # Clear the error counter
+                    self._error_counter = 0
+                    self._has_errors = False
+
                 else:
                     # Print TransferData error
-                    logging.error(self._sensor.GetError(1024).split('.')[0])
+                    self._error_counter += 1
+                    if(self._error_counter < 5):
+                        logging.error(self._sensor.GetError(1024).split('.')[0])
+                    else:
+                        self._latest_file = 'ERROR in acquisition'
+                        self._has_errors = True
             
             else:
                 time.sleep(0.001)

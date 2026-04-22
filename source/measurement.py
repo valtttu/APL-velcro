@@ -279,6 +279,11 @@ class Measurement:
             if(not self._is_measuring):
                 self._finished = True
                 return
+            elif(self.probe.get_error_state()):
+                self._finished = True
+                logging.error('Distance sensor in an error state, aborting the measurement')
+                self._state_str = 'Distance sensor error!'
+                return
             else:
                 self.stage.set_velocity(self._params['z-velocity meas.']['value'])
                 res = [False, False]

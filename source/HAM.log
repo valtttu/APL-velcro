@@ -4678,7 +4678,8 @@ Exiting...
 30-03-2026 10:09:42 ERROR:Got invalid reply for "QSTATE" USYOS2.2 U LL0,D=
 30-03-2026 10:09:42 ERROR:Error in moving to pos 36.0: B, P=12 L=0 = HOME1BUSY, POS=2.420, UL=0, LL=0, HOMED=1
 30-03-2026 10:09:42 ERROR:Got invalid reply for "QSTATE" UY O2.9, ,  HOMED=
-30-03-2026 10:09:45 ERROR:Got invalid reply for "QSTATE" BS,PS=62UL=0LL=0,1BUSY, PS=   04 U   ED=   
+30-03-2026 10:09:45 ERROR:Got invalid reply for "QSTATE" BS,PS=62UL=0LL=0,1
+BUSY, PS=   04 U   ED=   
 30-03-2026 10:09:45 ERROR:Got invalid reply for "QSTATE" O     L  L 0M   
 30-03-2026 10:09:45 ERROR:Got invalid reply for "QSTATE" , POS=15.542, UL=0, LL=0, HOMED=1
 30-03-2026 10:09:51 INFO:Started recording with FPS 199.9
@@ -4755,7 +4756,8 @@ Exiting...
 30-03-2026 10:22:17 INFO:Starting measurement 2 for sample ID Hook
 30-03-2026 10:22:17 ERROR:Error in moving to pos 36.0: BUSY, POS=34.208, UL=0, LL=0, HOMED=1
 30-03-2026 10:22:18 ERROR:Got invalid reply for "QSTATE" B O=4.47 U OMED=1
-30-03-2026 10:22:18 ERROR:Got invalid reply for "QSTATE" USY,PS31,L=0, LL=0,HMove finished
+30-03-2026 10:22:18 ERROR:Got invalid reply for "QSTATE" USY,PS31,L=0, LL=0,H
+Move finished
 30-03-2026 10:22:18 INFO:Started recording with FPS 199.9
 30-03-2026 10:22:18 ERROR:Got invalid reply for "QSTATE" Move started
 30-03-2026 10:22:18 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
@@ -4808,9 +4810,11 @@ Exiting...
 30-03-2026 10:36:18 ERROR:Got invalid reply for "QSTATE" 
 30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" Move started
 30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" USOS=34.4  U L HOMED=
-30-03-2026 10:36:26 ERROR:Error in moving to pos 36.0: BY, P8 L=  L=0 1BUSY, POS=34.721, UL=0, LL=0, HOMED=1
+30-03-2026 10:36:26 ERROR:Error in moving to pos 36.0: BY, P8 L=  L=0 1
+BUSY, POS=34.721, UL=0, LL=0, HOMED=1
 30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" B PO36,UL0 = HME1
-30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" USY,S=4.91 =,LL0,OD=Move finished
+30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" USY,S=4.91 =,LL0,OD=
+Move finished
 30-03-2026 10:36:26 INFO:Started recording with FPS 199.9
 30-03-2026 10:36:26 ERROR:Got invalid reply for "QSTATE" Move started
 30-03-2026 10:36:27 ERROR:Error in moving to pos 70: BUSY, POS=36.160, UL=0, LL=0, HOMED=1
@@ -4836,7 +4840,8 @@ Exiting...
 30-03-2026 10:38:35 ERROR:Got invalid reply for "QSTATE" UY ,U=0, L0OED=1
 30-03-2026 10:38:36 ERROR:Error in moving to pos 36.0: BS,POS=34.240 LL=, HMBUSY, POS=34.481, UL=0, LL=0, HOMED=1
 30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" UY,P472,=,0 E=
-30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" BS OS=3.1 UL0 LL=,HOMD1BUSY, POS=34.961, UL=0, LL=0, HOMED=1
+30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" BS OS=3.1 UL0 LL=,HOMD1
+BUSY, POS=34.961, UL=0, LL=0, HOMED=1
 30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" Move finished
 30-03-2026 10:38:36 INFO:Started recording with FPS 199.9
 30-03-2026 10:38:36 ERROR:Got invalid reply for "QSTATE" Move started
@@ -5359,3 +5364,587 @@ Exiting...
 31-03-2026 20:18:13 INFO:		Starting retracting
 31-03-2026 20:18:31 INFO:		Done!
 31-03-2026 20:18:31 INFO:	Done with sample  ID Hook3-t3!
+21-04-2026 08:49:00 INFO:Library version: 4.2.0.88
+21-04-2026 08:49:00 INFO:Number of cameras detected: 1
+21-04-2026 08:49:00 INFO:Opened device with serial number  22507263...
+21-04-2026 08:49:01 ERROR:ERROR: Could not connect to the micro controller
+21-04-2026 08:49:01 ERROR:Could not start the hardware!
+Exiting...
+21-04-2026 08:49:07 INFO:Library version: 4.2.0.88
+21-04-2026 08:49:07 INFO:Number of cameras detected: 1
+21-04-2026 08:49:07 INFO:Opened device with serial number  22507263...
+21-04-2026 09:42:04 INFO:Library version: 4.2.0.88
+21-04-2026 09:42:04 INFO:Number of cameras detected: 1
+21-04-2026 09:42:04 INFO:Opened device with serial number  22507263...
+21-04-2026 10:06:43 INFO:Updating params:
+21-04-2026 10:06:43 INFO:	Successfully updated "spring constant": 400
+21-04-2026 10:06:43 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:06:43 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:06:43 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:06:43 INFO:	Successfully updated "z start meas.": 35
+21-04-2026 10:06:43 INFO:	Successfully updated "scan length": 10
+21-04-2026 10:06:43 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:06:43 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:06:43 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:10:13 INFO:Updating params:
+21-04-2026 10:10:13 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:10:13 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:10:13 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:10:13 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:10:13 INFO:	Successfully updated "z start meas.": 35
+21-04-2026 10:10:13 INFO:	Successfully updated "scan length": 10
+21-04-2026 10:10:13 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:10:13 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:10:13 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:32:57 INFO:Updating params:
+21-04-2026 10:32:57 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:32:57 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:32:57 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:32:57 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:32:57 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:32:57 INFO:	Successfully updated "scan length": 10
+21-04-2026 10:32:57 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:32:57 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:32:57 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:33:37 INFO:Updating params:
+21-04-2026 10:33:37 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:33:37 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:33:37 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:33:37 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:33:37 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:33:37 INFO:	Successfully updated "scan length": 4
+21-04-2026 10:33:37 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:33:37 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:33:37 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:34:24 INFO:Updating params:
+21-04-2026 10:34:24 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:34:24 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:34:24 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:34:24 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:34:24 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:34:24 INFO:	Successfully updated "scan length": 4
+21-04-2026 10:34:24 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:34:24 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:34:24 INFO:	Successfully updated "sample ID": sample1A
+21-04-2026 10:35:29 INFO:Starting measurement  1/1 (1) for sample ID sample1A
+21-04-2026 10:35:31 INFO:Started recording with FPS 199.9
+21-04-2026 10:35:32 INFO:		Starting approach
+21-04-2026 10:35:58 INFO:		Approach was stopped: Stage upper limit reached
+21-04-2026 10:35:58 INFO:		Starting retracting
+21-04-2026 10:36:34 INFO:		Done!
+21-04-2026 10:36:34 INFO:	Done with sample  ID sample1A!
+21-04-2026 10:36:37 INFO:Starting measurement  1/1 (2) for sample ID sample1A
+21-04-2026 10:37:57 INFO:Started recording with FPS 199.9
+21-04-2026 10:37:57 INFO:		Starting approach
+21-04-2026 10:38:06 INFO:		Approach was stopped: Reason user input
+21-04-2026 10:39:44 INFO:Library version: 4.2.0.88
+21-04-2026 10:39:44 INFO:Number of cameras detected: 1
+21-04-2026 10:39:44 INFO:Opened device with serial number  22507263...
+21-04-2026 10:39:44 ERROR:ERROR: Could not connect to the micro controller
+21-04-2026 10:39:44 ERROR:Could not start the hardware!
+Exiting...
+21-04-2026 10:39:47 INFO:Library version: 4.2.0.88
+21-04-2026 10:39:47 INFO:Number of cameras detected: 1
+21-04-2026 10:39:47 INFO:Opened device with serial number  22507263...
+21-04-2026 10:41:22 INFO:Updating params:
+21-04-2026 10:41:22 INFO:	Successfully updated "spring constant": 400
+21-04-2026 10:41:22 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:41:22 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:41:22 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:41:22 INFO:	Successfully updated "z start meas.": 35
+21-04-2026 10:41:22 INFO:	Successfully updated "scan length": 10
+21-04-2026 10:41:22 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:41:22 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:41:22 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:41:34 INFO:Updating params:
+21-04-2026 10:41:34 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:41:34 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:41:34 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:41:34 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:41:34 INFO:	Successfully updated "z start meas.": 35
+21-04-2026 10:41:34 INFO:	Successfully updated "scan length": 10
+21-04-2026 10:41:34 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:41:34 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:41:34 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:42:16 INFO:Updating params:
+21-04-2026 10:42:16 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:42:16 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:42:16 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:42:16 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:42:16 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:42:16 INFO:	Successfully updated "scan length": 10
+21-04-2026 10:42:16 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:42:16 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:42:16 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:42:26 INFO:Updating params:
+21-04-2026 10:42:26 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:42:26 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:42:26 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:42:26 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:42:26 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:42:26 INFO:	Successfully updated "scan length": 4
+21-04-2026 10:42:26 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:42:26 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:42:26 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 10:42:36 INFO:Updating params:
+21-04-2026 10:42:36 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:42:36 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:42:36 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:42:36 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:42:36 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:42:36 INFO:	Successfully updated "scan length": 4
+21-04-2026 10:42:36 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:42:36 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:42:36 INFO:	Successfully updated "sample ID": sample1A
+21-04-2026 10:43:05 INFO:Starting measurement  1/1 (1) for sample ID sample1A
+21-04-2026 10:43:05 INFO:Started recording with FPS 199.9
+21-04-2026 10:43:05 INFO:		Starting approach
+21-04-2026 10:43:15 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 10:43:15 INFO:		Starting retracting
+21-04-2026 10:43:33 INFO:		Done!
+21-04-2026 10:43:33 INFO:	Done with sample  ID sample1A!
+21-04-2026 10:49:37 INFO:Starting measurement  1/1 (2) for sample ID sample1A
+21-04-2026 10:49:39 INFO:Started recording with FPS 199.9
+21-04-2026 10:49:39 INFO:		Starting approach
+21-04-2026 10:49:49 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 10:49:49 INFO:		Starting retracting
+21-04-2026 10:50:07 INFO:		Done!
+21-04-2026 10:50:07 INFO:	Done with sample  ID sample1A!
+21-04-2026 10:52:48 INFO:Updating params:
+21-04-2026 10:52:48 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:52:48 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:52:48 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:52:48 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:52:48 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:52:48 INFO:	Successfully updated "scan length": 4
+21-04-2026 10:52:48 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:52:48 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:52:48 INFO:	Successfully updated "sample ID": sample1B
+21-04-2026 10:53:59 INFO:Starting measurement  1/1 (3) for sample ID sample1B
+21-04-2026 10:54:02 INFO:Started recording with FPS 199.9
+21-04-2026 10:54:02 INFO:		Starting approach
+21-04-2026 10:54:12 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 10:54:12 INFO:		Starting retracting
+21-04-2026 10:54:31 INFO:		Done!
+21-04-2026 10:54:31 INFO:	Done with sample  ID sample1B!
+21-04-2026 10:55:32 INFO:Starting measurement  1/1 (4) for sample ID sample1B
+21-04-2026 10:55:35 INFO:Started recording with FPS 199.9
+21-04-2026 10:55:35 INFO:		Starting approach
+21-04-2026 10:55:45 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 10:55:45 INFO:		Starting retracting
+21-04-2026 10:56:07 INFO:		Done!
+21-04-2026 10:56:07 INFO:	Done with sample  ID sample1B!
+21-04-2026 10:59:58 INFO:Updating params:
+21-04-2026 10:59:58 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 10:59:58 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 10:59:58 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 10:59:58 INFO:	Successfully updated "pushing force": 1
+21-04-2026 10:59:58 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 10:59:58 INFO:	Successfully updated "scan length": 4
+21-04-2026 10:59:58 INFO:	Successfully updated "repeats": 1
+21-04-2026 10:59:58 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 10:59:58 INFO:	Successfully updated "sample ID": sample1C
+21-04-2026 11:01:31 INFO:Starting measurement  1/1 (5) for sample ID sample1C
+21-04-2026 11:01:32 INFO:Started recording with FPS 199.9
+21-04-2026 11:01:32 INFO:		Starting approach
+21-04-2026 11:01:41 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 11:01:41 INFO:		Starting retracting
+21-04-2026 11:01:59 INFO:		Done!
+21-04-2026 11:01:59 INFO:	Done with sample  ID sample1C!
+21-04-2026 11:02:28 INFO:Starting measurement  1/1 (6) for sample ID sample1C
+21-04-2026 11:02:54 INFO:Started recording with FPS 199.9
+21-04-2026 11:02:54 INFO:		Starting approach
+21-04-2026 11:03:03 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 11:03:03 INFO:		Starting retracting
+21-04-2026 11:03:22 INFO:		Done!
+21-04-2026 11:03:22 INFO:	Done with sample  ID sample1C!
+21-04-2026 11:07:43 INFO:Starting measurement  1/1 (7) for sample ID sample1C
+21-04-2026 11:07:45 INFO:Started recording with FPS 199.9
+21-04-2026 11:07:45 INFO:		Starting approach
+21-04-2026 11:07:55 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 11:07:55 INFO:		Starting retracting
+21-04-2026 11:08:13 INFO:		Done!
+21-04-2026 11:08:13 INFO:	Done with sample  ID sample1C!
+21-04-2026 11:08:31 INFO:Updating params:
+21-04-2026 11:08:31 INFO:	Successfully updated "spring constant": 8829.5
+21-04-2026 11:08:31 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 11:08:31 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 11:08:31 INFO:	Successfully updated "pushing force": 2
+21-04-2026 11:08:31 INFO:	Successfully updated "z start meas.": 34.5
+21-04-2026 11:08:31 INFO:	Successfully updated "scan length": 4
+21-04-2026 11:08:31 INFO:	Successfully updated "repeats": 1
+21-04-2026 11:08:31 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#5
+21-04-2026 11:08:31 INFO:	Successfully updated "sample ID": sample1C
+21-04-2026 11:08:33 INFO:Starting measurement  1/1 (8) for sample ID sample1C
+21-04-2026 11:09:09 INFO:Started recording with FPS 199.9
+21-04-2026 11:09:09 INFO:		Starting approach
+21-04-2026 11:09:19 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 11:09:19 INFO:		Starting retracting
+21-04-2026 11:09:39 INFO:		Done!
+21-04-2026 11:09:39 INFO:	Done with sample  ID sample1C!
+21-04-2026 11:29:35 INFO:Started recording with FPS 199.9
+21-04-2026 13:05:58 INFO:Library version: 4.2.0.88
+21-04-2026 13:05:58 INFO:Number of cameras detected: 1
+21-04-2026 13:05:58 INFO:Opened device with serial number  22507263...
+21-04-2026 13:05:58 ERROR:ERROR: Could not connect to the micro controller
+21-04-2026 13:05:58 ERROR:Could not start the hardware!
+Exiting...
+21-04-2026 13:06:01 INFO:Library version: 4.2.0.88
+21-04-2026 13:06:01 INFO:Number of cameras detected: 1
+21-04-2026 13:06:01 INFO:Opened device with serial number  22507263...
+21-04-2026 13:36:35 INFO:Library version: 4.2.0.88
+21-04-2026 13:36:35 INFO:Number of cameras detected: 1
+21-04-2026 13:36:35 INFO:Opened device with serial number  22507263...
+21-04-2026 14:19:02 INFO:Updating params:
+21-04-2026 14:19:02 INFO:	Successfully updated "spring constant": 9207.3
+21-04-2026 14:19:02 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 14:19:02 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 14:19:02 INFO:	Successfully updated "pushing force": 1
+21-04-2026 14:19:02 INFO:	Successfully updated "z start meas.": 35
+21-04-2026 14:19:02 INFO:	Successfully updated "scan length": 10
+21-04-2026 14:19:02 INFO:	Successfully updated "repeats": 1
+21-04-2026 14:19:02 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#6
+21-04-2026 14:19:02 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 14:38:33 INFO:Updating params:
+21-04-2026 14:38:33 INFO:	Successfully updated "spring constant": 9207.3
+21-04-2026 14:38:33 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 14:38:33 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 14:38:33 INFO:	Successfully updated "pushing force": 1
+21-04-2026 14:38:33 INFO:	Successfully updated "z start meas.": 33
+21-04-2026 14:38:33 INFO:	Successfully updated "scan length": 10
+21-04-2026 14:38:33 INFO:	Successfully updated "repeats": 1
+21-04-2026 14:38:33 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#6
+21-04-2026 14:38:33 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 14:39:07 INFO:Updating params:
+21-04-2026 14:39:07 INFO:	Successfully updated "spring constant": 9207.3
+21-04-2026 14:39:07 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 14:39:07 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 14:39:07 INFO:	Successfully updated "pushing force": 1
+21-04-2026 14:39:07 INFO:	Successfully updated "z start meas.": 33
+21-04-2026 14:39:07 INFO:	Successfully updated "scan length": 2.5
+21-04-2026 14:39:07 INFO:	Successfully updated "repeats": 1
+21-04-2026 14:39:07 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#6
+21-04-2026 14:39:07 INFO:	Successfully updated "sample ID": Hook
+21-04-2026 14:40:00 INFO:Updating params:
+21-04-2026 14:40:00 INFO:	Successfully updated "spring constant": 9207.3
+21-04-2026 14:40:00 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 14:40:00 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 14:40:00 INFO:	Successfully updated "pushing force": 1
+21-04-2026 14:40:00 INFO:	Successfully updated "z start meas.": 33
+21-04-2026 14:40:00 INFO:	Successfully updated "scan length": 2.5
+21-04-2026 14:40:00 INFO:	Successfully updated "repeats": 1
+21-04-2026 14:40:00 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#6
+21-04-2026 14:40:00 INFO:	Successfully updated "sample ID": Hook1A
+21-04-2026 14:40:02 INFO:Updating params:
+21-04-2026 14:40:02 INFO:	Successfully updated "spring constant": 9207.3
+21-04-2026 14:40:02 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 14:40:02 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 14:40:02 INFO:	Successfully updated "pushing force": 1
+21-04-2026 14:40:02 INFO:	Successfully updated "z start meas.": 33
+21-04-2026 14:40:02 INFO:	Successfully updated "scan length": 2.5
+21-04-2026 14:40:02 INFO:	Successfully updated "repeats": 1
+21-04-2026 14:40:02 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#6
+21-04-2026 14:40:02 INFO:	Successfully updated "sample ID": Hook1A
+21-04-2026 14:40:08 INFO:Starting measurement  1/1 (1) for sample ID Hook1A
+21-04-2026 14:40:09 INFO:Started recording with FPS 199.9
+21-04-2026 14:40:09 INFO:		Starting approach
+21-04-2026 14:40:21 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:40:21 INFO:		Starting retracting
+21-04-2026 14:40:37 INFO:		Done!
+21-04-2026 14:40:37 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:41:28 INFO:Starting measurement  1/1 (2) for sample ID Hook1A
+21-04-2026 14:41:30 INFO:Started recording with FPS 199.9
+21-04-2026 14:41:30 INFO:		Starting approach
+21-04-2026 14:41:41 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:41:41 INFO:		Starting retracting
+21-04-2026 14:41:58 INFO:		Done!
+21-04-2026 14:41:58 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:44:11 INFO:Starting measurement  1/1 (3) for sample ID Hook1A
+21-04-2026 14:44:13 INFO:Started recording with FPS 199.9
+21-04-2026 14:44:13 INFO:		Starting approach
+21-04-2026 14:44:24 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:44:24 INFO:		Starting retracting
+21-04-2026 14:44:40 INFO:		Done!
+21-04-2026 14:44:40 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:45:09 INFO:Updating params:
+21-04-2026 14:45:09 INFO:	Successfully updated "spring constant": 9207.3
+21-04-2026 14:45:09 INFO:	Successfully updated "z-velocity meas.": 0.5
+21-04-2026 14:45:09 INFO:	Successfully updated "z-velocity default": 2
+21-04-2026 14:45:09 INFO:	Successfully updated "pushing force": 3
+21-04-2026 14:45:09 INFO:	Successfully updated "z start meas.": 33
+21-04-2026 14:45:09 INFO:	Successfully updated "scan length": 2.5
+21-04-2026 14:45:09 INFO:	Successfully updated "repeats": 1
+21-04-2026 14:45:09 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260421_#6
+21-04-2026 14:45:09 INFO:	Successfully updated "sample ID": Hook1A
+21-04-2026 14:45:24 INFO:Starting measurement  1/1 (4) for sample ID Hook1A
+21-04-2026 14:45:28 INFO:Started recording with FPS 199.9
+21-04-2026 14:45:28 INFO:		Starting approach
+21-04-2026 14:45:41 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:45:41 INFO:		Starting retracting
+21-04-2026 14:45:58 INFO:		Done!
+21-04-2026 14:45:58 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:46:27 INFO:Starting measurement  1/1 (5) for sample ID Hook1A
+21-04-2026 14:46:48 INFO:Started recording with FPS 199.9
+21-04-2026 14:46:48 INFO:		Starting approach
+21-04-2026 14:47:01 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:47:01 INFO:		Starting retracting
+21-04-2026 14:47:19 INFO:		Done!
+21-04-2026 14:47:19 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:47:38 INFO:Starting measurement  1/1 (6) for sample ID Hook1A
+21-04-2026 14:48:12 INFO:Started recording with FPS 199.9
+21-04-2026 14:48:12 INFO:		Starting approach
+21-04-2026 14:48:24 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:48:24 INFO:		Starting retracting
+21-04-2026 14:48:42 INFO:		Done!
+21-04-2026 14:48:42 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:49:21 INFO:Starting measurement  1/1 (7) for sample ID Hook1A
+21-04-2026 14:49:35 INFO:Started recording with FPS 199.9
+21-04-2026 14:49:35 INFO:		Starting approach
+21-04-2026 14:49:48 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:49:48 INFO:		Starting retracting
+21-04-2026 14:50:06 INFO:		Done!
+21-04-2026 14:50:06 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:50:12 INFO:Starting measurement  1/1 (8) for sample ID Hook1A
+21-04-2026 14:51:00 INFO:Started recording with FPS 199.9
+21-04-2026 14:51:00 INFO:		Starting approach
+21-04-2026 14:51:12 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:51:12 INFO:		Starting retracting
+21-04-2026 14:51:30 INFO:		Done!
+21-04-2026 14:51:30 INFO:	Done with sample  ID Hook1A!
+21-04-2026 14:56:14 INFO:Starting measurement  1/1 (9) for sample ID Hook1A
+21-04-2026 14:56:16 INFO:Started recording with FPS 199.9
+21-04-2026 14:56:16 INFO:		Starting approach
+21-04-2026 14:56:28 INFO:		Approach was stopped: Pushing force limit reached
+21-04-2026 14:56:28 INFO:		Starting retracting
+21-04-2026 14:56:46 ERROR:Exception in thread 
+21-04-2026 14:56:46 ERROR:Thread-23 (_measure_experiment)
+21-04-2026 14:56:46 ERROR::
+
+21-04-2026 14:56:46 ERROR:Traceback (most recent call last):
+
+21-04-2026 14:56:46 ERROR:  File "C:\Users\turkkiv2\.conda\envs\velcro\lib\threading.py", line 1016, in _bootstrap_inner
+
+21-04-2026 14:56:46 ERROR:    
+21-04-2026 14:56:46 ERROR:self.run()
+21-04-2026 14:56:46 ERROR:
+
+21-04-2026 14:56:46 ERROR:  File "C:\Users\turkkiv2\.conda\envs\velcro\lib\threading.py", line 953, in run
+
+21-04-2026 14:56:46 ERROR:    
+21-04-2026 14:56:46 ERROR:self._target(*self._args, **self._kwargs)
+21-04-2026 14:56:46 ERROR:
+
+21-04-2026 14:56:46 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\measurement.py", line 332, in _measure_experiment
+
+21-04-2026 14:56:46 ERROR:    
+21-04-2026 14:56:46 ERROR:self.stage.set_velocity(self._params['z-velocity default']['value'])
+21-04-2026 14:56:46 ERROR:
+
+21-04-2026 14:56:46 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 60, in set_velocity
+
+21-04-2026 14:56:46 ERROR:    
+21-04-2026 14:56:46 ERROR:self._write_command(f'SVEL {value}')
+21-04-2026 14:56:46 ERROR:
+
+21-04-2026 14:56:46 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 131, in _write_command
+
+21-04-2026 14:56:46 ERROR:    
+21-04-2026 14:56:46 ERROR:self._stepper.write(bytes(command + '\n', 'utf-8'))
+21-04-2026 14:56:46 ERROR:
+
+21-04-2026 14:56:46 ERROR:  File "C:\Users\turkkiv2\.conda\envs\velcro\lib\site-packages\serial\serialwin32.py", line 325, in write
+
+21-04-2026 14:56:46 ERROR:    
+21-04-2026 14:56:46 ERROR:raise SerialTimeoutException('Write timeout')
+21-04-2026 14:56:46 ERROR:
+
+21-04-2026 14:56:46 ERROR:serial.serialutil
+21-04-2026 14:56:46 ERROR:.
+21-04-2026 14:56:46 ERROR:SerialTimeoutException
+21-04-2026 14:56:46 ERROR:: 
+21-04-2026 14:56:46 ERROR:Write timeout
+21-04-2026 14:56:46 ERROR:
+
+21-04-2026 15:21:04 INFO:Library version: 4.2.0.88
+21-04-2026 15:21:04 INFO:Number of cameras detected: 1
+21-04-2026 15:21:04 INFO:Opened device with serial number  22507263...
+22-04-2026 08:57:52 INFO:Library version: 4.2.0.88
+22-04-2026 08:57:52 INFO:Number of cameras detected: 1
+22-04-2026 08:57:52 INFO:Opened device with serial number  22507263...
+22-04-2026 08:57:52 ERROR:ERROR: Could not connect to the micro controller
+22-04-2026 08:57:52 ERROR:Could not start the hardware!
+Exiting...
+22-04-2026 08:57:55 INFO:Library version: 4.2.0.88
+22-04-2026 08:57:55 INFO:Number of cameras detected: 1
+22-04-2026 08:57:55 INFO:Opened device with serial number  22507263...
+22-04-2026 09:38:51 INFO:Library version: 4.2.0.88
+22-04-2026 09:38:51 INFO:Number of cameras detected: 1
+22-04-2026 09:38:51 INFO:Opened device with serial number  22507263...
+22-04-2026 09:39:03 INFO:Updating params:
+22-04-2026 09:39:03 INFO:	Successfully updated "spring constant": 400
+22-04-2026 09:39:03 INFO:	Successfully updated "z-velocity meas.": 0.5
+22-04-2026 09:39:03 INFO:	Successfully updated "z-velocity default": 2
+22-04-2026 09:39:03 INFO:	Successfully updated "pushing force": 1
+22-04-2026 09:39:03 INFO:	Successfully updated "z start meas.": 35
+22-04-2026 09:39:03 INFO:	Successfully updated "scan length": 10
+22-04-2026 09:39:03 INFO:	Successfully updated "repeats": 1
+22-04-2026 09:39:03 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260422_#7
+22-04-2026 09:39:03 INFO:	Successfully updated "sample ID": Hook
+22-04-2026 09:39:32 INFO:Updating params:
+22-04-2026 09:39:32 INFO:	Successfully updated "spring constant": 400
+22-04-2026 09:39:32 INFO:	Successfully updated "z-velocity meas.": 0.5
+22-04-2026 09:39:32 INFO:	Successfully updated "z-velocity default": 4
+22-04-2026 09:39:32 INFO:	Successfully updated "pushing force": 1
+22-04-2026 09:39:32 INFO:	Successfully updated "z start meas.": 35
+22-04-2026 09:39:32 INFO:	Successfully updated "scan length": 10
+22-04-2026 09:39:32 INFO:	Successfully updated "repeats": 1
+22-04-2026 09:39:32 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260422_#7
+22-04-2026 09:39:32 INFO:	Successfully updated "sample ID": Hook
+22-04-2026 09:39:40 INFO:Updating params:
+22-04-2026 09:39:40 INFO:	Successfully updated "spring constant": 400
+22-04-2026 09:39:40 INFO:	Successfully updated "z-velocity meas.": 0.5
+22-04-2026 09:39:40 INFO:	Successfully updated "z-velocity default": 4
+22-04-2026 09:39:40 INFO:	Successfully updated "pushing force": 1
+22-04-2026 09:39:40 INFO:	Successfully updated "z start meas.": 35
+22-04-2026 09:39:40 INFO:	Successfully updated "scan length": 1
+22-04-2026 09:39:40 INFO:	Successfully updated "repeats": 1
+22-04-2026 09:39:40 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260422_#7
+22-04-2026 09:39:40 INFO:	Successfully updated "sample ID": Hook
+22-04-2026 09:39:41 INFO:Starting measurement  1/1 (1) for sample ID Hook
+22-04-2026 09:39:52 INFO:Started recording with FPS 199.9
+22-04-2026 09:39:52 INFO:		Starting approach
+22-04-2026 09:39:52 ERROR:		Approach was stopped: Reason unknown
+22-04-2026 09:39:52 INFO:		Starting retracting
+22-04-2026 09:39:54 INFO:		Done!
+22-04-2026 09:39:54 INFO:	Done with sample  ID Hook!
+22-04-2026 09:51:07 INFO:Library version: 4.2.0.88
+22-04-2026 09:51:07 INFO:Number of cameras detected: 1
+22-04-2026 09:51:07 INFO:Opened device with serial number  22507263...
+22-04-2026 10:13:00 INFO:Updating params:
+22-04-2026 10:13:00 INFO:	Successfully updated "spring constant": 8614
+22-04-2026 10:13:00 INFO:	Successfully updated "z-velocity meas.": 0.5
+22-04-2026 10:13:00 INFO:	Successfully updated "z-velocity default": 2
+22-04-2026 10:13:00 INFO:	Successfully updated "pushing force": 1
+22-04-2026 10:13:00 INFO:	Successfully updated "z start meas.": 35
+22-04-2026 10:13:00 INFO:	Successfully updated "scan length": 10
+22-04-2026 10:13:00 INFO:	Successfully updated "repeats": 1
+22-04-2026 10:13:00 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260422_#7
+22-04-2026 10:13:00 INFO:	Successfully updated "sample ID": Hook
+22-04-2026 10:23:25 INFO:Updating params:
+22-04-2026 10:23:25 INFO:	Successfully updated "spring constant": 8614
+22-04-2026 10:23:25 INFO:	Successfully updated "z-velocity meas.": 0.5
+22-04-2026 10:23:25 INFO:	Successfully updated "z-velocity default": 2
+22-04-2026 10:23:25 INFO:	Successfully updated "pushing force": 2
+22-04-2026 10:23:25 INFO:	Successfully updated "z start meas.": 35
+22-04-2026 10:23:25 INFO:	Successfully updated "scan length": 1
+22-04-2026 10:23:25 INFO:	Successfully updated "repeats": 1
+22-04-2026 10:23:25 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260422_#7
+22-04-2026 10:23:25 INFO:	Successfully updated "sample ID": k1A
+22-04-2026 10:24:12 INFO:Starting measurement  1/1 (1) for sample ID k1A
+22-04-2026 10:24:12 INFO:Started recording with FPS 199.9
+22-04-2026 10:24:12 INFO:		Starting approach
+22-04-2026 10:24:23 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:24:23 INFO:		Starting retracting
+22-04-2026 10:24:36 INFO:		Done!
+22-04-2026 10:24:36 INFO:	Done with sample  ID k1A!
+22-04-2026 10:25:55 INFO:Starting measurement  1/1 (2) for sample ID k1A
+22-04-2026 10:25:56 INFO:Started recording with FPS 199.9
+22-04-2026 10:25:56 INFO:		Starting approach
+22-04-2026 10:26:07 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:26:07 INFO:		Starting retracting
+22-04-2026 10:26:20 INFO:		Done!
+22-04-2026 10:26:20 INFO:	Done with sample  ID k1A!
+22-04-2026 10:27:11 INFO:Starting measurement  1/1 (3) for sample ID k1A
+22-04-2026 10:27:12 INFO:Started recording with FPS 199.9
+22-04-2026 10:27:12 INFO:		Starting approach
+22-04-2026 10:27:23 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:27:23 INFO:		Starting retracting
+22-04-2026 10:27:36 INFO:		Done!
+22-04-2026 10:27:36 INFO:	Done with sample  ID k1A!
+22-04-2026 10:28:37 INFO:Starting measurement  1/1 (4) for sample ID k1A
+22-04-2026 10:28:38 INFO:Started recording with FPS 199.9
+22-04-2026 10:28:38 INFO:		Starting approach
+22-04-2026 10:28:49 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:28:49 INFO:		Starting retracting
+22-04-2026 10:28:49 ERROR:Exception in Tkinter callback
+22-04-2026 10:28:49 ERROR:
+
+22-04-2026 10:28:49 ERROR:Traceback (most recent call last):
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:28:49 ERROR:  File "C:\Users\turkkiv2\.conda\envs\velcro\lib\tkinter\__init__.py", line 1921, in __call__
+    return self.func(*args)
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:28:49 ERROR:  File "C:\Users\turkkiv2\.conda\envs\velcro\lib\tkinter\__init__.py", line 839, in callit
+    func(*args)
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:28:49 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\main_gui.py", line 118, in updateGUI
+    stage_state = z_stage.get_state()
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:28:49 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 71, in get_state
+    result = self._write_command('QSTATE')
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:28:49 ERROR:  File "C:\Users\turkkiv2\Work\APL-software\APL-velcro\source\stage.py", line 131, in _write_command
+    self._stepper.write(bytes(command + '\n', 'utf-8'))
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:28:49 ERROR:  File "C:\Users\turkkiv2\.conda\envs\velcro\lib\site-packages\serial\serialwin32.py", line 325, in write
+    raise SerialTimeoutException('Write timeout')
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:28:49 ERROR:serial.serialutil.SerialTimeoutException: Write timeout
+
+22-04-2026 10:28:49 ERROR:
+22-04-2026 10:29:08 INFO:		Done!
+22-04-2026 10:29:08 INFO:	Done with sample  ID k1A!
+22-04-2026 10:29:24 INFO:Starting measurement  1/1 (5) for sample ID k1A
+22-04-2026 10:29:32 INFO:Measurement stopped
+22-04-2026 10:30:50 INFO:Library version: 4.2.0.88
+22-04-2026 10:30:50 INFO:Number of cameras detected: 1
+22-04-2026 10:30:50 INFO:Opened device with serial number  22507263...
+22-04-2026 10:31:39 INFO:Updating params:
+22-04-2026 10:31:39 INFO:	Successfully updated "spring constant": 8614
+22-04-2026 10:31:39 INFO:	Successfully updated "z-velocity meas.": 0.5
+22-04-2026 10:31:39 INFO:	Successfully updated "z-velocity default": 2
+22-04-2026 10:31:39 INFO:	Successfully updated "pushing force": 2
+22-04-2026 10:31:39 INFO:	Successfully updated "z start meas.": 35
+22-04-2026 10:31:39 INFO:	Successfully updated "scan length": 1
+22-04-2026 10:31:39 INFO:	Successfully updated "repeats": 1
+22-04-2026 10:31:39 INFO:	Successfully updated "save path": C:\Users\turkkiv2\APL-Velcro\20260422_#7
+22-04-2026 10:31:39 INFO:	Successfully updated "sample ID": k1A
+22-04-2026 10:32:46 INFO:Starting measurement  1/1 (1) for sample ID k1A
+22-04-2026 10:32:47 INFO:Started recording with FPS 199.9
+22-04-2026 10:32:47 ERROR:Given file already exists!
+22-04-2026 10:32:47 ERROR:Could not start recording, aborting the measurement
+22-04-2026 10:33:55 INFO:Starting measurement  1/1 (1) for sample ID k1A
+22-04-2026 10:33:58 INFO:Started recording with FPS 199.9
+22-04-2026 10:33:58 INFO:		Starting approach
+22-04-2026 10:34:09 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:34:09 INFO:		Starting retracting
+22-04-2026 10:34:22 INFO:		Done!
+22-04-2026 10:34:22 INFO:	Done with sample  ID k1A!
+22-04-2026 10:35:20 INFO:Starting measurement  1/1 (2) for sample ID k1A
+22-04-2026 10:35:21 INFO:Started recording with FPS 199.9
+22-04-2026 10:35:22 INFO:		Starting approach
+22-04-2026 10:35:32 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:35:32 INFO:		Starting retracting
+22-04-2026 10:35:45 INFO:		Done!
+22-04-2026 10:35:45 INFO:	Done with sample  ID k1A!
+22-04-2026 10:36:27 INFO:Starting measurement  1/1 (3) for sample ID k1A
+22-04-2026 10:36:28 INFO:Started recording with FPS 199.9
+22-04-2026 10:36:28 INFO:		Starting approach
+22-04-2026 10:36:38 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:36:38 INFO:		Starting retracting
+22-04-2026 10:36:51 INFO:		Done!
+22-04-2026 10:36:51 INFO:	Done with sample  ID k1A!
+22-04-2026 10:38:10 INFO:Starting measurement  1/1 (4) for sample ID k1A
+22-04-2026 10:38:11 INFO:Started recording with FPS 199.9
+22-04-2026 10:38:11 INFO:		Starting approach
+22-04-2026 10:38:22 INFO:		Approach was stopped: Pushing force limit reached
+22-04-2026 10:38:22 INFO:		Starting retracting
+22-04-2026 10:38:35 INFO:		Done!
+22-04-2026 10:38:35 INFO:	Done with sample  ID k1A!

@@ -126,11 +126,16 @@ class Stage:
 
 
 
-    def _write_command(self, command: str): 
-        self._stepper.read_all() # Empty the current buffer
-        self._stepper.write(bytes(command + '\n', 'utf-8'))
-        time.sleep(0.05)
-        data = self._stepper.readline().decode().rstrip()
+    def _write_command(self, command: str):
+        try:
+            self._stepper.read_all() # Empty the current buffer
+            self._stepper.write(bytes(command + '\n', 'utf-8'))
+            time.sleep(0.05)
+            data = self._stepper.readline().decode().rstrip()
+        except serial.SerialException as e:
+            logging.error(f'ERROR with stage write command: {e}')
+            data = ''
+            
         return data 
     
 
