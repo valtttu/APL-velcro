@@ -160,7 +160,10 @@ class Stage:
         for i in range(1,len(pts)):
             tmp = pts[i].split('=')
             if('pos' in tmp[0].lower()):
-                self._position = float(tmp[1].rstrip())
+                try:
+                    self._position = float(tmp[1].rstrip())
+                except ValueError:
+                    logging.error(f'Got invalid input as position: {tmp[1].rstrip()}')
             elif('homed' in tmp[0].lower()):
                 self._is_homed =  '1' in tmp[1].rstrip()
             elif('ll' in tmp[0].lower()):

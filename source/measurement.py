@@ -10,6 +10,7 @@ import threading
 
 MEASUREMENT_STOP_NOISE_THRESHOLD = 10  # Limit for force reading standard deviation in [um]. Recording stops only after the noise is smaller than this
 MEASUREMENT_STOP_TIMEOUT = 30   # The timeout for waiting for the standard deviation to come down in [s]
+RECORD_VIDEO = False
 
 class Measurement:
 
@@ -24,10 +25,10 @@ class Measurement:
         self._params = {'spring constant': {'value': 400, 'type': 'float', 'range': (0, 50000), 'unit': 'N/m'},
                         'z-velocity meas.': {'value': 0.5, 'type': 'float', 'range': (0.01, MAX_SPEED), 'unit': 'mm/s'},
                         'z-velocity default': {'value': 2, 'type': 'float', 'range': (0.1, MAX_SPEED), 'unit': 'mm/s'},
-                        'pushing force': {'value': 1, 'type': 'float', 'range': (0.1, 50), 'unit': 'N'},
+                        'pushing force': {'value': 1, 'type': 'float', 'range': (0.01, 50), 'unit': 'N'},
                         'z start meas.': {'value': 35, 'type': 'float', 'range': (0, Z_MAX), 'unit': 'mm'},
-                        'scan length': {'value': 10, 'type': 'float', 'range': (0.5, 50), 'unit': 'mm'},
-                        'repeats': {'value': 1, 'type': 'int', 'range': (1, 10), 'unit': ''},
+                        'scan length': {'value': 10, 'type': 'float', 'range': (0, 50), 'unit': 'mm'},
+                        'repeats': {'value': 1, 'type': 'int', 'range': (1, 30), 'unit': ''},
                         'save path': {'value': utils.construct_default_path(), 'type': 'path', 'range': None, 'unit': ''},
                         'sample ID': {'value': 'Hook', 'type': 'string', 'range': None, 'unit': ''}}
         
@@ -287,7 +288,10 @@ class Measurement:
             else:
                 self.stage.set_velocity(self._params['z-velocity meas.']['value'])
                 res = [False, False]
-                res[0] = self.camera.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_N_{self._measurement_no:02d}_video")
+                if(RECORD_VIDEO):
+                    res[0] = self.camera.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_N_{self._measurement_no:02d}_video")
+                else:
+                    res[0] = True
                 res[1] = self.probe.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_N_{self._measurement_no:02d}_force.csv")
             
             if(res[0] and res[1] and self._is_measuring):
@@ -299,7 +303,8 @@ class Measurement:
                 logging.error('Could not start recording, aborting the measurement')
                 self._state_str = 'Could not start recording!'
                 self.stage.stop()
-                self.camera.end_recording()
+                if(RECORD_VIDEO):
+                    self.camera.end_recording()
                 self.probe.stop_recording()
                 self._measurement_no -= 1
                 self._is_measuring = False
@@ -313,6 +318,10 @@ class Measurement:
             while(self._is_measuring and self.stage.can_move() and np.abs(starting_force - current_force) < self._params['pushing force']['value']):
                 time.sleep(0.05)
                 current_force = self.probe.get_latest()/1e6*self._params['spring constant']['value']
+
+                if(self.probe.get_error_state()):
+                    self.stage.stop()
+                    break
                 
             # Log the approach stop reason
             if(not self._is_measuring):
@@ -321,6 +330,8 @@ class Measurement:
                 logging.info('\t\tApproach was stopped: Stage upper limit reached')
             elif(np.abs(starting_force - current_force) >= self._params['pushing force']['value']):
                 logging.info('\t\tApproach was stopped: Pushing force limit reached')
+            elif(self.probe.get_error_state()):
+                logging.info('\t\tApproach was stopped: Distance sensor acquisition error')
             else:
                 logging.error('\t\tApproach was stopped: Reason unknown')
 
@@ -328,6 +339,7 @@ class Measurement:
 
             # Reverse the direction and retract
             if(not self._is_measuring):
+                self._state_str = f'Meas. no.  {i+1}/{n} ({self._measurement_no}): Exited'
                 self._finished = True
                 return
             else:
@@ -349,7 +361,8 @@ class Measurement:
 
 
             # Finish the measurement
-            self.camera.end_recording()
+            if(RECORD_VIDEO):
+                self.camera.end_recording()
             self.probe.stop_recording()
             self._is_recording = False
             logging.info('\t\tDone!')

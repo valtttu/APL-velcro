@@ -50,6 +50,7 @@ class Probe:
         # Other needed variables
         self._save_fid = None
         self._latest_file = ''
+        self._latest_file_tmp = ''
         self._sample_rate = 200
         self._error_counter = 0
 
@@ -143,7 +144,7 @@ class Probe:
             return False
         
         self._save_fid = open(path + '/' + filename, 'w')
-        self._latest_file = filename
+        self._latest_file_tmp = filename
         self._is_recording = True
         return True
 
@@ -235,6 +236,7 @@ class Probe:
                     # Clear the error counter
                     self._error_counter = 0
                     self._has_errors = False
+                    self._latest_file = self._latest_file_tmp
 
                 else:
                     # Print TransferData error
