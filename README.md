@@ -55,6 +55,15 @@ The control software has been implemented using `python` (excluding for the micr
 
 ### Photos
 
+<center>
+    <img src="./figs/20260330_HAM_1.jpeg" alt="View for two hook pull" width="53%" height="auto">
+    <img src="./figs/20260330_HAM_2.jpeg" alt="View for two hook pull" width="30%" height="auto">
+</center>
+
+<center>
+    <img src="./figs/20260316_cantiever_mount.jpg" alt="View for two hook pull" width="41.5%" height="auto">
+    <img src="./figs/20260316_cantilever+sample.jpg" alt="View for two hook pull" width="41.5%" height="auto">
+</center>
 
 ## References
 
