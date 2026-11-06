@@ -6,8 +6,6 @@ import utils
 
 
 from termcolor import colored
-import numpy as np
-import os
 import sys
 import logging
 
@@ -19,10 +17,19 @@ from PIL import ImageTk, Image
 UPDATE_MS = 40
 
 
+# Get command line arguments
+opts = {'stage-COM': 'COM6', 'probe-COM': 'COM4'}
+args = ()
+for arg in sys.argv[1:]:
+    for key in opts.keys():
+        if(key.lower() in arg.lower()):
+            opts[key] = arg.split('=')[-1].rstrip()
+
+
 # Open hardware connections
-laser_probe = probe.Probe(port = 'COM4')
+laser_probe = probe.Probe(port = opts["probe-COM"])
 side_camera = camera.Camera()
-z_stage = stage.Stage(port = 'COM6')
+z_stage = stage.Stage(port = opts["stage-COM"])
 
 measurer = measurement.Measurement(laser_probe, side_camera, z_stage)
 
@@ -95,6 +102,17 @@ def toggle_automatic_recording(enable = False):
         bt_start_automatic.config(activebackground='red')
         for entry in entries:
             entry.config(state="disabled")
+
+
+def toggle_save_video():
+    if(bt_video_toggle['activebackground'] == 'red'):
+        measurer.enable_video()
+        bt_video_toggle.config(text="Disable video")
+        bt_video_toggle.config(activebackground='green')
+    else:
+        measurer.disable_video()
+        bt_video_toggle.config(text="Enable video")
+        bt_video_toggle.config(activebackground='red')
 
 
 def driveUp(event):
@@ -177,7 +195,7 @@ oval = canvas.create_oval(5, 5, 25, 25, fill='', outline = '')
 
 
 # Create buttons
-bt_start_automatic = tk.Button(root, text="Start measurement\n sequence", 
+bt_start_automatic = tk.Button(root, text="Start measurement\nsequence", 
                             command= toggle_automatic_recording,
                             activebackground="green", 
                             activeforeground="white",
@@ -197,7 +215,7 @@ bt_start_automatic = tk.Button(root, text="Start measurement\n sequence",
                             pady=10)
 
 
-bt_start_manual = tk.Button(root, text="Start manual\n recording", 
+bt_start_manual = tk.Button(root, text="Start manual\nrecording", 
                             command= toggle_manual_recording,
                             activebackground="green", 
                             activeforeground="white",
@@ -256,8 +274,28 @@ bt_stage_down = tk.Button(root, text="↓",
                             pady=10)
 
 
-bt_stage_home = tk.Button(root, text="Home\n stage", 
+bt_stage_home = tk.Button(root, text="Home\nstage", 
                             command= z_stage.home,
+                            activebackground="green", 
+                            activeforeground="white",
+                            anchor="center",
+                            bd=3,
+                            bg="lightgray",
+                            cursor="hand2",
+                            disabledforeground="gray",
+                            fg="black",
+                            font=default_font,
+                            highlightbackground="black",
+                            highlightcolor="green",
+                            highlightthickness=2,
+                            justify="center",
+                            overrelief="raised",
+                            padx=10,
+                            pady=10)
+
+
+bt_video_toggle = tk.Button(root, text="Disable video", 
+                            command= toggle_save_video,
                             activebackground="green", 
                             activeforeground="white",
                             anchor="center",
@@ -322,8 +360,9 @@ for i in range(len(keys)):
     entries[i].bind("<Return>", lambda event: update_param(event, text_vars, keys))
     tk.Label(root, text=default_params[i]["unit"], foreground='white', bg='#300924', font=default_font).grid(column=col_span+2, row=start_row+i, columnspan=1, sticky='W')
 
-state3_label.grid(row=start_row + len(keys), column=0, columnspan=6, sticky='W', padx=10)
-state4_label.grid(row=start_row + len(keys) + 1, column=0, columnspan=6, sticky='W', padx=10)
+state3_label.grid(row=start_row + len(keys), column=0, columnspan=4, sticky='W', padx=10)
+state4_label.grid(row=start_row + len(keys) + 1, column=0, columnspan=4, sticky='W', padx=10)
+bt_video_toggle.grid(row=start_row + len(keys) + 1, column=6, columnspan=2, sticky='W', padx=10)
 
 
 # Bind buttons for stage movement

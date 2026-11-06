@@ -21,6 +21,7 @@ class Camera:
         self._fps = 100
         self._frame_time = np.nan
         self._is_recording = False
+        self._save_path = ''
         self._is_live = False
         self._resolution = (720, 540)
 
@@ -158,15 +159,8 @@ class Camera:
 
         self._fps = node_acquisition_framerate.GetValue()
 
-
-        # Initiate the video recording object
-        option = PySpin.MJPGOption()
-        option.frameRate = self._fps
-        option.quality = 60
-        option.width = self._resolution[0]
-        option.height = self._resolution[1]
-
-        self._avi_recorder.Open(path + '/' + filename, option)
+        # Initiate a list where to save images and save the save path
+        self._save_path = path + '/' + filename
         self._images = []
 
         # Set recoding flag to true
@@ -217,6 +211,15 @@ class Camera:
         '''
             Write the currently saved frames to a video
         '''
+        # Initiate the video object
+        option = PySpin.MJPGOption()
+        option.frameRate = self._fps
+        option.quality = 60
+        option.width = self._resolution[0]
+        option.height = self._resolution[1]
+        self._avi_recorder.Open(self._save_path, option)
+
+        # Write all the images from the buffer
         n_tot = len(self._images)
         for i, image in enumerate(self._images):            
             self._avi_recorder.Append(image)

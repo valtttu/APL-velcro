@@ -50,6 +50,9 @@ class Measurement:
         self._finished = False
         self._state_str = ''
 
+        # Save video option
+        self._save_video = True
+
 
     def get_parameters(self):
         '''
@@ -171,6 +174,22 @@ class Measurement:
             self._is_recording = False
 
 
+    def disable_video(self):
+        '''
+            Disable video recording
+        '''
+        if(not self._is_recording):
+            self._save_video = False
+
+
+    def enable_video(self):
+        '''
+            Enable video recording
+        '''
+        if(not self._is_recording):
+            self._save_video = True
+            
+
     def start_measurement(self):
         '''
             Start a single measurement
@@ -288,7 +307,7 @@ class Measurement:
             else:
                 self.stage.set_velocity(self._params['z-velocity meas.']['value'])
                 res = [False, False]
-                if(RECORD_VIDEO):
+                if(self._save_video):
                     res[0] = self.camera.start_recording(self._params['save path']['value'], f"{self._params['sample ID']['value']}_N_{self._measurement_no:02d}_video")
                 else:
                     res[0] = True
@@ -303,7 +322,7 @@ class Measurement:
                 logging.error('Could not start recording, aborting the measurement')
                 self._state_str = 'Could not start recording!'
                 self.stage.stop()
-                if(RECORD_VIDEO):
+                if(self._save_video):
                     self.camera.end_recording()
                 self.probe.stop_recording()
                 self._measurement_no -= 1
@@ -361,7 +380,7 @@ class Measurement:
 
 
             # Finish the measurement
-            if(RECORD_VIDEO):
+            if(self._save_video):
                 self.camera.end_recording()
             self.probe.stop_recording()
             self._is_recording = False
